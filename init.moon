@@ -1,6 +1,11 @@
 --- The root of all the modules
 -- @module helper
 
+succ, err = pcall require, 'discordia'
+
+unless succ
+  error 'This module requires discordia!'
+
 helper = {}
 
 import scandirSync from require 'fs'
