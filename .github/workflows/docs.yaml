@@ -23,9 +23,12 @@ jobs:
       - name: Install luarocks
         uses: leafo/gh-actions-luarocks@v2
 
-      - name: Install and Build
+      - name: Install
         run: |
           luarocks install ldoc
+      
+      - name: Build
+        run: |
           ldoc .
       
       - name: Deploy
