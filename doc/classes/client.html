@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Comrade</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/prompt.html">prompt</a></li>
+  <li><a href="../classes/array.html">array</a></li>
+  <li><strong>client</strong></li>
+  <li><a href="../classes/command.html">command</a></li>
+  <li><a href="../classes/embed.html">embed</a></li>
+  <li><a href="../classes/event.html">event</a></li>
+  <li><a href="../classes/help.html">help</a></li>
+  <li><a href="../classes/internalError.html">internalError</a></li>
+  <li><a href="../classes/luaCommand.html">luaCommand</a></li>
+  <li><a href="../classes/plugin.html">plugin</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/dotenv.html">dotenv</a></li>
+  <li><a href="../modules/logger.html">logger</a></li>
+  <li><a href="../modules/util.html">util</a></li>
+  <li><a href="../modules/helper.html">helper</a></li>
+  <li><a href="../modules/lua.html">lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>client</code></h1>
+<p>The helper client, extends a Discordia client</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#helper.__init">helper.__init (token[, config={}])</a></td>
+	<td class="summary">Create a new helper client</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#helper.login">helper.login (status)</a></td>
+	<td class="summary">Login to Discord</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#helper.addCommand">helper.addCommand (command)</a></td>
+	<td class="summary">Add a command</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#helper.removeCommand">helper.removeCommand (name)</a></td>
+	<td class="summary">Remove a command</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#helper.addEvent">helper.addEvent (event)</a></td>
+	<td class="summary">Add an event</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#client.config">client.config</a></td>
+	<td class="summary">The clients configuration (Most from Discordia client)</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "helper.__init"></a>
+    <strong>helper.__init (token[, config={}])</strong>
+    </dt>
+    <dd>
+    Create a new helper client
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">token</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The Discord bot token
+        </li>
+        <li><span class="parameter">config</span>
+            <span class="types"><a class="type" href="../classes/client.html#client.config">config</a></span>
+        The configuration of the client
+         (<em>default</em> {})
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "helper.login"></a>
+    <strong>helper.login (status)</strong>
+    </dt>
+    <dd>
+    Login to Discord
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">status</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "helper.addCommand"></a>
+    <strong>helper.addCommand (command)</strong>
+    </dt>
+    <dd>
+    Add a command
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">command</span>
+            <span class="types"><a class="type" href="../classes/command.html#">command</a></span>
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/command.html#">command</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "helper.removeCommand"></a>
+    <strong>helper.removeCommand (name)</strong>
+    </dt>
+    <dd>
+    Remove a command
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "helper.addEvent"></a>
+    <strong>helper.addEvent (event)</strong>
+    </dt>
+    <dd>
+    Add an event
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">event</span>
+            <span class="types"><a class="type" href="../classes/event.html#">event</a></span>
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/event.html#">event</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "client.config"></a>
+    <strong>client.config</strong>
+    </dt>
+    <dd>
+    The clients configuration (Most from Discordia client)
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">prefix</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The prefix the bot will use
+         (<em>default</em> '!')
+        </li>
+        <li><span class="parameter">defaultHelp</span>
+            <span class="types"><span class="type">boolean</span></span>
+        Whether to use the default help or not
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">owners</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        The owners of this bot
+         (<em>default</em> {})
+        </li>
+        <li><span class="parameter">routeDelay</span>
+            <span class="types"><span class="type">number</span></span>
+        Minimum time in milliseconds to wait between HTTP requests per-route
+         (<em>default</em> 300)
+        </li>
+        <li><span class="parameter">maxRetries</span>
+            <span class="types"><span class="type">number</span></span>
+        The maximum number of retries to attempt after an HTTP request fails
+         (<em>default</em> 5)
+        </li>
+        <li><span class="parameter">shardCount</span>
+            <span class="types"><span class="type">number</span></span>
+        The total number of shards the application is using (0 signals to use the recommended count)
+         (<em>default</em> 0)
+        </li>
+        <li><span class="parameter">firstShard</span>
+            <span class="types"><span class="type">number</span></span>
+        The ID of the first shard to run on the client (0 is the minimum)
+         (<em>default</em> 0)
+        </li>
+        <li><span class="parameter">lastShard</span>
+            <span class="types"><span class="type">number</span></span>
+        The ID of the last shard to run on the client (-1 signals to use shardCount - 1)
+         (<em>default</em> -1)
+        </li>
+        <li><span class="parameter">largeThreshold</span>
+            <span class="types"><span class="type">number</span></span>
+        Limit to how many members are initially fetched per-guild on start-up
+         (<em>default</em> 100)
+        </li>
+        <li><span class="parameter">cacheAllMembers</span>
+            <span class="types"><span class="type">boolean</span></span>
+        Whether to cache all members (If false, offline members may not be cached)
+         (<em>default</em> false)
+        </li>
+        <li><span class="parameter">autoReconnect</span>
+            <span class="types"><span class="type">boolean</span></span>
+        Whether to attempt to reconnect after an unexpected gateway disconnection
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">compress</span>
+            <span class="types"><span class="type">boolean</span></span>
+        Whether to allow for compressed gateway payloads
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">bitrate</span>
+            <span class="types"><span class="type">number</span></span>
+        The default bitrate to use for voice connections, from 8000 to 128000
+         (<em>default</em> 64000)
+        </li>
+        <li><span class="parameter">logFile</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The file to use for logging
+         (<em>default</em> 'discordia.log')
+        </li>
+        <li><span class="parameter">logLevel</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The level to use for logging (see Enumerations)
+         (<em>default</em> logLevel.info)
+        </li>
+        <li><span class="parameter">dateTime</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The date and time format to use logging
+         (<em>default</em> '%F %T')
+        </li>
+        <li><span class="parameter">syncGuilds</span>
+            <span class="types"><span class="type">boolean</span></span>
+        Whether to automatically sync all guilds on start up (user-accounts only)
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-09-03 19:16:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

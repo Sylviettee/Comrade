@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Comrade</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/dotenv.html">dotenv</a></li>
+  <li><a href="../modules/logger.html">logger</a></li>
+  <li><strong>util</strong></li>
+  <li><a href="../modules/helper.html">helper</a></li>
+  <li><a href="../modules/lua.html">lua</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/prompt.html">prompt</a></li>
+  <li><a href="../classes/array.html">array</a></li>
+  <li><a href="../classes/client.html">client</a></li>
+  <li><a href="../classes/command.html">command</a></li>
+  <li><a href="../classes/embed.html">embed</a></li>
+  <li><a href="../classes/event.html">event</a></li>
+  <li><a href="../classes/help.html">help</a></li>
+  <li><a href="../classes/internalError.html">internalError</a></li>
+  <li><a href="../classes/luaCommand.html">luaCommand</a></li>
+  <li><a href="../classes/plugin.html">plugin</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>util</code></h1>
+<p>A utility module for time, moderation, and permissions</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#years">years (years)</a></td>
+	<td class="summary">Convert years into milliseconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#weeks">weeks (weeks)</a></td>
+	<td class="summary">Convert weeks into milliseconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#days">days (days)</a></td>
+	<td class="summary">Convert days into milliseconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#hours">hours (hours)</a></td>
+	<td class="summary">Convert hours into milliseconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#minutes">minutes (minutes)</a></td>
+	<td class="summary">Convert minutes into milliseconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#seconds">seconds (seconds)</a></td>
+	<td class="summary">Convert seconds into milliseconds</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#formatLong">formatLong (milliseconds)</a></td>
+	<td class="summary">Convert milliseconds into a long formatted time; eg 10 days</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#plural">plural (ms, msAbs, n, name)</a></td>
+	<td class="summary">Check if a time should be plural</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#bulkDelete">bulkDelete (msg, messages)</a></td>
+	<td class="summary">Bulk delete messages in a channel using getMessages</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#compareRoles">compareRoles (role1, role2)</a></td>
+	<td class="summary">Compare 2 roles positions</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#manageable">manageable (member)</a></td>
+	<td class="summary">Compare 2 roles positions</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#checkPerm">checkPerm (member, channel, permissions)</a></td>
+	<td class="summary">Check if the member has permissions or a role override</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "years"></a>
+    <strong>years (years)</strong>
+    </dt>
+    <dd>
+    Convert years into milliseconds
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">years</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        milliseconds
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "weeks"></a>
+    <strong>weeks (weeks)</strong>
+    </dt>
+    <dd>
+    Convert weeks into milliseconds
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">weeks</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        milliseconds
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "days"></a>
+    <strong>days (days)</strong>
+    </dt>
+    <dd>
+    Convert days into milliseconds
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">days</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        milliseconds
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "hours"></a>
+    <strong>hours (hours)</strong>
+    </dt>
+    <dd>
+    Convert hours into milliseconds
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">hours</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        milliseconds
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "minutes"></a>
+    <strong>minutes (minutes)</strong>
+    </dt>
+    <dd>
+    Convert minutes into milliseconds
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">minutes</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        milliseconds
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "seconds"></a>
+    <strong>seconds (seconds)</strong>
+    </dt>
+    <dd>
+    Convert seconds into milliseconds
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">seconds</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        milliseconds
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "formatLong"></a>
+    <strong>formatLong (milliseconds)</strong>
+    </dt>
+    <dd>
+    Convert milliseconds into a long formatted time; eg 10 days
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">milliseconds</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        formatted
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "plural"></a>
+    <strong>plural (ms, msAbs, n, name)</strong>
+    </dt>
+    <dd>
+    Check if a time should be plural
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ms</span>
+            <span class="types"><span class="type">number</span></span>
+
+        </li>
+        <li><span class="parameter">msAbs</span>
+            <span class="types"><span class="type">number</span></span>
+        Absolute value of the milliseconds
+        </li>
+        <li><span class="parameter">n</span>
+            <span class="types"><span class="type">number</span></span>
+        The amount of milliseconds in the unit
+        </li>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The name of the unit eg <code>second</code>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Name with possibly an s
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "bulkDelete"></a>
+    <strong>bulkDelete (msg, messages)</strong>
+    </dt>
+    <dd>
+    Bulk delete messages in a channel using getMessages
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">msg</span>
+        The message you got the call to bulk delete
+        </li>
+        <li><span class="parameter">messages</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">number</span></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">{table,...}</a></span>
+        The messages that were deleted
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "compareRoles"></a>
+    <strong>compareRoles (role1, role2)</strong>
+    </dt>
+    <dd>
+    Compare 2 roles positions
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">role1</span>
+        The first role to compare
+        </li>
+        <li><span class="parameter">role2</span>
+        The second role to compare
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        The distance from first role to second
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "manageable"></a>
+    <strong>manageable (member)</strong>
+    </dt>
+    <dd>
+    Compare 2 roles positions
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">member</span>
+        The member to see if the bot can manage
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If true, the bot can manage the member, else than not
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "checkPerm"></a>
+    <strong>checkPerm (member, channel, permissions)</strong>
+    </dt>
+    <dd>
+    Check if the member has permissions or a role override
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">member</span>
+        The member to check the permissions of
+        </li>
+        <li><span class="parameter">channel</span>
+        The channel that the member is using
+        </li>
+        <li><span class="parameter">permissions</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        The permissions you want to check, eg kickMembers
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-09-03 19:16:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
