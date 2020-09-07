@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Comrade</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Bots_using_Comrade">Bots using Comrade </a></li>
+<li><a href="#Features">Features </a></li>
+<li><a href="#Installation">Installation </a></li>
+<li><a href="#Todo">Todo </a></li>
+</ul>
+
+
+<h2>Topics</h2>
+<ul class="">
+  <li><strong>readme</strong></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/dotenv.html">dotenv</a></li>
+  <li><a href="../modules/logger.html">logger</a></li>
+  <li><a href="../modules/util.html">util</a></li>
+  <li><a href="../modules/helper.html">helper</a></li>
+  <li><a href="../modules/lua.html">lua</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/prompt.html">prompt</a></li>
+  <li><a href="../classes/array.html">array</a></li>
+  <li><a href="../classes/client.html">client</a></li>
+  <li><a href="../classes/command.html">command</a></li>
+  <li><a href="../classes/embed.html">embed</a></li>
+  <li><a href="../classes/event.html">event</a></li>
+  <li><a href="../classes/help.html">help</a></li>
+  <li><a href="../classes/internalError.html">internalError</a></li>
+  <li><a href="../classes/luaCommand.html">luaCommand</a></li>
+  <li><a href="../classes/plugin.html">plugin</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="nowrap">
+  <li><a href="../examples/command.moon.html">command.moon</a></li>
+  <li><a href="../examples/embeds.moon.html">embeds.moon</a></li>
+  <li><a href="../examples/event.moon.html">event.moon</a></li>
+  <li><a href="../examples/plugin.moon.html">plugin.moon</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+    <div align="center">
+  <h1>Comrade</h1>
+
+  [Docs](https://sovietkitsune.github.io/comrade) |
+  [Changelog](https://github.com/SovietKitsune/Comrade/blob/master/CHANGELOG.md)
+</div>
+
+<div align="center">
+
+  <a href="https://discord.gg/uCDq5mw">
+<pre>
+&lt;img src=<span class="string">"https://img.shields.io/discord/665029118575902739?logo=discord&amp;label=Support&amp;style=for-the-badge"</span>&gt;
+</pre>
+  </a>
+
+  <img src="https://img.shields.io/github/contributors/SovietKitsune/Comrade?style=for-the-badge">
+  <a href="https://moonscript.org/">
+<pre>
+&lt;img src=<span class="string">"https://img.shields.io/badge/Made%20with-MoonScript-ff69b4?style=for-the-badge"</span>&gt;
+</pre>
+  </a>
+
+  <span>Comrade is a light weight framework for Discordia and uses Moonscript.</span>
+</div>
+
+<ul>
+<li><a href="#bots-using-comrade">Bots using Comrade</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#command-system">Command system</a></li>
+<li><a href="#hot-reloading">Hot reloading</a></li>
+<li><a href="#safety">Safety</a></li>
+<li><a href="#lightweight">Lightweight</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#todo">Todo</a></li>
+</ul>
+
+<p><a name="Bots_using_Comrade"></a></p>
+
+<h2>Bots using Comrade</h2>
+
+<p>If your bot uses Comrade send an issue with it.</p>
+
+<ul>
+<li><a href="https://github.com/SovietKitsune/Little-Commander">Little Commander</a></li>
+</ul>
+
+<p><a name="Features"></a></p>
+
+<h2>Features</h2>
+
+<ul>
+<li><h3>Command system</h3></li>
+</ul>
+
+<p>Comrades command system allows for subcommands, permissions, cooldowns, aliases in a snap. You can make a command owner only or accessible in dms with just changing 1 variable. You are not forced into using the default help. You can over ride it, if you want to over ride the help embed for a certain command then you can easily or for a group of commands.</p>
+
+<ul>
+<li><h3>Hot reloading</h3></li>
+</ul>
+
+<p>Comrade allows for you to load and unload commands with ease. If you combine a directory water like one found <a href="https://github.com/Bilal2453/Commandia/blob/master/include/loader.lua">here</a> you can allow you to reload commands on save with ease. Make sure to check examples to see a simple way.</p>
+
+<ul>
+<li><h3>Safety</h3></li>
+</ul>
+
+<p>Comrade runs many checks before running a command. For example, if you want to run a command, it by defaults checks if the bot has permissions to speak in the channel. For embeds it checks if it has the ability to send messages and embed messages. Comrade comes with utilities like manageable since Discordia doesn’t. This makes it harder for you to run into errors.</p>
+
+<ul>
+<li><h3>Lightweight</h3></li>
+</ul>
+
+<p>Comrade only has 1 required dependency of Discordia which you should already have. The codebase for Comrade is also very small and very powerful.</p>
+
+<p><a name="Installation"></a></p>
+
+<h2>Installation</h2>
+
+<p>You can clone the repo into your deps folder.</p>
+
+<p><a name="Todo"></a></p>
+
+<h2>Todo</h2>
+
+<ul>
+<li>[x] Examples be an array</li>
+<li>[x] Fixed preconditions</li>
+<li>[x] Check embed limits</li>
+<li>[x] Unload events and separation for plugin and commands</li>
+<li>[x] Examples for documentation</li>
+<li>[] Pagination</li>
+<li>[] Branched prompts</li>
+<li>[] More advanced argument parsing system</li>
+</ul>
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-09-06 21:47:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
