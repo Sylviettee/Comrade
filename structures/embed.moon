@@ -16,16 +16,22 @@ class embed
   -- @treturn embed
   addField: (name,value,inline = false) =>
     @embed.fields = {} unless @embed.fields
-    if type(name) == 'table'
-      table.insert @embed.fields, name
-    else
-      table.insert @embed.fields, {
-        :name,
-        :value,
-        :inline
-      }
 
-    @
+    if #@embed.fields <= 25
+      if type(name) == 'table'
+        table.insert @embed.fields, name
+      else
+
+        name = name\sub 0, 256
+        value = value\sub 0, 1024
+
+        table.insert @embed.fields, {
+          :name,
+          :value,
+          :inline
+        }
+
+      @
   --- Add fields to the embed
   -- @tparam {field,...}|{name,value,inline}... fields The fields to add, max 25
   -- @treturn embed
@@ -66,7 +72,7 @@ class embed
   -- @tparam string description The description of the embed
   -- @treturn embed
   setDescription: (description) =>
-    @embed.description = description
+    @embed.description = description\sub 0, 2048
 
     @
   
@@ -75,6 +81,7 @@ class embed
   -- @tparam ?string iconURL The icon of the footer
   -- @treturn embed
   setFooter: (text, iconURL) =>
+    text = text\sub 0, 2048
     @embed.footer = {
       :text,
       'icon_url': iconURL

@@ -4,15 +4,7 @@ logger = {}
 
 import getenv from os
 
-lustache = pcall require, "lustache"
-
-unless lustache
-  print 'Unable to find lustache, expect output to be messy'
-
-  lustache = {
-    render: (text) =>
-      return text
-  }
+lustache = require '../libs/lustache'
 
 --- A table containing color bit values
 -- @field 8 8 bit colors

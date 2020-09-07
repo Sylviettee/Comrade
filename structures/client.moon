@@ -56,6 +56,7 @@ helper.__init = (token,config={}) =>
   @_start = os.time!
 
   @_commands = array!
+  @_events = array!
   @_plugins = array!
 
   @_events = array!
@@ -73,14 +74,11 @@ helper.__init = (token,config={}) =>
       @addCommand require './help'
 
   @\on 'messageCreate', (msg) ->
-    unless string.startswith(msg.content,@_prefix)
-      return nil
+    return unless string.startswith(msg.content,@_prefix)     
 
     perms = msg.guild.me\getPermissions msg.channel
     
-    unless perms\has enums.permission.sendMessages -- If we can't send messages then just reject
-      @\debug "Comrade : No send messages"
-      return nil
+    return @\debug "Comrade : No send messages" unless perms\has enums.permission.sendMessages -- If we can't send messages then just reject
 
     command = string.split msg.content, ' '
 
@@ -95,9 +93,11 @@ helper.__init = (token,config={}) =>
 
     if found
       @\debug "Comrade : Ran #{command}"
+
       succ,err = pcall () -> 
         found\run msg,args, @
-      if not succ
+
+      unless succ
         @\debug "Comrade : Error #{err}"
         intError err
 
@@ -116,9 +116,10 @@ helper.addCommand = (command) =>
 
 --- Remove a command
 -- @tparam string name
-helper.removeCommand = (name) =>
+-- @tparam ?function check
+helper.removeCommand = (name, check = () -> false) =>
   @_commands\forEach (command, pos) ->
-    if command.parent == name or command.name == name
+    if command.name == name or check command, name
       @_commands\pop pos
 
 --- Add an event
@@ -128,6 +129,23 @@ helper.addEvent = (event) =>
   @\debug "Comrade: New listener #{event.name}"
   event\use @
   @_events\push event
+
+--- Remove an event
+-- @tparam string name
+-- @tparam ?function check
+helper.removeEvent = (name, check = () -> false) =>
+  @_events\forEach (event, pos) ->
+    if event.name == name or check event, name
+      @_events\pop pos
+      @\removeListener event.__class.__name, event.execute
+
+--- Remove plugin
+-- @tparam string name
+helper.removePlugin = (name) =>
+  @removeCommand '', (com) ->
+    com.parent == name
+  @removeEvent '', (event) ->
+    event.parent == name
 
 get.start = () =>
   @_start

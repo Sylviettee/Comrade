@@ -19,7 +19,7 @@ concatIndex = (tbl, sep=', ') ->
   val\sub(0,#val - #sep)
 
 class command
-  --- Create a command and call preconditions if it exists.
+  --- Create a command
   new: () =>
     @name = @@__name or '_temp_'
 
@@ -28,11 +28,18 @@ class command
   --- An function to generate a help embed and send to to a channel
   -- @tparam table channel The channel to send the message to
   help: (channel) =>
+    formatted = ''
+
+    @example = {@example} if type(@example) == 'string'
+
+    for i,v in pairs @example
+      formatted ..= "#{i}. #{v}\n"
+
     helpEmbed = embed!\setTitle('Help')\addFields {'Description',@description},
       {'Aliases', (table.concat(@aliases, ', ') == '' and 'None') or (table.concat(@aliases, ', ') != '' and table.concat(@aliases, ', '))},
       {'Subcommands', (concatIndex(@subcommands, ', ') == '' and 'None') or (concatIndex(@subcommands, ', ') != '' and concatIndex(@subcommands, ', '))},
       {'Usage', @usage},
-      {'Example', @example}
+      {'Example', formatted}
       
     helpEmbed\send channel
 
@@ -53,7 +60,7 @@ class command
 
     @description = 'None'
     @usage = "#{@name}"
-    @example = "#{@name}"
+    @example = {"#{@name}"}
 
     ignore = {'pre', 'new', 'check', 'run', 'execute'}
 
@@ -64,8 +71,6 @@ class command
 
     if #@permissions > 0
       @allowDMS = false
-
-    @preconditions! if @preconditions
 
   --- An internal function to check if the message fits the command
   -- @tparam string command The command without arguments or prefix
@@ -100,16 +105,18 @@ class command
           @cooldowns[msg.author.id] = false
 
     isValid
-  --- An internal function to run the command 
+  --- An internal function to run the command, it will check against preconditions if it exists
   -- @tparam table msg The message that called the command
   -- @tparam string[] args The arguments of the message
   -- @tparam client client The client that called the command
   run: (msg,args,client) =>
     -- Check for sub commands
-    subcommand = args[1]
 
-    if @subcommands[subcommand]
-      args = table.slice args, 2
-      @subcommands[subcommand] msg,args,client
-    else
-      @execute msg,args,client
+    if @preconditions and @preconditions msg, args, client
+      subcommand = args[1]
+
+      if @subcommands[subcommand]
+        args = table.slice args, 2
+        @subcommands[subcommand] msg,args,client
+      else
+        @execute msg,args,client
