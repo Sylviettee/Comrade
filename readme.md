@@ -34,11 +34,11 @@ You can clone the repo into your deps folder.
 
 ## Todo
 
-[x] Examples be an array
-[x] Fixed preconditions
-[x] Check embed limits
-[x] Unload events and separation for plugin and commands
-[x] Examples for documentation
-[ ] Pagination
-[ ] Branched prompts
-[ ] More advanced argument parsing system
+- [x] Examples be an array
+- [x] Fixed preconditions
+- [x] Check embed limits
+- [x] Unload events and separation for plugin and commands
+- [x] Examples for documentation
+- [ ] Pagination
+- [ ] Branched prompts
+- [ ] More advanced argument parsing system
