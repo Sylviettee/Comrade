@@ -51,22 +51,6 @@
                     </a>
 
 
-                      <ul>
-
-                          <li>
-                            <a href="#Functions">
-                              Functions
-                            </a>
-                          </li>
-
-                          <li>
-                            <a href="#Tables">
-                              Tables
-                            </a>
-                          </li>
-
-                      </ul>
-
                   </li>
 
                   <li>
@@ -90,6 +74,24 @@
                       lua
                     </a>
 
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/structures.emitter.html">
+                      structures.emitter
+                    </a>
+
+
+                      <ul>
+
+                          <li>
+                            <a href="#Functions">
+                              Functions
+                            </a>
+                          </li>
+
+                      </ul>
 
                   </li>
 
@@ -173,6 +175,14 @@
 
                   </li>
 
+                  <li>
+                    <a href="../classes/status.html">
+                      status
+                    </a>
+
+
+                  </li>
+
               </ul>
 
 
@@ -241,11 +251,11 @@
         <h1>
           Module
           <code>
-            logger
+            structures.emitter
           </code>
         </h1>
 
-        <p> A module to make logging with colors easier </p>
+        <p> Create a new emitter </p>
         <p>  </p>
 
 
@@ -266,42 +276,56 @@
 
                 <tr>
                   <td>
-                    <a href="#palette">
-                      palette ()
+                    <a href="#on">
+                      on (name, fn)
                     </a>
                   </td>
                   <td>
-                    An internal table to store the current palette
+                    Listen to the emitter
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#render">
-                      render (text, env)
+                    <a href="#once">
+                      once (name, fn)
                     </a>
                   </td>
                   <td>
-                    Renders text put in
+                    Listen to the emitter once
                   </td>
                 </tr>
 
-            </table>
-
-            <h2>
-              <a href="6">Tables</a>
-            </h2>
-
-            <table>
-
                 <tr>
                   <td>
-                    <a href="#colors">
-                      colors
+                    <a href="#emit">
+                      emit (name, data)
                     </a>
                   </td>
                   <td>
-                    A table containing color bit values
+                    Emit an event
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#removeListener">
+                      removeListener (name, fn)
+                    </a>
+                  </td>
+                  <td>
+                    Remove a listener from an event
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#waitFor">
+                      waitFor (name, timeout, predicate)
+                    </a>
+                  </td>
+                  <td>
+                    Wait for an event to be fired in a certain timeframe matching an optional predicate
                   </td>
                 </tr>
 
@@ -315,21 +339,21 @@
               Functions
             </h2>
 
-            Methods
+
 
 
 
             <dl>
 
                 <dt>
-                  <a name="palette"></a>
-                  <strong>palette ()</strong>
+                  <a name="on"></a>
+                  <strong>on (name, fn)</strong>
 
 
                 </dt>
 
                 <dd>
-                  An internal table to store the current palette
+                  Listen to the emitter
 
 
 
@@ -345,73 +369,16 @@
                 </dd>
 
                 <dt>
-                  <a name="render"></a>
-                  <strong>render (text, env)</strong>
+                  <a name="once"></a>
+                  <strong>once (name, fn)</strong>
 
 
                 </dt>
 
                 <dd>
-                  Renders text put in
+                  Listen to the emitter once
 
 
-
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>text</span>
-
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
-                                The text to render with color
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>env</span>
-
-                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-
-
-                                Some variables you can add to the renderer
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-                    <h3>Returns:</h3>
-
-                      <ol>
-
-
-
-                            <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
-                          rendered The rendered text
-
-
-
-
-                      </ol>
 
 
 
@@ -424,79 +391,64 @@
 
                 </dd>
 
-            </dl>
-
-
-            <h2>
-              <a name="Tables"></a>
-              Tables
-            </h2>
-
-
-
-
-
-            <dl>
-
                 <dt>
-                  <a name="colors"></a>
-                  <strong>colors</strong>
+                  <a name="emit"></a>
+                  <strong>emit (name, data)</strong>
 
 
                 </dt>
 
                 <dd>
-                  A table containing color bit values
+                  Emit an event
 
 
 
 
 
-                      <h3>Fields: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>8</span>
-
-
-                                8 bit colors
 
 
 
 
-                              </li>
 
 
 
-                              <li>
-                                <span>16</span>
+                </dd>
+
+                <dt>
+                  <a name="removeListener"></a>
+                  <strong>removeListener (name, fn)</strong>
 
 
-                                16 bit colors
+                </dt>
 
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>256</span>
-
-
-                                Some 256 bit colors
+                <dd>
+                  Remove a listener from an event
 
 
 
 
-                              </li>
 
 
 
-                    </ul>
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="waitFor"></a>
+                  <strong>waitFor (name, timeout, predicate)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Wait for an event to be fired in a certain timeframe matching an optional predicate
+
+
+
 
 
 

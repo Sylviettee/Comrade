@@ -1,173 +1,470 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Reference</title>
-    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
+
+  <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+
+  <title>Comrade</title>
 </head>
 <body>
 
-<div id="container">
+  <div class="row">
+    <div class="col-3">
+      <div class="p-side-navigation--raw-html">
 
-<div id="product">
-	<div id="product_logo"></div>
-	<div id="product_name"><big><b></b></big></div>
-	<div id="product_description"></div>
-</div> <!-- id="product" -->
-
-
-<div id="main">
-
-
-<!-- Menu -->
-
-<div id="navigation">
-<br/>
-<h1>Comrade</h1>
+        <ul>
+          <h2> Comrade </h2>
 
 
 
 
-<h2>Modules</h2>
-<ul class="nowrap">
-  <li><a href="modules/dotenv.html">dotenv</a></li>
-  <li><a href="modules/logger.html">logger</a></li>
-  <li><a href="modules/util.html">util</a></li>
-  <li><a href="modules/helper.html">helper</a></li>
-  <li><a href="modules/lua.html">lua</a></li>
-</ul>
-<h2>Classes</h2>
-<ul class="nowrap">
-  <li><a href="classes/prompt.html">prompt</a></li>
-  <li><a href="classes/array.html">array</a></li>
-  <li><a href="classes/client.html">client</a></li>
-  <li><a href="classes/command.html">command</a></li>
-  <li><a href="classes/embed.html">embed</a></li>
-  <li><a href="classes/event.html">event</a></li>
-  <li><a href="classes/help.html">help</a></li>
-  <li><a href="classes/internalError.html">internalError</a></li>
-  <li><a href="classes/luaCommand.html">luaCommand</a></li>
-  <li><a href="classes/plugin.html">plugin</a></li>
-</ul>
-<h2>Topics</h2>
-<ul class="">
-  <li><a href="topics/readme.md.html">readme</a></li>
-</ul>
-<h2>Examples</h2>
-<ul class="nowrap">
-  <li><a href="examples/command.moon.html">command.moon</a></li>
-  <li><a href="examples/embeds.moon.html">embeds.moon</a></li>
-  <li><a href="examples/event.moon.html">event.moon</a></li>
-  <li><a href="examples/plugin.moon.html">plugin.moon</a></li>
-</ul>
-
-</div>
-
-<div id="content">
 
 
-  <h2>A Discord bot framework build on Discordia</h2>
+              <h3>Modules</h3>
 
-<h2>Modules</h2>
-<table class="module_list">
-	<tr>
-		<td class="name"  nowrap><a href="modules/dotenv.html">dotenv</a></td>
-		<td class="summary">A module to parse a .env file</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="modules/logger.html">logger</a></td>
-		<td class="summary">A module to make logging with colors easier</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="modules/util.html">util</a></td>
-		<td class="summary">A utility module for time, moderation, and permissions</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="modules/helper.html">helper</a></td>
-		<td class="summary">The root of all the modules</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="modules/lua.html">lua</a></td>
-		<td class="summary">Allows lua to create and extend classes</td>
-	</tr>
-</table>
-<h2>Classes</h2>
-<table class="module_list">
-	<tr>
-		<td class="name"  nowrap><a href="classes/prompt.html">prompt</a></td>
-		<td class="summary">A prompt helper class</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/array.html">array</a></td>
-		<td class="summary">An array with helper functions</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/client.html">client</a></td>
-		<td class="summary">The helper client, extends a Discordia client</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/command.html">command</a></td>
-		<td class="summary">A command helper class, should be extended</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/embed.html">embed</a></td>
-		<td class="summary">A embed helper class</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/event.html">event</a></td>
-		<td class="summary">An event class, should be extended</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/help.html">help</a></td>
-		<td class="summary">The default help, extends command</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/internalError.html">internalError</a></td>
-		<td class="summary">An internal error class to send to the console or the client</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/luaCommand.html">luaCommand</a></td>
-		<td class="summary">Makes creating commands with pure lua easier</td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="classes/plugin.html">plugin</a></td>
-		<td class="summary">A plugin that functions like a dpy cog, should be extended</td>
-	</tr>
-</table>
-<h2>Topics</h2>
-<table class="module_list">
-	<tr>
-		<td class="name"  nowrap><a href="topics/readme.md.html">readme.md</a></td>
-		<td class="summary"></td>
-	</tr>
-</table>
-<h2>Examples</h2>
-<table class="module_list">
-	<tr>
-		<td class="name"  nowrap><a href="examples/command.moon.html">command.moon</a></td>
-		<td class="summary"></td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="examples/embeds.moon.html">embeds.moon</a></td>
-		<td class="summary"></td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="examples/event.moon.html">event.moon</a></td>
-		<td class="summary"></td>
-	</tr>
-	<tr>
-		<td class="name"  nowrap><a href="examples/plugin.moon.html">plugin.moon</a></td>
-		<td class="summary"></td>
-	</tr>
-</table>
+              <ul>
 
-</div> <!-- id="content" -->
-</div> <!-- id="main" -->
-<div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2020-09-06 21:49:25 </i>
-</div> <!-- id="about" -->
-</div> <!-- id="container" -->
+                  <li>
+                    <a href="modules/dotenv.html">
+                      dotenv
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="modules/logger.html">
+                      logger
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="modules/util.html">
+                      util
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="modules/helper.html">
+                      helper
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="modules/lua.html">
+                      lua
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Classes</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="classes/prompt.html">
+                      prompt
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/Array.html">
+                      Array
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/client.html">
+                      client
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/command.html">
+                      command
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/embed.html">
+                      embed
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/event.html">
+                      event
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/help.html">
+                      help
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/luaCommand.html">
+                      luaCommand
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="classes/plugin.html">
+                      plugin
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Topics</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="topics/readme.md.html">
+                      readme
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Examples</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="examples/command.moon.html">
+                      command.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="examples/embeds.moon.html">
+                      embeds.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="examples/event.moon.html">
+                      event.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="examples/plugin.moon.html">
+                      plugin.moon
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+        </ul>
+
+      </div>
+    </div>
+    <div class="col-9">
+
+
+          <h2>A Discord bot framework build on Discordia</h2>
+
+
+
+
+
+          <h2>Modules</h2>
+
+
+
+          <table>
+
+              <tr>
+                <td>
+                  <a href="modules/dotenv.html">
+                    dotenv
+                  </a>
+                </td>
+                <td>
+                  A module to parse a .env file
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="modules/logger.html">
+                    logger
+                  </a>
+                </td>
+                <td>
+                  A module to make logging with colors easier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="modules/util.html">
+                    util
+                  </a>
+                </td>
+                <td>
+                  A utility module for time, moderation, and permissions
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="modules/helper.html">
+                    helper
+                  </a>
+                </td>
+                <td>
+                  The root of all the modules
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="modules/lua.html">
+                    lua
+                  </a>
+                </td>
+                <td>
+                  Allows lua to create and extend classes
+                </td>
+              </tr>
+
+          </table>
+
+          <h2>Classes</h2>
+
+
+
+          <table>
+
+              <tr>
+                <td>
+                  <a href="classes/prompt.html">
+                    prompt
+                  </a>
+                </td>
+                <td>
+                  A prompt helper class
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/Array.html">
+                    Array
+                  </a>
+                </td>
+                <td>
+                  An array with helper functions
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/client.html">
+                    client
+                  </a>
+                </td>
+                <td>
+                  The helper client, extends a Discordia client
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/command.html">
+                    command
+                  </a>
+                </td>
+                <td>
+                  A command helper class, should be extended
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/embed.html">
+                    embed
+                  </a>
+                </td>
+                <td>
+                  A embed helper class
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/event.html">
+                    event
+                  </a>
+                </td>
+                <td>
+                  An event class, should be extended
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/help.html">
+                    help
+                  </a>
+                </td>
+                <td>
+                  The default help, extends command
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/luaCommand.html">
+                    luaCommand
+                  </a>
+                </td>
+                <td>
+                  Makes creating commands with pure lua easier
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="classes/plugin.html">
+                    plugin
+                  </a>
+                </td>
+                <td>
+                  A plugin that functions like a dpy cog, should be extended
+                </td>
+              </tr>
+
+          </table>
+
+          <h2>Topics</h2>
+
+
+
+          <table>
+
+              <tr>
+                <td>
+                  <a href="topics/readme.md.html">
+                    readme.md
+                  </a>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+          </table>
+
+          <h2>Examples</h2>
+
+
+
+          <table>
+
+              <tr>
+                <td>
+                  <a href="examples/command.moon.html">
+                    command.moon
+                  </a>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="examples/embeds.moon.html">
+                    embeds.moon
+                  </a>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="examples/event.moon.html">
+                    event.moon
+                  </a>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <a href="examples/plugin.moon.html">
+                    plugin.moon
+                  </a>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+          </table>
+
+
+
+    </div>
+  </div>
 </body>
 </html>

@@ -1,473 +1,964 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Reference</title>
-    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
+
+  <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+
+  <title>Comrade</title>
 </head>
 <body>
 
-<div id="container">
-
-<div id="product">
-	<div id="product_logo"></div>
-	<div id="product_name"><big><b></b></big></div>
-	<div id="product_description"></div>
-</div> <!-- id="product" -->
-
-
-<div id="main">
-
-
-<!-- Menu -->
-
-<div id="navigation">
-<br/>
-<h1>Comrade</h1>
-
-<ul>
-  <li><a href="../index.html">Index</a></li>
-</ul>
-
-<h2>Contents</h2>
-<ul>
-<li><a href="#Functions">Functions</a></li>
-</ul>
-
-
-<h2>Modules</h2>
-<ul class="nowrap">
-  <li><a href="../modules/dotenv.html">dotenv</a></li>
-  <li><a href="../modules/logger.html">logger</a></li>
-  <li><a href="../modules/util.html">util</a></li>
-  <li><strong>helper</strong></li>
-  <li><a href="../modules/lua.html">lua</a></li>
-</ul>
-<h2>Classes</h2>
-<ul class="nowrap">
-  <li><a href="../classes/prompt.html">prompt</a></li>
-  <li><a href="../classes/array.html">array</a></li>
-  <li><a href="../classes/client.html">client</a></li>
-  <li><a href="../classes/command.html">command</a></li>
-  <li><a href="../classes/embed.html">embed</a></li>
-  <li><a href="../classes/event.html">event</a></li>
-  <li><a href="../classes/help.html">help</a></li>
-  <li><a href="../classes/internalError.html">internalError</a></li>
-  <li><a href="../classes/luaCommand.html">luaCommand</a></li>
-  <li><a href="../classes/plugin.html">plugin</a></li>
-</ul>
-<h2>Topics</h2>
-<ul class="">
-  <li><a href="../topics/readme.md.html">readme</a></li>
-</ul>
-<h2>Examples</h2>
-<ul class="nowrap">
-  <li><a href="../examples/command.moon.html">command.moon</a></li>
-  <li><a href="../examples/embeds.moon.html">embeds.moon</a></li>
-  <li><a href="../examples/event.moon.html">event.moon</a></li>
-  <li><a href="../examples/plugin.moon.html">plugin.moon</a></li>
-</ul>
-
-</div>
-
-<div id="content">
-
-<h1>Module <code>helper</code></h1>
-<p>The root of all the modules</p>
-<p></p>
-
-
-<h2><a href="#Functions">Functions</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#version">version ()</a></td>
-	<td class="summary">The version</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Array">Array ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Client">Client ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Command">Command ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Embed">Embed ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Event">Event ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Help">Help ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#InternalError">InternalError ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#LuaCommand">LuaCommand ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Plugin">Plugin ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#logger">logger ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#prompt">prompt ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#util">util ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#dotenv">dotenv ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#extenstions">extenstions ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#color">color ()</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#lua">lua ()</a></td>
-	<td class="summary"></td>
-	</tr>
-</table>
+  <div class="row">
+    <div class="col-3">
+      <div class="p-side-navigation--raw-html">
 
-<br/>
-<br/>
+        <ul>
+          <h2> Comrade </h2>
 
+            <ul>
+              <li>
+                <a href="../index.html">
+                  Index
+                </a>
+              </li>
+            </ul>
 
-    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
-    Methods
-    <dl class="function">
-    <dt>
-    <a name = "version"></a>
-    <strong>version ()</strong>
-    </dt>
-    <dd>
-    The version
 
 
 
 
 
+              <h3>Modules</h3>
 
+              <ul>
 
-</dd>
-    <dt>
-    <a name = "Array"></a>
-    <strong>Array ()</strong>
-    </dt>
-    <dd>
+                  <li>
+                    <a href="../modules/dotenv.html">
+                      dotenv
+                    </a>
 
 
+                  </li>
 
+                  <li>
+                    <a href="../modules/logger.html">
+                      logger
+                    </a>
 
 
+                  </li>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#Array">Array</a>
-    </ul>
+                  <li>
+                    <a href="../modules/util.html">
+                      util
+                    </a>
 
 
-</dd>
-    <dt>
-    <a name = "Client"></a>
-    <strong>Client ()</strong>
-    </dt>
-    <dd>
+                  </li>
 
+                  <li>
+                    <a href="../modules/helper.html">
+                      helper
+                    </a>
 
 
+                      <ul>
 
+                          <li>
+                            <a href="#Functions">
+                              Functions
+                            </a>
+                          </li>
 
+                      </ul>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#Client">Client</a>
-    </ul>
+                  </li>
 
+                  <li>
+                    <a href="../modules/lua.html">
+                      lua
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "Command"></a>
-    <strong>Command ()</strong>
-    </dt>
-    <dd>
 
+                  </li>
 
+              </ul>
 
 
 
+              <h3>Classes</h3>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#Command">Command</a>
-    </ul>
+              <ul>
 
+                  <li>
+                    <a href="../classes/prompt.html">
+                      prompt
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "Embed"></a>
-    <strong>Embed ()</strong>
-    </dt>
-    <dd>
 
+                  </li>
 
+                  <li>
+                    <a href="../classes/Array.html">
+                      Array
+                    </a>
 
 
+                  </li>
 
+                  <li>
+                    <a href="../classes/client.html">
+                      client
+                    </a>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#Embed">Embed</a>
-    </ul>
 
+                  </li>
 
-</dd>
-    <dt>
-    <a name = "Event"></a>
-    <strong>Event ()</strong>
-    </dt>
-    <dd>
+                  <li>
+                    <a href="../classes/command.html">
+                      command
+                    </a>
 
 
+                  </li>
 
+                  <li>
+                    <a href="../classes/embed.html">
+                      embed
+                    </a>
 
 
+                  </li>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#Event">Event</a>
-    </ul>
+                  <li>
+                    <a href="../classes/event.html">
+                      event
+                    </a>
 
 
-</dd>
-    <dt>
-    <a name = "Help"></a>
-    <strong>Help ()</strong>
-    </dt>
-    <dd>
+                  </li>
 
+                  <li>
+                    <a href="../classes/help.html">
+                      help
+                    </a>
 
 
+                  </li>
 
+                  <li>
+                    <a href="../classes/luaCommand.html">
+                      luaCommand
+                    </a>
 
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#Help">Help</a>
-    </ul>
+                  </li>
 
+                  <li>
+                    <a href="../classes/plugin.html">
+                      plugin
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "InternalError"></a>
-    <strong>InternalError ()</strong>
-    </dt>
-    <dd>
 
+                  </li>
 
+              </ul>
 
 
 
+              <h3>Topics</h3>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#InternalError">InternalError</a>
-    </ul>
+              <ul>
 
+                  <li>
+                    <a href="../topics/readme.md.html">
+                      readme
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "LuaCommand"></a>
-    <strong>LuaCommand ()</strong>
-    </dt>
-    <dd>
 
+                  </li>
 
+              </ul>
 
 
 
+              <h3>Examples</h3>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#LuaCommand">LuaCommand</a>
-    </ul>
+              <ul>
 
+                  <li>
+                    <a href="../examples/command.moon.html">
+                      command.moon
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "Plugin"></a>
-    <strong>Plugin ()</strong>
-    </dt>
-    <dd>
 
+                  </li>
 
+                  <li>
+                    <a href="../examples/embeds.moon.html">
+                      embeds.moon
+                    </a>
 
 
+                  </li>
 
+                  <li>
+                    <a href="../examples/event.moon.html">
+                      event.moon
+                    </a>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#Plugin">Plugin</a>
-    </ul>
 
+                  </li>
 
-</dd>
-    <dt>
-    <a name = "logger"></a>
-    <strong>logger ()</strong>
-    </dt>
-    <dd>
+                  <li>
+                    <a href="../examples/plugin.moon.html">
+                      plugin.moon
+                    </a>
 
 
+                  </li>
 
+              </ul>
 
 
+        </ul>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/logger.html#">logger</a>
-    </ul>
+      </div>
+    </div>
+    <div class="col-9">
 
+        <h1>
+          Module
+          <code>
+            helper
+          </code>
+        </h1>
 
-</dd>
-    <dt>
-    <a name = "prompt"></a>
-    <strong>prompt ()</strong>
-    </dt>
-    <dd>
+        <p> The root of all the modules </p>
+        <p>  </p>
 
 
 
 
 
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/prompt.html#">prompt</a>
-    </ul>
 
 
-</dd>
-    <dt>
-    <a name = "util"></a>
-    <strong>util ()</strong>
-    </dt>
-    <dd>
 
 
 
+            <h2>
+              <a href="9">Functions</a>
+            </h2>
 
+            <table>
 
+                <tr>
+                  <td>
+                    <a href="#version">
+                      version ()
+                    </a>
+                  </td>
+                  <td>
+                    The version
+                  </td>
+                </tr>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/util.html#">util</a>
-    </ul>
+                <tr>
+                  <td>
+                    <a href="#Array">
+                      Array ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
-</dd>
-    <dt>
-    <a name = "dotenv"></a>
-    <strong>dotenv ()</strong>
-    </dt>
-    <dd>
+                <tr>
+                  <td>
+                    <a href="#Client">
+                      Client ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+                <tr>
+                  <td>
+                    <a href="#Command">
+                      Command ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+                <tr>
+                  <td>
+                    <a href="#Embed">
+                      Embed ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/dotenv.html#">dotenv</a>
-    </ul>
+                <tr>
+                  <td>
+                    <a href="#Event">
+                      Event ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
-</dd>
-    <dt>
-    <a name = "extenstions"></a>
-    <strong>extenstions ()</strong>
-    </dt>
-    <dd>
+                <tr>
+                  <td>
+                    <a href="#Help">
+                      Help ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+                <tr>
+                  <td>
+                    <a href="#LuaCommand">
+                      LuaCommand ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+                <tr>
+                  <td>
+                    <a href="#Plugin">
+                      Plugin ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#extenstions">extenstions</a>
-    </ul>
+                <tr>
+                  <td>
+                    <a href="#logger">
+                      logger ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
-</dd>
-    <dt>
-    <a name = "color"></a>
-    <strong>color ()</strong>
-    </dt>
-    <dd>
+                <tr>
+                  <td>
+                    <a href="#prompt">
+                      prompt ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+                <tr>
+                  <td>
+                    <a href="#util">
+                      util ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+                <tr>
+                  <td>
+                    <a href="#dotenv">
+                      dotenv ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/helper.html#color">color</a>
-    </ul>
+                <tr>
+                  <td>
+                    <a href="#extensions">
+                      extensions ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
-</dd>
-    <dt>
-    <a name = "lua"></a>
-    <strong>lua ()</strong>
-    </dt>
-    <dd>
+                <tr>
+                  <td>
+                    <a href="#color">
+                      color ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+                <tr>
+                  <td>
+                    <a href="#lua">
+                      lua ()
+                    </a>
+                  </td>
+                  <td>
 
+                  </td>
+                </tr>
 
+            </table>
 
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/lua.html#">lua</a>
-    </ul>
 
 
-</dd>
-</dl>
+            <h2>
+              <a name="Functions"></a>
+              Functions
+            </h2>
 
+            Methods
 
-</div> <!-- id="content" -->
-</div> <!-- id="main" -->
-<div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2020-09-06 21:49:25 </i>
-</div> <!-- id="about" -->
-</div> <!-- id="container" -->
+
+
+            <dl>
+
+                <dt>
+                  <a name="version"></a>
+                  <strong>version ()</strong>
+
+
+                </dt>
+
+                <dd>
+                  The version
+
+
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array"></a>
+                  <strong>Array ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../classes/Array.html#">Array</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Client"></a>
+                  <strong>Client ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#Client">Client</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Command"></a>
+                  <strong>Command ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#Command">Command</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Embed"></a>
+                  <strong>Embed ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#Embed">Embed</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Event"></a>
+                  <strong>Event ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#Event">Event</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Help"></a>
+                  <strong>Help ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#Help">Help</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="LuaCommand"></a>
+                  <strong>LuaCommand ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#LuaCommand">LuaCommand</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Plugin"></a>
+                  <strong>Plugin ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#Plugin">Plugin</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="logger"></a>
+                  <strong>logger ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/logger.html#">logger</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="prompt"></a>
+                  <strong>prompt ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../classes/prompt.html#">prompt</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="util"></a>
+                  <strong>util ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/util.html#">util</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="dotenv"></a>
+                  <strong>dotenv ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/dotenv.html#">dotenv</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="extensions"></a>
+                  <strong>extensions ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#extensions">extensions</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="color"></a>
+                  <strong>color ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/helper.html#color">color</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="lua"></a>
+                  <strong>lua ()</strong>
+
+
+                </dt>
+
+                <dd>
+
+
+
+
+
+
+
+
+
+
+
+                    <h3>See also:</h3>
+                    <ul>
+
+
+                          <a href="../modules/lua.html#">lua</a>
+
+
+                    </ul>
+
+
+
+                </dd>
+
+            </dl>
+
+
+
+
+    </div>
+  </div>
 </body>
 </html>

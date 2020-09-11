@@ -99,6 +99,22 @@
                     </a>
 
 
+                  </li>
+
+                  <li>
+                    <a href="../classes/plugin.html">
+                      plugin
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/status.html">
+                      status
+                    </a>
+
+
                       <ul>
 
                           <li>
@@ -108,14 +124,6 @@
                           </li>
 
                       </ul>
-
-                  </li>
-
-                  <li>
-                    <a href="../classes/plugin.html">
-                      plugin
-                    </a>
-
 
                   </li>
 
@@ -162,6 +170,14 @@
                   <li>
                     <a href="../modules/lua.html">
                       lua
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/structures.emitter.html">
+                      structures.emitter
                     </a>
 
 
@@ -235,11 +251,11 @@
         <h1>
           Class
           <code>
-            luaCommand
+            status
           </code>
         </h1>
 
-        <p> Makes creating commands with pure lua easier </p>
+        <p> A command for testing to check the status of your tests </p>
         <p>  </p>
 
 
@@ -260,23 +276,23 @@
 
                 <tr>
                   <td>
-                    <a href="#luaCommand\new">
-                      luaCommand\new (name)
+                    <a href="#status\new">
+                      status\new ()
                     </a>
                   </td>
                   <td>
-                    Takes in the name of the command
+                    Sets the usage, example, and description of the command
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#luaCommand\make">
-                      luaCommand\make ()
+                    <a href="#status\execute">
+                      status\execute (msg, _, client)
                     </a>
                   </td>
                   <td>
-                    Makes the command, remember that you should set the properties
+                    Get all status informaton
                   </td>
                 </tr>
 
@@ -297,40 +313,17 @@
             <dl>
 
                 <dt>
-                  <a name="luaCommand\new"></a>
-                  <strong>luaCommand\new (name)</strong>
+                  <a name="status\new"></a>
+                  <strong>status\new ()</strong>
 
 
                 </dt>
 
                 <dd>
-                  Takes in the name of the command
+                  Sets the usage, example, and description of the command
 
 
 
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>name</span>
-
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-
-
-                                Command name
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
 
 
 
@@ -343,14 +336,14 @@
                 </dd>
 
                 <dt>
-                  <a name="luaCommand\make"></a>
-                  <strong>luaCommand\make ()</strong>
+                  <a name="status\execute"></a>
+                  <strong>status\execute (msg, _, client)</strong>
 
 
                 </dt>
 
                 <dd>
-                  Makes the command, remember that you should set the properties
+                  Get all status informaton
 
 
 

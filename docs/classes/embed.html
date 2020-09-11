@@ -1,583 +1,1427 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Reference</title>
-    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
+
+  <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+
+  <title>Comrade</title>
 </head>
 <body>
 
-<div id="container">
-
-<div id="product">
-	<div id="product_logo"></div>
-	<div id="product_name"><big><b></b></big></div>
-	<div id="product_description"></div>
-</div> <!-- id="product" -->
-
-
-<div id="main">
-
-
-<!-- Menu -->
-
-<div id="navigation">
-<br/>
-<h1>Comrade</h1>
-
-<ul>
-  <li><a href="../index.html">Index</a></li>
-</ul>
-
-<h2>Contents</h2>
-<ul>
-<li><a href="#Tables">Tables</a></li>
-<li><a href="#Methods">Methods</a></li>
-</ul>
-
-
-<h2>Classes</h2>
-<ul class="nowrap">
-  <li><a href="../classes/prompt.html">prompt</a></li>
-  <li><a href="../classes/array.html">array</a></li>
-  <li><a href="../classes/client.html">client</a></li>
-  <li><a href="../classes/command.html">command</a></li>
-  <li><strong>embed</strong></li>
-  <li><a href="../classes/event.html">event</a></li>
-  <li><a href="../classes/help.html">help</a></li>
-  <li><a href="../classes/internalError.html">internalError</a></li>
-  <li><a href="../classes/luaCommand.html">luaCommand</a></li>
-  <li><a href="../classes/plugin.html">plugin</a></li>
-</ul>
-<h2>Modules</h2>
-<ul class="nowrap">
-  <li><a href="../modules/dotenv.html">dotenv</a></li>
-  <li><a href="../modules/logger.html">logger</a></li>
-  <li><a href="../modules/util.html">util</a></li>
-  <li><a href="../modules/helper.html">helper</a></li>
-  <li><a href="../modules/lua.html">lua</a></li>
-</ul>
-<h2>Topics</h2>
-<ul class="">
-  <li><a href="../topics/readme.md.html">readme</a></li>
-</ul>
-<h2>Examples</h2>
-<ul class="nowrap">
-  <li><a href="../examples/command.moon.html">command.moon</a></li>
-  <li><a href="../examples/embeds.moon.html">embeds.moon</a></li>
-  <li><a href="../examples/event.moon.html">event.moon</a></li>
-  <li><a href="../examples/plugin.moon.html">plugin.moon</a></li>
-</ul>
-
-</div>
-
-<div id="content">
-
-<h1>Class <code>embed</code></h1>
-<p>A embed helper class</p>
-<p></p>
-
-
-<h2><a href="#Tables">Tables</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#embed.field">embed.field</a></td>
-	<td class="summary">An embed field</td>
-	</tr>
-</table>
-<h2><a href="#Methods">Methods</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#embed\new">embed\new ([starting={}])</a></td>
-	<td class="summary">Create an embed, can be passed a table as a starting point</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\addField">embed\addField (name, value[, inline=false])</a></td>
-	<td class="summary">Add a field to the embed with name, value, and inline</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\addFields">embed\addFields (fields)</a></td>
-	<td class="summary">Add fields to the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setAuthor">embed\setAuthor (name, iconURL, url)</a></td>
-	<td class="summary">Set the author of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setColor">embed\setColor (color)</a></td>
-	<td class="summary">Set the color of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setDescription">embed\setDescription (description)</a></td>
-	<td class="summary">Set the description of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setFooter">embed\setFooter (text, iconURL)</a></td>
-	<td class="summary">Set the footer of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setImage">embed\setImage (url)</a></td>
-	<td class="summary">Set the image of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setThumbnail">embed\setThumbnail (url)</a></td>
-	<td class="summary">Set the thumbnail of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setTimestamp">embed\setTimestamp ([timestamp=Date().toISO()])</a></td>
-	<td class="summary">Set the timestamp of the embed, defaults to right now</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setTitle">embed\setTitle (title)</a></td>
-	<td class="summary">Set the title of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\setURL">embed\setURL (url)</a></td>
-	<td class="summary">Set the url of the embed</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\toJSON">embed\toJSON ()</a></td>
-	<td class="summary">Returns the embed object without any metatables</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#embed\send">embed\send (channel)</a></td>
-	<td class="summary">Sends the embed and checks if we have permissions to</td>
-	</tr>
-</table>
-
-<br/>
-<br/>
-
-
-    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "embed.field"></a>
-    <strong>embed.field</strong>
-    </dt>
-    <dd>
-    An embed field
-
-
-    <h3>Fields:</h3>
-    <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The name of the field
-        </li>
-        <li><span class="parameter">value</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The value of the field
-        </li>
-        <li><span class="parameter">inline</span>
-            <span class="types"><span class="type">boolean</span></span>
-        If the field is inline
-         (<em>default</em> false)
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-</dl>
-    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "embed\new"></a>
-    <strong>embed\new ([starting={}])</strong>
-    </dt>
-    <dd>
-    Create an embed, can be passed a table as a starting point
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">starting</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        Where the internal embed starts
-         (<em>default</em> {})
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "embed\addField"></a>
-    <strong>embed\addField (name, value[, inline=false])</strong>
-    </dt>
-    <dd>
-    Add a field to the embed with name, value, and inline
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="../classes/embed.html#embed.field">field</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The name of the field or an embed object
-        </li>
-        <li><span class="parameter">value</span>
-            <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The value of the field, optional if name is field
-        </li>
-        <li><span class="parameter">inline</span>
-            <span class="types"><span class="type">boolean</span></span>
-        If the field is inline
-         (<em>default</em> false)
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "embed\addFields"></a>
-    <strong>embed\addFields (fields)</strong>
-    </dt>
-    <dd>
-    Add fields to the embed
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">fields</span>
-            <span class="types"><a class="type" href="../classes/embed.html#embed.field">{field,...}</a> or <span class="type">{name,value,inline}...</span></span>
-        The fields to add, max 25
-        </li>
-    </ul>
+  <div class="row">
+    <div class="col-3">
+      <div class="p-side-navigation--raw-html">
 
-    <h3>Returns:</h3>
-    <ol>
+        <ul>
+          <h2> Comrade </h2>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
-
-    </ol>
-
+            <ul>
+              <li>
+                <a href="../index.html">
+                  Index
+                </a>
+              </li>
+            </ul>
 
 
 
-</dd>
-    <dt>
-    <a name = "embed\setAuthor"></a>
-    <strong>embed\setAuthor (name, iconURL, url)</strong>
-    </dt>
-    <dd>
-    Set the author of the embed
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The author name
-        </li>
-        <li><span class="parameter">iconURL</span>
-            <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The icon of the author
-        </li>
-        <li><span class="parameter">url</span>
-            <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The url of the author
-        </li>
-    </ul>
 
-    <h3>Returns:</h3>
-    <ol>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
 
-    </ol>
+              <h3>Classes</h3>
 
+              <ul>
 
+                  <li>
+                    <a href="../classes/prompt.html">
+                      prompt
+                    </a>
 
 
-</dd>
-    <dt>
-    <a name = "embed\setColor"></a>
-    <strong>embed\setColor (color)</strong>
-    </dt>
-    <dd>
-    Set the color of the embed
+                  </li>
 
+                  <li>
+                    <a href="../classes/Array.html">
+                      Array
+                    </a>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">color</span>
-            <span class="types"><span class="type">hex</span></span>
-        The color in hex eg 0xFFFFFF
-        </li>
-    </ul>
 
-    <h3>Returns:</h3>
-    <ol>
+                  </li>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
+                  <li>
+                    <a href="../classes/client.html">
+                      client
+                    </a>
 
-    </ol>
 
+                  </li>
 
+                  <li>
+                    <a href="../classes/command.html">
+                      command
+                    </a>
 
 
-</dd>
-    <dt>
-    <a name = "embed\setDescription"></a>
-    <strong>embed\setDescription (description)</strong>
-    </dt>
-    <dd>
-    Set the description of the embed
+                  </li>
 
+                  <li>
+                    <a href="../classes/embed.html">
+                      embed
+                    </a>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">description</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The description of the embed
-        </li>
-    </ul>
 
-    <h3>Returns:</h3>
-    <ol>
+                      <ul>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
+                          <li>
+                            <a href="#Tables">
+                              Tables
+                            </a>
+                          </li>
 
-    </ol>
+                          <li>
+                            <a href="#Methods">
+                              Methods
+                            </a>
+                          </li>
 
+                      </ul>
 
+                  </li>
 
+                  <li>
+                    <a href="../classes/event.html">
+                      event
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "embed\setFooter"></a>
-    <strong>embed\setFooter (text, iconURL)</strong>
-    </dt>
-    <dd>
-    Set the footer of the embed
 
+                  </li>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">text</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The footer text
-        </li>
-        <li><span class="parameter">iconURL</span>
-            <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The icon of the footer
-        </li>
-    </ul>
+                  <li>
+                    <a href="../classes/help.html">
+                      help
+                    </a>
 
-    <h3>Returns:</h3>
-    <ol>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
+                  </li>
 
-    </ol>
+                  <li>
+                    <a href="../classes/luaCommand.html">
+                      luaCommand
+                    </a>
 
 
+                  </li>
 
+                  <li>
+                    <a href="../classes/plugin.html">
+                      plugin
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "embed\setImage"></a>
-    <strong>embed\setImage (url)</strong>
-    </dt>
-    <dd>
-    Set the image of the embed
 
+                  </li>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">url</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The image url of the embed
-        </li>
-    </ul>
+              </ul>
 
-    <h3>Returns:</h3>
-    <ol>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
 
-    </ol>
+              <h3>Modules</h3>
 
+              <ul>
 
+                  <li>
+                    <a href="../modules/dotenv.html">
+                      dotenv
+                    </a>
 
 
-</dd>
-    <dt>
-    <a name = "embed\setThumbnail"></a>
-    <strong>embed\setThumbnail (url)</strong>
-    </dt>
-    <dd>
-    Set the thumbnail of the embed
+                  </li>
 
+                  <li>
+                    <a href="../modules/logger.html">
+                      logger
+                    </a>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">url</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The thumbnail url of the embed
-        </li>
-    </ul>
 
-    <h3>Returns:</h3>
-    <ol>
+                  </li>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
+                  <li>
+                    <a href="../modules/util.html">
+                      util
+                    </a>
 
-    </ol>
 
+                  </li>
 
+                  <li>
+                    <a href="../modules/helper.html">
+                      helper
+                    </a>
 
 
-</dd>
-    <dt>
-    <a name = "embed\setTimestamp"></a>
-    <strong>embed\setTimestamp ([timestamp=Date().toISO()])</strong>
-    </dt>
-    <dd>
-    Set the timestamp of the embed, defaults to right now
+                  </li>
 
+                  <li>
+                    <a href="../modules/lua.html">
+                      lua
+                    </a>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">timestamp</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The timestamp in ISO 8601
-         (<em>default</em> Date().toISO())
-        </li>
-    </ul>
 
-    <h3>Returns:</h3>
-    <ol>
+                  </li>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
+              </ul>
 
-    </ol>
 
 
+              <h3>Topics</h3>
 
+              <ul>
 
-</dd>
-    <dt>
-    <a name = "embed\setTitle"></a>
-    <strong>embed\setTitle (title)</strong>
-    </dt>
-    <dd>
-    Set the title of the embed
+                  <li>
+                    <a href="../topics/readme.md.html">
+                      readme
+                    </a>
 
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">title</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The title of the embed
-        </li>
-    </ul>
+                  </li>
 
-    <h3>Returns:</h3>
-    <ol>
+              </ul>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
 
-    </ol>
 
+              <h3>Examples</h3>
 
+              <ul>
 
+                  <li>
+                    <a href="../examples/command.moon.html">
+                      command.moon
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "embed\setURL"></a>
-    <strong>embed\setURL (url)</strong>
-    </dt>
-    <dd>
-    Set the url of the embed
 
+                  </li>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">url</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        The url of the embed
-        </li>
-    </ul>
+                  <li>
+                    <a href="../examples/embeds.moon.html">
+                      embeds.moon
+                    </a>
 
-    <h3>Returns:</h3>
-    <ol>
 
-           <span class="types"><a class="type" href="../classes/embed.html#">embed</a></span>
+                  </li>
 
-    </ol>
+                  <li>
+                    <a href="../examples/event.moon.html">
+                      event.moon
+                    </a>
 
 
+                  </li>
 
+                  <li>
+                    <a href="../examples/plugin.moon.html">
+                      plugin.moon
+                    </a>
 
-</dd>
-    <dt>
-    <a name = "embed\toJSON"></a>
-    <strong>embed\toJSON ()</strong>
-    </dt>
-    <dd>
-    Returns the embed object without any metatables
 
+                  </li>
 
+              </ul>
 
-    <h3>Returns:</h3>
-    <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        </ul>
 
-    </ol>
+      </div>
+    </div>
+    <div class="col-9">
 
+        <h1>
+          Class
+          <code>
+            embed
+          </code>
+        </h1>
 
+        <p> A embed helper class </p>
+        <p>  </p>
 
 
-</dd>
-    <dt>
-    <a name = "embed\send"></a>
-    <strong>embed\send (channel)</strong>
-    </dt>
-    <dd>
-    Sends the embed and checks if we have permissions to
 
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">channel</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        The channel to send the embed into
-        </li>
-    </ul>
 
 
 
 
 
-</dd>
-</dl>
 
 
-</div> <!-- id="content" -->
-</div> <!-- id="main" -->
-<div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2020-09-06 21:49:25 </i>
-</div> <!-- id="about" -->
-</div> <!-- id="container" -->
+            <h2>
+              <a href="6">Tables</a>
+            </h2>
+
+            <table>
+
+                <tr>
+                  <td>
+                    <a href="#embed.field">
+                      embed.field
+                    </a>
+                  </td>
+                  <td>
+                    An embed field
+                  </td>
+                </tr>
+
+            </table>
+
+            <h2>
+              <a href="7">Methods</a>
+            </h2>
+
+            <table>
+
+                <tr>
+                  <td>
+                    <a href="#embed\addField">
+                      embed\addField (name, value[, inline=false])
+                    </a>
+                  </td>
+                  <td>
+                    Add a field to the embed with name, value, and inline
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\addFields">
+                      embed\addFields (fields)
+                    </a>
+                  </td>
+                  <td>
+                    Add fields to the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setAuthor">
+                      embed\setAuthor (name, iconURL, url)
+                    </a>
+                  </td>
+                  <td>
+                    Set the author of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setColor">
+                      embed\setColor (color)
+                    </a>
+                  </td>
+                  <td>
+                    Set the color of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setDescription">
+                      embed\setDescription (description)
+                    </a>
+                  </td>
+                  <td>
+                    Set the description of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setFooter">
+                      embed\setFooter (text, iconURL)
+                    </a>
+                  </td>
+                  <td>
+                    Set the footer of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setImage">
+                      embed\setImage (url)
+                    </a>
+                  </td>
+                  <td>
+                    Set the image of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setThumbnail">
+                      embed\setThumbnail (url)
+                    </a>
+                  </td>
+                  <td>
+                    Set the thumbnail of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setTimestamp">
+                      embed\setTimestamp ([timestamp=Date().toISO()])
+                    </a>
+                  </td>
+                  <td>
+                    Set the timestamp of the embed, defaults to right now
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setTitle">
+                      embed\setTitle (title)
+                    </a>
+                  </td>
+                  <td>
+                    Set the title of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\setURL">
+                      embed\setURL (url)
+                    </a>
+                  </td>
+                  <td>
+                    Set the url of the embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\toJSON">
+                      embed\toJSON ()
+                    </a>
+                  </td>
+                  <td>
+                    Returns the embed object without any metatables
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#embed\send">
+                      embed\send (channel)
+                    </a>
+                  </td>
+                  <td>
+                    Sends the embed and checks if we have permissions to
+                  </td>
+                </tr>
+
+            </table>
+
+
+
+
+            <h2>
+              <a name="Tables"></a>
+              Tables
+            </h2>
+
+
+
+
+
+            <dl>
+
+                <dt>
+                  <a name="embed.field"></a>
+                  <strong>embed.field</strong>
+
+
+                </dt>
+
+                <dd>
+                  An embed field
+
+
+
+
+
+                      <h3>Fields: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>name</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The name of the field
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>value</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The value of the field
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>inline</span>
+
+                                  <span><span class="type">boolean</span></span>
+
+
+                                If the field is inline
+
+
+                                  <em>default</em> false
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+            </dl>
+
+
+            <h2>
+              <a name="Methods"></a>
+              Methods
+            </h2>
+
+
+
+
+
+            <dl>
+
+                <dt>
+                  <a name="embed\addField"></a>
+                  <strong>embed\addField (name, value[, inline=false])</strong>
+
+
+                </dt>
+
+                <dd>
+                  Add a field to the embed with name, value, and inline
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>name</span>
+
+                                  <span><a class="type" href="../classes/embed.html#embed.field">field</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The name of the field or an embed object
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>value</span>
+
+                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The value of the field, optional if name is field
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>inline</span>
+
+                                  <span><span class="type">boolean</span></span>
+
+
+                                If the field is inline
+
+
+                                  <em>default</em> false
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\addFields"></a>
+                  <strong>embed\addFields (fields)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Add fields to the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>fields</span>
+
+                                  <span><a class="type" href="../classes/embed.html#embed.field">{field,...}</a> or <span class="type">{name,value,inline}...</span></span>
+
+
+                                The fields to add, max 25
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setAuthor"></a>
+                  <strong>embed\setAuthor (name, iconURL, url)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the author of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>name</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The author name
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>iconURL</span>
+
+                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The icon of the author
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>url</span>
+
+                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The url of the author
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setColor"></a>
+                  <strong>embed\setColor (color)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the color of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>color</span>
+
+                                  <span><span class="type">hex</span></span>
+
+
+                                The color in hex eg 0xFFFFFF
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setDescription"></a>
+                  <strong>embed\setDescription (description)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the description of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>description</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The description of the embed
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setFooter"></a>
+                  <strong>embed\setFooter (text, iconURL)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the footer of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>text</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The footer text
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>iconURL</span>
+
+                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The icon of the footer
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setImage"></a>
+                  <strong>embed\setImage (url)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the image of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>url</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The image url of the embed
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setThumbnail"></a>
+                  <strong>embed\setThumbnail (url)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the thumbnail of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>url</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The thumbnail url of the embed
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setTimestamp"></a>
+                  <strong>embed\setTimestamp ([timestamp=Date().toISO()])</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the timestamp of the embed, defaults to right now
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>timestamp</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The timestamp in ISO 8601
+
+
+                                  <em>default</em> Date().toISO()
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setTitle"></a>
+                  <strong>embed\setTitle (title)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the title of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>title</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The title of the embed
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\setURL"></a>
+                  <strong>embed\setURL (url)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Set the url of the embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>url</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                The url of the embed
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\toJSON"></a>
+                  <strong>embed\toJSON ()</strong>
+
+
+                </dt>
+
+                <dd>
+                  Returns the embed object without any metatables
+
+
+
+
+
+
+                    <h3>Returns:</h3>
+
+                      <ol>
+
+
+
+                            <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+
+
+
+
+                      </ol>
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="embed\send"></a>
+                  <strong>embed\send (channel)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Sends the embed and checks if we have permissions to
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>channel</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+                                The channel to send the embed into
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+            </dl>
+
+
+
+
+    </div>
+  </div>
 </body>
 </html>

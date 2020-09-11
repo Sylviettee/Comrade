@@ -43,22 +43,6 @@
                     </a>
 
 
-                      <ul>
-
-                          <li>
-                            <a href="#Tables">
-                              Tables
-                            </a>
-                          </li>
-
-                          <li>
-                            <a href="#Methods">
-                              Methods
-                            </a>
-                          </li>
-
-                      </ul>
-
                   </li>
 
                   <li>
@@ -66,6 +50,22 @@
                       Array
                     </a>
 
+
+                      <ul>
+
+                          <li>
+                            <a href="#Methods">
+                              Methods
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#Metamethods">
+                              Metamethods
+                            </a>
+                          </li>
+
+                      </ul>
 
                   </li>
 
@@ -241,11 +241,11 @@
         <h1>
           Class
           <code>
-            prompt
+            Array
           </code>
         </h1>
 
-        <p> A prompt helper class </p>
+        <p> An array with helper functions </p>
         <p>  </p>
 
 
@@ -259,47 +259,6 @@
 
 
             <h2>
-              <a href="6">Tables</a>
-            </h2>
-
-            <table>
-
-                <tr>
-                  <td>
-                    <a href="#prompt.globalActions">
-                      prompt.globalActions
-                    </a>
-                  </td>
-                  <td>
-                    Prompt global actions
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <a href="#prompt.config">
-                      prompt.config
-                    </a>
-                  </td>
-                  <td>
-                    Prompt configuration
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <a href="#prompt.task">
-                      prompt.task
-                    </a>
-                  </td>
-                  <td>
-                    A prompt task
-                  </td>
-                </tr>
-
-            </table>
-
-            <h2>
               <a href="7">Methods</a>
             </h2>
 
@@ -307,111 +266,130 @@
 
                 <tr>
                   <td>
-                    <a href="#prompt\new">
-                      prompt\new (msg, client, config)
+                    <a href="#Array\new">
+                      Array\new (...)
                     </a>
                   </td>
                   <td>
-                    Construct a prompt to get user information
+                    Takes in a vararg to populate the table
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\next">
-                      prompt\next ()
+                    <a href="#Array\forEach">
+                      Array\forEach (func)
                     </a>
                   </td>
                   <td>
-                    Move on the prompt
+                    For every item in the array, call the function
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\back">
-                      prompt\back ()
+                    <a href="#Array\filter">
+                      Array\filter (func)
                     </a>
                   </td>
                   <td>
-                    Go back on the prompt
+                    Loop through each item and each item that satifies the function gets added to an array and gets returned
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\redo">
-                      prompt\redo ()
+                    <a href="#Array\find">
+                      Array\find (func)
                     </a>
                   </td>
                   <td>
-                    Redo the current prompt task
+                    The first item to satify a function gets returned
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\close">
-                      prompt\close ()
+                    <a href="#Array\map">
+                      Array\map (func)
                     </a>
                   </td>
                   <td>
-                    Close the prompt
+                    Create a new array based off what the passed function evaluates the data to
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\reply">
-                      prompt\reply (content)
+                    <a href="#Array\push">
+                      Array\push (item)
                     </a>
                   </td>
                   <td>
-                    Send a message in the prompt channel
+                    Add an item to the array
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\save">
-                      prompt\save (key, value)
+                    <a href="#Array\slice">
+                      Array\slice ([start=1[, stop=#array[, step=1]]])
                     </a>
                   </td>
                   <td>
-                    Save a value into the prompt
+                    Slice an array with a start, stop, and step
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\get">
-                      prompt\get (key)
+                    <a href="#Array\shift">
+                      Array\shift ()
                     </a>
                   </td>
                   <td>
-                    Get a value from the prompt
+                    Remove the first in an array
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\handle">
-                      prompt\handle (msg)
+                    <a href="#Array\pop">
+                      Array\pop (pos)
                     </a>
                   </td>
                   <td>
-                    Internal; Handle the action
+                    Remove the last or an index piece of data from an array
+                  </td>
+                </tr>
+
+            </table>
+
+            <h2>
+              <a href="11">Metamethods</a>
+            </h2>
+
+            <table>
+
+                <tr>
+                  <td>
+                    <a href="#Array\__len">
+                      Array\__len ()
+                    </a>
+                  </td>
+                  <td>
+                    Length of the list
                   </td>
                 </tr>
 
                 <tr>
                   <td>
-                    <a href="#prompt\update">
-                      prompt\update ()
+                    <a href="#Array\__pairs">
+                      Array\__pairs ()
                     </a>
                   </td>
                   <td>
-                    Internal; Handle the message
+                    Loop over the list
                   </td>
                 </tr>
 
@@ -421,8 +399,8 @@
 
 
             <h2>
-              <a name="Tables"></a>
-              Tables
+              <a name="Methods"></a>
+              Methods
             </h2>
 
 
@@ -432,87 +410,26 @@
             <dl>
 
                 <dt>
-                  <a name="prompt.globalActions"></a>
-                  <strong>prompt.globalActions</strong>
+                  <a name="Array\new"></a>
+                  <strong>Array\new (...)</strong>
 
 
                 </dt>
 
                 <dd>
-                  Prompt global actions
+                  Takes in a vararg to populate the table
 
 
 
 
 
-                      <h3>Fields: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>check</span>
-
-
-                                A function that prompts the user to check their input data, to make data private prefix it with an underscore
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt.config"></a>
-                  <strong>prompt.config</strong>
-
-
-                </dt>
-
-                <dd>
-                  Prompt configuration
-
-
-
-
-
-                      <h3>Fields: </h3>
+                      <h3>Parameters: </h3>
 
 
                     <ul>
 
                               <li>
-                                <span>embed</span>
-
-                                  <span><span class="type">boolean</span></span>
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>tasks</span>
-
-                                  <span><a class="type" href="../classes/prompt.html#prompt.task">task[]</a></span>
+                                <span>...</span>
 
 
 
@@ -537,31 +454,31 @@
                 </dd>
 
                 <dt>
-                  <a name="prompt.task"></a>
-                  <strong>prompt.task</strong>
+                  <a name="Array\forEach"></a>
+                  <strong>Array\forEach (func)</strong>
 
 
                 </dt>
 
                 <dd>
-                  A prompt task
+                  For every item in the array, call the function
 
 
 
 
 
-                      <h3>Fields: </h3>
+                      <h3>Parameters: </h3>
 
 
                     <ul>
 
                               <li>
-                                <span>message</span>
+                                <span>func</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+                                  <span><span class="type">function</span></span>
 
 
-                                The message of the task, if the embed flag is set, message has to be embed
+
 
 
 
@@ -570,13 +487,331 @@
 
 
 
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array\filter"></a>
+                  <strong>Array\filter (func)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Loop through each item and each item that satifies the function gets added to an array and gets returned
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
                               <li>
-                                <span>action</span>
+                                <span>func</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">function</span></span>
+                                  <span><span class="type">function</span></span>
 
 
-                                If its a string, it has to be in global actions. Calls function with message content, prompt, and message object
+
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array\find"></a>
+                  <strong>Array\find (func)</strong>
+
+
+                </dt>
+
+                <dd>
+                  The first item to satify a function gets returned
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>func</span>
+
+                                  <span><span class="type">function</span></span>
+
+
+
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array\map"></a>
+                  <strong>Array\map (func)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Create a new array based off what the passed function evaluates the data to
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>func</span>
+
+                                  <span><span class="type">function</span></span>
+
+
+
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array\push"></a>
+                  <strong>Array\push (item)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Add an item to the array
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>item</span>
+
+
+
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array\slice"></a>
+                  <strong>Array\slice ([start=1[, stop=#array[, step=1]]])</strong>
+
+
+                </dt>
+
+                <dd>
+                  Slice an array with a start, stop, and step
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>start</span>
+
+                                  <span><span class="type">number</span></span>
+
+
+                                Where to start the slice
+
+
+                                  <em>default</em> 1
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>stop</span>
+
+                                  <span><span class="type">number</span></span>
+
+
+                                Where to stop the slice
+
+
+                                  <em>default</em> #array
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>step</span>
+
+                                  <span><span class="type">number</span></span>
+
+
+                                The amount to step buy
+
+
+                                  <em>default</em> 1
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array\shift"></a>
+                  <strong>Array\shift ()</strong>
+
+
+                </dt>
+
+                <dd>
+                  Remove the first in an array
+
+
+
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Array\pop"></a>
+                  <strong>Array\pop (pos)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Remove the last or an index piece of data from an array
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>pos</span>
+
+                                  <span><span class="type">number</span></span>
+
+
+                                Where to take the data out of
 
 
 
@@ -601,8 +836,8 @@
 
 
             <h2>
-              <a name="Methods"></a>
-              Methods
+              <a name="Metamethods"></a>
+              Metamethods
             </h2>
 
 
@@ -612,86 +847,14 @@
             <dl>
 
                 <dt>
-                  <a name="prompt\new"></a>
-                  <strong>prompt\new (msg, client, config)</strong>
+                  <a name="Array\__len"></a>
+                  <strong>Array\__len ()</strong>
 
 
                 </dt>
 
                 <dd>
-                  Construct a prompt to get user information
-
-
-
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>msg</span>
-
-
-                                The message
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>client</span>
-
-
-                                A Discordia or Comrade client
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>config</span>
-
-                                  <span><a class="type" href="../classes/prompt.html#prompt.config">config</a></span>
-
-
-                                A config containing the tasks, timeout, and if its an embed
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\next"></a>
-                  <strong>prompt\next ()</strong>
-
-
-                </dt>
-
-                <dd>
-                  Move on the prompt
+                  Length of the list
 
 
 
@@ -707,272 +870,14 @@
                 </dd>
 
                 <dt>
-                  <a name="prompt\back"></a>
-                  <strong>prompt\back ()</strong>
+                  <a name="Array\__pairs"></a>
+                  <strong>Array\__pairs ()</strong>
 
 
                 </dt>
 
                 <dd>
-                  Go back on the prompt
-
-
-
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\redo"></a>
-                  <strong>prompt\redo ()</strong>
-
-
-                </dt>
-
-                <dd>
-                  Redo the current prompt task
-
-
-
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\close"></a>
-                  <strong>prompt\close ()</strong>
-
-
-                </dt>
-
-                <dd>
-                  Close the prompt
-
-
-
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\reply"></a>
-                  <strong>prompt\reply (content)</strong>
-
-
-                </dt>
-
-                <dd>
-                  Send a message in the prompt channel
-
-
-
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>content</span>
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\save"></a>
-                  <strong>prompt\save (key, value)</strong>
-
-
-                </dt>
-
-                <dd>
-                  Save a value into the prompt
-
-
-
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>key</span>
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>value</span>
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\get"></a>
-                  <strong>prompt\get (key)</strong>
-
-
-                </dt>
-
-                <dd>
-                  Get a value from the prompt
-
-
-
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>key</span>
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\handle"></a>
-                  <strong>prompt\handle (msg)</strong>
-
-
-                </dt>
-
-                <dd>
-                  Internal; Handle the action
-
-
-
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>msg</span>
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="prompt\update"></a>
-                  <strong>prompt\update ()</strong>
-
-
-                </dt>
-
-                <dd>
-                  Internal; Handle the message
+                  Loop over the list
 
 
 
