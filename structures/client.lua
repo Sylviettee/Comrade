@@ -19,6 +19,7 @@ helper.__init = function(self, token, config)
   self._token = token
   self._prefix = config.prefix or '!'
   self._defaultHelp = config.defaultHelp or true
+  self._disableDefaultCH = config.disableDefaultCH or false
   self._owners = config.owners or {}
   self._testing = config.testing or config.testbot or false
   self._testbot = config.testbot or false
@@ -37,7 +38,7 @@ helper.__init = function(self, token, config)
     if self._defaultHelp then self:addCommand(require('./help')) end
     if self._testing then return self:addCommand(require('./status')) end
   end)
-  if not (self._testbot) then
+  if not (self._testbot or self._disableDefaultCH) then
     return self:on('messageCreate', function(msg)
       if not (string.startswith(msg.content, self._prefix)) then return nil end
       if msg.author.bot and msg.author.id ~= self._botid then return nil end

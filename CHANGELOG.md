@@ -1,3 +1,8 @@
+# 1.2.1
+
+* Added option to disable command handler
+* Updated documentation for new testing options
+
 # 1.2.0
 
 * Large bug fixes

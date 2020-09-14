@@ -50,6 +50,7 @@ helper.__init = (token,config={}) =>
   @_prefix = config.prefix or '!'
 
   @_defaultHelp = config.defaultHelp or true
+  @_disableDefaultCH = config.disableDefaultCH or false
   @_owners = config.owners or {}
 
   -- Testing
@@ -81,7 +82,7 @@ helper.__init = (token,config={}) =>
     if @_testing
       @addCommand require './status'
 
-  unless @_testbot
+  unless @_testbot or @_disableDefaultCH
     @\on 'messageCreate', (msg) ->
       return nil unless string.startswith(msg.content,@_prefix)     
       if msg.author.bot and msg.author.id != @_botid
@@ -206,6 +207,11 @@ helper
 -- @tparam[opt='!'] string prefix The prefix the bot will use
 -- @tparam[opt=true] boolean defaultHelp Whether to use the default help or not
 -- @tparam[opt={}] table owners The owners of this bot
+-- @tparam[opt=false] boolean testing Weather the bot is in testing or not
+-- @tparam[opt=false] boolean testbot Weather this current bot is a test bot
+-- @tparam[opt=nil] string botid The bot testing this current bot 
+-- @tparam[opt=false] boolean storeErrors Weather to store error information within a table
+-- @tparam[opt=false] boolean disableDefaultCH Weather to disable the default command handler (Usually for custom prefixes)
 -- @tparam[opt=300] number routeDelay Minimum time in milliseconds to wait between HTTP requests per-route
 -- @tparam[opt=5] number maxRetries The maximum number of retries to attempt after an HTTP request fails
 -- @tparam[opt=0] number shardCount The total number of shards the application is using (0 signals to use the recommended count)
