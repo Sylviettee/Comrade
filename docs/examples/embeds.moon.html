@@ -283,7 +283,7 @@ level = Template { <span class="hljs-comment">-- They extend embeds meaning that
   description: <span class="hljs-string">'{{user}} got to level {{level}}! You now have {{coins}} coins!'</span>
 }
 
-level\compile {
+level\render {
   user: <span class="hljs-string">'4 times 1 is even less than 0#3870'</span>,
   level: <span class="hljs-number">5</span>,
   coins: <span class="hljs-string">'2'</span>
@@ -300,7 +300,7 @@ leaderboard = Template {
 '</span>
 }
 
-leaderboard\compile {
+leaderboard\render {
   members: {
     {name: <span class="hljs-string">'Github Issues'</span>, level: <span class="hljs-number">100</span>}
     {name: <span class="hljs-string">'4 times 1 is even less than 0'</span>, level: <span class="hljs-number">5</span>}

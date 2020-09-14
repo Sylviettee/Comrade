@@ -27,6 +27,12 @@ If your bot uses Comrade send an issue with it.
 
 * [Little Commander](https://github.com/SovietKitsune/Little-Commander)
 
+## Documentation
+
+The documentation can be located at [https://comrade-project.github.io/Comrade](https://comrade-project.github.io/Comrade). (Note that the search is non-functional for now)
+
+If you have any issues you can join the support Discord [here](https://discord.gg/uCDq5mw) in the [#lua-comrade](https://discordapp.com/channels/665029118575902739/738684991923290182/) channel.
+
 ## Features
 
 * ### Command system
