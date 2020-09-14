@@ -1,6 +1,6 @@
 import sort, concat, insert, remove from table
-import min, max, random, ciel, floor from math
-import byte, char, gmatch, match, rep, find, sub from string
+import min, max, random, floor from math
+import char, gmatch, match, find, sub from string
 
 table = {}
 
@@ -10,6 +10,14 @@ table.count = (tbl) ->
   for _ in pairs tbl
     n += 1
   n
+
+table.clone = (tbl) ->
+  new = {}
+
+  for i,v in pairs tbl
+    new[i] = v
+  
+  new
 
 table.deepcount = (tbl) ->
   ret = {}
@@ -89,6 +97,13 @@ table.join = (tbl, sep) ->
   
   str
 
+table.concatIndex = (tbl, sep) ->
+  val = ''
+  for i,_ in pairs tbl
+    val = "#{val}#{i}#{sep}"
+
+  val\sub(0,#val - #sep)
+
 string = {}
 
 string.split = (str, delim) ->
@@ -133,6 +148,15 @@ string.random = (len, mn = 0, mx = 255) ->
 
 string.clamp = (n, mn, mx) ->
   min max(n, mn), mx
+
+math = {}
+
+math.clamp = (n, minValue, maxValue) ->
+	min max(n, minValue), maxValue
+
+math.round = (n, i) ->
+	m = 10 ^ (i or 0)
+	return floor(n * m + 0.5) / m
 
 ext = setmetatable {
   table: table

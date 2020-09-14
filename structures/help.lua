@@ -1,5 +1,3 @@
-local get
-get = require('../init').get
 local command = require('./command')
 local embed = require('./embed')
 local help
@@ -7,19 +5,17 @@ do
   local _class_0
   local _parent_0 = command
   local _base_0 = {
-    all = function(msg, _, client)
+    all = function(self, msg, _, client)
       local helpEmbed = embed():setTitle('Help')
       local desc = ''
-      client.commands:forEach(function(command)
-        desc = tostring(desc) .. ", `" .. tostring(command.name) .. "`"
-      end)
+      client.commands:forEach(function(command) desc = tostring(desc) .. ', `' .. tostring(command.name) .. '`' end)
       desc = desc:sub(2, #desc)
       helpEmbed:setDescription(desc)
       return helpEmbed:send(msg.channel)
     end,
     execute = function(self, msg, args, client)
       if not (args[1]) then
-        return self['all'](msg, args, client)
+        return self:all(msg, args, client)
       else
         command = client.commands:find(function(com)
           return com.name == args[1] or table.search(com.aliases, args[1])
@@ -38,20 +34,18 @@ do
     __init = function(self)
       _class_0.__parent.__init(self)
       self.usage = '[all | command name]'
-      self.example = tostring(self.name) .. " all"
+      self.example = tostring(self.name) .. ' all'
       self.description = 'The help command to give you all the commands'
     end,
     __base = _base_0,
-    __name = "help",
+    __name = 'help',
     __parent = _parent_0
   }, {
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        local parent = rawget(cls, "__parent")
-        if parent then
-          return parent[name]
-        end
+        local parent = rawget(cls, '__parent')
+        if parent then return parent[name] end
       else
         return val
       end
@@ -63,9 +57,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  if _parent_0.__inherited then
-    _parent_0.__inherited(_parent_0, _class_0)
-  end
+  if _parent_0.__inherited then _parent_0.__inherited(_parent_0, _class_0) end
   help = _class_0
-  return _class_0
 end
+return help()

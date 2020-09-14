@@ -4,7 +4,8 @@
 
 Command = require './command'
 
-class luaCommand
+class
+  @__name = 'luaCommand'
   --- Takes in the name of the command
   -- @tparam string name Command name
   new: (name) =>

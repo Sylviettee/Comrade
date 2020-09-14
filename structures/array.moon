@@ -1,8 +1,8 @@
 ----
 -- An array with helper functions
--- @classmod array
+-- @classmod Array
 
-class array
+class Array
   --- Takes in a vararg to populate the table
   new: (...) =>
     @data = {...}
@@ -36,7 +36,7 @@ class array
     for _,v in pairs @data
       if func v
         table.insert data,v
-    array unpack data
+    Array unpack data
   
   --- The first item to satify a function gets returned
   -- @tparam function func
@@ -52,7 +52,7 @@ class array
 
     for _,v in pairs @
       table.insert newData, func v
-    array unpack newData
+    Array unpack newData
   --- Add an item to the array
   -- @param item
   push: (item) =>

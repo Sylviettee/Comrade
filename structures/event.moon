@@ -1,10 +1,11 @@
 ----
 -- An event class, should be extended
 -- @classmod event
-class event
+class
   --- Create an event, class should have execute field
+  @__name = 'event'
   new: () =>
-    intAssert @execute, 'No execution for event was found'
+    assert @execute, 'No execution for event was found'
 
     @name = @@__name
   

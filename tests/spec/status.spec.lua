@@ -1,0 +1,21 @@
+return describe('status command', function()
+  it('should display status information', function()
+    local msg = assert(execute(tostring(bot.prefix) .. "status"))
+    local content = msg.content
+    if not (content:find('Content too large')) then
+      assert(content:find('Memory Usage'), 'No memory usage found')
+      assert(content:find('Commands'), 'No command information found')
+      assert(content:find('Cache'), 'No cache information found')
+    end
+    return assert(not tester.errored, 'Bot errored while testing')
+  end)
+  return it('should not reply when unauthed', function()
+    tester:deauth()
+    local msg = execute(tostring(bot.prefix) .. "status")
+    assert(not msg, 'Message was sent when there was an unauthed user')
+    tester:auth()
+    msg = execute(tostring(bot.prefix) .. "status")
+    assert(msg, 'Message was not sent when there was an authed user')
+    return assert(not tester.errored, 'Bot errored while testing')
+  end)
+end)

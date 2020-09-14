@@ -37,16 +37,15 @@ dotenv.parse = (src, options = {}) ->
 
     unless key or val
       print "Failed to parse line #{idx} > #{line}" if debug
-      continue
-    
-    isQuoted = val\sub(0,1) == '"' or val\sub(0,1) == "'" and val\sub(#val, #val) == '"' or val\sub(#val, #val) == "'"
+    else
+      isQuoted = val\sub(0,1) == '"' or val\sub(0,1) == "'" and val\sub(#val, #val) == '"' or val\sub(#val, #val) == "'"
 
-    val = (isQuoted and val\sub 2, #val - 1) or val
+      val = (isQuoted and val\sub 2, #val - 1) or val
 
-    unless isQuoted
-      val = dotenv.trim val
-    
-    obj[key] = dotenv.transform val, isQuoted
+      unless isQuoted
+        val = dotenv.trim val
+      
+      obj[key] = dotenv.transform val, isQuoted
 
   obj
 
@@ -63,9 +62,8 @@ dotenv.config = (options = {}) ->
     for i,_ in pairs parsed
       if process.env[i]
         print "#{i} is already defined in process.env and will not be overwritten" if debug
-        continue
-      
-      process.env[i] = parsed[i]
+      else
+        process.env[i] = parsed[i]
 
     return parsed
 

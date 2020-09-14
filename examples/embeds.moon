@@ -7,7 +7,11 @@ embed = Embed {
   description: 'You just got level 0! You now have 5 coins!'
 }
 
+embed\send 'channel'
+
 embed = Embed!\setTitle('You just got level 0')\setDescription 'You just got level 0! You now have 5 coins!' -- Other method
+
+embed\send 'channel'
 
 -- Templates --
 
@@ -18,7 +22,7 @@ level = Template { -- They extend embeds meaning that they allow for starting po
   description: '{{user}} got to level {{level}}! You now have {{coins}} coins!'
 }
 
-level\compile {
+level\render {
   user: '4 times 1 is even less than 0#3870', 
   level: 5, 
   coins: '2'
@@ -35,7 +39,7 @@ leaderboard = Template {
 '
 }
 
-leaderboard\compile {
+leaderboard\render {
   members: { 
     {name: 'Github Issues', level: 100}
     {name: '4 times 1 is even less than 0', level: 5}

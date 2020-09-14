@@ -1,1 +1,5 @@
 .env
+.vscode
+deps
+gateway.json
+discordia.log

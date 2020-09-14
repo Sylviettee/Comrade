@@ -1,16 +1,23 @@
-lustache = require '../libs/'
-Embed = require './Embed'
+lustache = require '../libs/lustache'
+Embed = require './embed'
 
 deepScan = (tbl, fn) ->
-  for _,v in pairs tbl
-    if type(v) == 'table'
-      deepScan v, fn
-    else
-      fn v
+  clone = table.clone tbl
 
-class Template extends Embed
+  for i,v in pairs clone
+    if type(v) == 'table'
+      clone[i] = deepScan v, fn
+    else
+      clone[i] = fn v
+
+  clone
+
+class extends Embed
+  @__name = 'Template'
   new: (start) =>
     super start
   render: (env) =>
-    deepScan @toJSON!, (val) ->
+    tbl = deepScan @toJSON!, (val) ->
       lustache\render val, env if type(val) == 'string'
+
+    Embed tbl

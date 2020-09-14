@@ -2,8 +2,6 @@
 -- The default help, extends command
 -- @classmod help
 
-import get from require '../init'
-
 command = require './command'
 embed = require './embed'
 
@@ -16,7 +14,7 @@ class help extends command
     @example = "#{@name} all"
     @description = 'The help command to give you all the commands'
   --- Returns a list of all the commands
-  all: (msg,_,client) ->
+  all: (msg,_,client) =>
     helpEmbed = embed!\setTitle('Help')
 
     desc = ''
@@ -32,7 +30,7 @@ class help extends command
   --- Search for the command giving if one was given
   execute: (msg,args,client) =>
     unless args[1]
-      @['all'] msg,args,client
+      @all msg,args,client
     else
       command = client.commands\find (com) ->
         com.name == args[1] or table.search com.aliases, args[1]
@@ -41,3 +39,5 @@ class help extends command
         command\help msg.channel
       else
         msg\reply 'Could\'t find that command'
+
+help!

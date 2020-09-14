@@ -3,7 +3,8 @@
 -- @classmod embed
 import Date, enums from require 'discordia'
 
-class embed
+class
+  @__name = 'embed' -- No unused variables
   --- Create an embed, can be passed a table as a starting point
   -- @tparam[opt={}] table starting Where the internal embed starts
   new: (starting = {}) =>
@@ -52,6 +53,7 @@ class embed
   -- @tparam ?string url The url of the author
   -- @treturn embed
   setAuthor: (name, iconURL, url) =>
+    name = name\sub 0, 256
     @embed.author = {
       :name,
       'icon_url': iconURL,
@@ -121,7 +123,7 @@ class embed
   -- @tparam string title The title of the embed
   -- @treturn embed
   setTitle: (title) =>
-    @embed.title = title
+    @embed.title = title\sub 0, 256
 
     @
   

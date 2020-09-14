@@ -19,7 +19,8 @@ class pluginEvent extends event
   @clear: () =>
     @@events = {}
 
-class plugin
+class
+  @__name = 'Plugin'
   --- Create a new plugin, sets 2 properties, @command and @event. These should be used inplace of command and event
   new: () =>
     @command = plguinCommand

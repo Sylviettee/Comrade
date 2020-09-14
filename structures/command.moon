@@ -1,9 +1,6 @@
 ----
 -- A command helper class, should be extended
 -- @classmod command
-
-import get from require '../init'
-
 embed = require './embed'
 util = require '../helpers/util'
 
@@ -11,14 +8,8 @@ import setTimeout from require 'timer'
 
 import Date from require 'discordia'
 
-concatIndex = (tbl, sep=', ') ->
-  val = ''
-  for i,_ in pairs tbl
-    val = "#{val}#{i}#{sep}"
-
-  val\sub(0,#val - #sep)
-
-class command
+class
+  @__name = 'Command'
   --- Create a command
   new: () =>
     @name = @@__name or '_temp_'
@@ -28,25 +19,34 @@ class command
   --- An function to generate a help embed and send to to a channel
   -- @tparam table channel The channel to send the message to
   help: (channel) =>
-    formatted = ''
+    unless @formatted
+      formatted = ''
 
-    @example = {@example} if type(@example) == 'string'
+      @example = {@example} if type(@example) == 'string'
 
-    for i,v in pairs @example
-      formatted ..= "#{i}. #{v}\n"
+      for i,v in pairs @example
+        formatted ..= "#{i}. #{v}\n"
+
+      @formatted = formatted
 
     helpEmbed = embed!\setTitle('Help')\addFields {'Description',@description},
-      {'Aliases', (table.concat(@aliases, ', ') == '' and 'None') or (table.concat(@aliases, ', ') != '' and table.concat(@aliases, ', '))},
-      {'Subcommands', (concatIndex(@subcommands, ', ') == '' and 'None') or (concatIndex(@subcommands, ', ') != '' and concatIndex(@subcommands, ', '))},
+      {'Aliases', 
+        (table.concat(@aliases, ', ') == '' and 'None') or 
+        (table.concat(@aliases, ', ') != '' and table.concat(@aliases, ', '))
+      },
+      {'Subcommands', 
+        (table.concatIndex(@subcommands, ', ') == '' and 'None') or 
+        (table.concatIndex(@subcommands, ', ') != '' and table.concatIndex(@subcommands, ', '))
+      },
       {'Usage', @usage},
-      {'Example', formatted}
+      {'Example', @formatted}
       
     helpEmbed\send channel
 
   --- An internal function to fill in all the data
   pre: () =>
-    intAssert @name, 'No name found'
-    intAssert @execute, 'No execute command found'
+    assert @name, 'No name found'
+    assert @execute, 'No execute command found'
     
     -- Fill in defaults
 
@@ -54,6 +54,8 @@ class command
     @permissions = {} 
     @subcommands = {}
     @cooldowns = {}
+    @errors = {}
+    @tested = {}
 
     @allowDMS = false
     @hidden = false
@@ -112,11 +114,24 @@ class command
   run: (msg,args,client) =>
     -- Check for sub commands
 
-    if @preconditions and @preconditions msg, args, client
+    if (@preconditions and @preconditions msg, args, client) or true
       subcommand = args[1]
+
+      ran = @subcommands[subcommand] and subcommand or 'main'
+
+      local succ, err
 
       if @subcommands[subcommand]
         args = table.slice args, 2
-        @subcommands[subcommand] msg,args,client
+        succ, err = pcall @subcommands[subcommand], @, msg,args,client
       else
-        @execute msg,args,client
+        succ, err = pcall @execute, @, msg,args,client
+
+      unless succ
+        client\error "Command error: #{err}"
+
+        @errors[ran] = {} unless @errors[ran]
+
+        table.insert @errors[ran], err
+      
+      @tested[ran] = true

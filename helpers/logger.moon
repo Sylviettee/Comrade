@@ -46,14 +46,11 @@ term = getenv "TERM"
 color = getenv "COLORTERM"
 
 theme = 8
-truecolor = false
+
+truecolor = (color and (color == 'truecolor' or color == '24bit')) or false
 
 if term and (term == 'xterm' or term\find'-256color$')
   theme = 256
-else
-  theme = 8
-
-truecolor = (color and (color == 'truecolor' or color == '24bit')) or false
 
 for i,v in pairs logger.colors
   if i <= theme

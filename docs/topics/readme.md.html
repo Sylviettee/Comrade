@@ -13,6 +13,24 @@
 </head>
 <body>
 
+  <div class="p-navigation">
+    <div class="p-navigation__row">
+      <nav class="p-navigation__nav">
+        <ul class="p-navigation__items">
+          <li class="navigation__item">
+            <a href="../index.html" class="navigation__link">Home</a>
+          </li>
+        </ul>
+
+        <form class="p-search-box">
+          <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="">
+          <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close"></i></button>
+          <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
+        </form>
+      </nav>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-3">
       <div class="p-side-navigation--raw-html">
@@ -64,12 +82,6 @@
                           </li>
 
                           <li>
-                            <a href="#Files_included">
-                              Files included
-                            </a>
-                          </li>
-
-                          <li>
                             <a href="#Credits">
                               Credits
                             </a>
@@ -78,12 +90,6 @@
                           <li>
                             <a href="#Todo">
                               Todo
-                            </a>
-                          </li>
-
-                          <li>
-                            <a href="#3_0_Thoughts">
-                              3.0 Thoughts
                             </a>
                           </li>
 
@@ -188,6 +194,14 @@
                   </li>
 
                   <li>
+                    <a href="../classes/emitter.html">
+                      emitter
+                    </a>
+
+
+                  </li>
+
+                  <li>
                     <a href="../classes/event.html">
                       event
                     </a>
@@ -214,6 +228,14 @@
                   <li>
                     <a href="../classes/plugin.html">
                       plugin
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/status.html">
+                      status
                     </a>
 
 
@@ -290,7 +312,6 @@
 <li><a href="#bots_using_comrade">Bots using Comrade</a></li>
 <li><a href="#features">Features</a></li>
 <li><a href="#installation">Installation</a></li>
-<li><a href="#files_included">Files included</a></li>
 <li><a href="#todo">Todo</a></li>
 </ul>
 
@@ -336,33 +357,7 @@
 
 <h2>Installation</h2>
 
-<p>You can clone the repo into your deps folder.</p>
-
-<p><a name="Files_included"></a></p>
-
-<h2>Files included</h2>
-
-<ul>
-<li>config.ld - LDoc configuration file</li>
-<li>config.lua - Utility for running commands and generating new instructions programmatically</li>
-<li>init.moon - Entry point of the module</li>
-<li>lua.moon - Utilities relating to allowing lua to use MoonScript classes</li>
-<li>Makefile - Shortcut to running parse</li>
-<li>parse.moon - Create a Makefile</li>
-</ul>
-
-<h3>Folders included</h3>
-
-<ul>
-<li>constants - Contains constant values like colors</li>
-<li>docs - Contains documentation for the module</li>
-<li>examples - Contains examples for things like creating embeds</li>
-<li>faker - Testing framework with faking the client and whatnot</li>
-<li>helpers - Contains useful utilities to allow bot creation to be made easier</li>
-<li>libs - Contains modules made by other people</li>
-<li>structures - Contains classes, some utility and others for internal use</li>
-<li>tests - Test the bot, requires some human interaction</li>
-</ul>
+<p>You can clone the repo into your deps folder or have it as a sub module</p>
 
 <p><a name="Credits"></a></p>
 
@@ -386,15 +381,6 @@
 <li>[] Pagination</li>
 <li>[] Branched prompts</li>
 <li>[] More advanced argument parsing system</li>
-</ul>
-
-<p><a name="3_0_Thoughts"></a></p>
-
-<h2>3.0 Thoughts</h2>
-
-<ul>
-<li>Some rewriting</li>
-<li>Methods like send message stored in client allowing for faking a client</li>
 </ul>
 
 

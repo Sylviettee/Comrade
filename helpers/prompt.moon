@@ -2,8 +2,6 @@
 -- A prompt helper class
 -- @classmod prompt
 
-import setTimeout,clearTimeout from require 'timer'
-
 embed = require '../structures/embed'
 
 prompts = {}
@@ -19,7 +17,8 @@ globalActions = {
       prompt\redo! 
 }
 
-class prompt
+class
+  @__name = 'Prompt'
   --- Construct a prompt to get user information
   -- @param msg The message
   -- @param client A Discordia or Comrade client

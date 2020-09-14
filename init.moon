@@ -4,13 +4,17 @@
 succ, err = pcall require, 'discordia'
 
 unless succ
-  error 'This module requires discordia!'
+  error "This module requires discordia!
+
+#{err}"
+
+require('./helpers/extensions') !
 
 {
   -- Metadata
 
   --- The version
-  version: '1.0.0-dev'
+  version: '1.1.0'
 
   --- The name of the module
   name: 'Comrade'
@@ -35,14 +39,18 @@ unless succ
   --- @see Help
   Help: require './structures/help'
 
-  --- @see InternalError
-  InternalError: require './structures/internalError'
-
   --- @see LuaCommand
   LuaCommand: require './structures/luaCommand'
 
   --- @see Plugin
   Plugin: require './structures/plugin'
+
+  --- @see Template
+  Template: require './structures/template'
+
+  -- Faker
+
+  faker: require './faker'
 
   -- Helpers
 
@@ -58,13 +66,12 @@ unless succ
   --- @see dotenv
   dotenv: require './helpers/dotenv'
 
-  --- @see extenstions
-  extenstions: require './helpers/extenstions'
+  --- @see extensions
+  extensions: require './helpers/extensions'
 
   --- @see color
   color: require './constants/color' --- color
 
   --- @see lua
   lua: require './lua' --- lua
-
 }

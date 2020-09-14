@@ -1,3 +1,11 @@
+# 1.2.0
+
+* Large bug fixes
+* Test suit
+* Faker library for testing
+* Lua check linting
+* Makefile utility
+
 # 1.1.0
 
 * Examples be an array
