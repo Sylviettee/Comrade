@@ -4,19 +4,18 @@ addons:
   apt:
     packages:
     - curl
-os:
-  - linux
 
 branches:
   only:
     - master
 
 install:
-  - mkdir luvit && cd luvit && curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
+  - mkdir luvit && cd luvit && curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh && cd ..
   - export PATH=$HOME/luvit:${PATH}
 
 script:
-  - cd tests && luvit main.lua
+  - cd tests
+  - luvit main.lua
 
 env:
   global:
