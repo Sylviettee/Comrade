@@ -12,6 +12,8 @@ branches:
 install:
   - curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
   - sudo mv ./luvit /bin/
+  - sudo mv ./lit /bin/
+  - lit install SinisterRectus/discordia
 
 script:
   - cd tests
