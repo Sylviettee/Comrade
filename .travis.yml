@@ -10,8 +10,8 @@ branches:
     - master
 
 install:
-  - mkdir luvit && cd luvit && curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh && cd ..
-  - export PATH=$HOME/luvit:${PATH}
+  - curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
+  - mv ./luvit /bin/
 
 script:
   - cd tests
