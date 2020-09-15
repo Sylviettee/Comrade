@@ -11,6 +11,9 @@ format:
 moonscript:
 	@echo -e '\033[32mRunning moonscript\033[0m'
 	@moonc .
+test:
+	@echo -e '\033[32mRunning test\033[0m'
+	@cd tests && luvit main.lua
 lint:
 	@echo -e '\033[32mRunning lint\033[0m'
 	@luacheck .

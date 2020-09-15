@@ -1,0 +1,21 @@
+language: c
+addons:
+  apt:
+    packages:
+    - curl
+os:
+  - linux
+before_script:
+  - ulimit -c unlimited -S
+  - source .travis/platform.sh
+  - if [[ ${PLATFORM} == linux ]]; then source .travis/setenv_lua.sh; fi
+  - if [[ ${PLATFORM} == linux ]]; then luarocks install luacheck; fi
+  - if [[ ${PLATFORM} == linux ]]; then export LUA_PATH=`luarocks path --lr-path`; fi
+  - mkdir luvit && cd luvit && curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
+  - export PATH=$HOME/luvit:${PATH}
+script:
+  - make test
+env:
+  global:
+  - secure: gHba1+v6c0PsT+vbXxbXJcVP+U1H25ODiP/qD6RFI3+2zP6ioU6K9WW+VGutdDHL4olj9cS+09Hh5rvK2hdJO2COiWEIZl6DtMmywHxgy5kpGt7K54x708QqQ3HYsocx4gJLfs0LdBfzgM50SFQmqjJNT7hVL0z8BaxQ7ceoA3alyJEmcHYlZgTwyFkG402mto0cCzGuvo484cNq8ixvn6pqEtL+g/drBOJ0kdizSc1tHRey6XFZTDyOtGCCvxJFVtYx/yn0x5L+VBsFQVKyinbXpPQYPDTnnL00qRJe8HtjIqvA4GKY8NRm7XFyWtAYPwGLxKov50DOfug53HymLEiiSAv844MmgrhpJ13X1JYFMLvl0MFWAOh2jcjR12I96RG7xTWWb/1f9lFty3UbgQArezEauA0IWRXCpGWRWByhuXvIGAXTjdXelE2DA2MqcgE0leDJ0jVwtCEHhpLsE38YVFFD8BS3U3fIZ2uQnKtMi7scLKA+GcZo+JzQNFz1D8iP55wZfrNxc90oncHRfHR96XGXvPckeNJjzsspleg1UitvJ6j8mrIjXBbsXslvXx8Xm/d+2UdKcsYFg6/Wwzy+q25FkpB/v3HICAGQzY8Rqqpngn2fg1fBGS8PCJQjxN6wDj/pEUsBOeAqwNYeefSLOhVO1cQNOY/C6jMHuMM=
+  - secure: MHt7SBAZuY83YyUDCmllbr+UN/EUKKmUza7drNizqSTb39aesfC3lyYAa36FSsHPpsVcCWg1cpgNRhTdyrPnu9nGrXxw4D77VNt27gKXOovO3Lh2OJW1ictEnWmiEhvnxaJSmUnMOBoFGW2KcQN5hascbEQb1dYd7tCON5A5qk18Vh3IDSWWCqGC22BqTDoDdQi9AFbA8ZGvPjt2jl9kJRXaayrSQtVL+Fb5m4WNpSlE3hST3JK+urtOqnayhfur3W/x6FEmzACb6/zLip7mgqI5bLR42p5CEsi9sc4cPpoaER3pMBgNR0pxdAe2hnAt58f9wHP/u7cjHiZ9NgVmvMHKsEYsETaDHgLROE1p3nmSDrjvNdMuCbkssME2sb2wX+p5YWoHjM9ZnfNNeN9noAKb/qrf3AGgkzFtb7YCJpnR7MSRazQ5hJGK3TaT4OlwSvrMBqpq7etPr1cfUstgP3T10SC6YMEHFYBhZmklcRMlbNV/PiatunOFsaFBSHLtLA9OHaXKeNM23tna0uhQkfy+sFCp52otpx+lnYF+bICeWBVqcsyKDFGg7oTOZRBKzVgC7czzg7YDPGsU23+Ao3ERDIe0s4ML6unckvXosV/NWSzS2/N+8Ca67YFySlOFq+6Wn+NuRLBMnooeo1ZtSVAcfrR6oazVBMm462g/Hgc=

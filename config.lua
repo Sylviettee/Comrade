@@ -11,5 +11,6 @@ return {
   },
   moonscript = {'moonc .'},
   lint = {'luacheck .'},
-  format = {'lua-format *.lua ./**/*.lua -i -c .luaformat.yaml'}
+  format = {'lua-format *.lua ./**/*.lua -i -c .luaformat.yaml'},
+  test = {'cd tests && luvit main.lua'}
 }
