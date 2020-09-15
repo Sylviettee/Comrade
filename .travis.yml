@@ -1,7 +1,5 @@
 language: c
 
-sudo: false
-
 addons:
   apt:
     packages:
@@ -12,10 +10,6 @@ os:
 branches:
   only:
     - master
-
-before_install:
-  - source .travis/setenv_lua.sh
-  - luarocks install luacheck
 
 install:
   - mkdir luvit && cd luvit && curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
