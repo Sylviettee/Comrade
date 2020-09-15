@@ -11,7 +11,7 @@ branches:
 
 install:
   - curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
-  - mv ./luvit /bin/
+  - sudo mv ./luvit /bin/
 
 script:
   - cd tests
