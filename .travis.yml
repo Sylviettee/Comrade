@@ -16,7 +16,7 @@ install:
   - export PATH=$HOME/luvit:${PATH}
 
 script:
-  - make test
+  - cd tests && luvit main.lua
 
 env:
   global:
