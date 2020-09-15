@@ -1,20 +1,29 @@
 language: c
+
+sudo: false
+
 addons:
   apt:
     packages:
     - curl
 os:
   - linux
-before_script:
-  - ulimit -c unlimited -S
-  - source .travis/platform.sh
-  - if [[ ${PLATFORM} == linux ]]; then source .travis/setenv_lua.sh; fi
-  - if [[ ${PLATFORM} == linux ]]; then luarocks install luacheck; fi
-  - if [[ ${PLATFORM} == linux ]]; then export LUA_PATH=`luarocks path --lr-path`; fi
+
+branches:
+  only:
+    - master
+
+before_install:
+  - source .travis/setenv_lua.sh
+  - luarocks install luacheck
+
+install:
   - mkdir luvit && cd luvit && curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
   - export PATH=$HOME/luvit:${PATH}
+
 script:
   - make test
+
 env:
   global:
   - secure: gHba1+v6c0PsT+vbXxbXJcVP+U1H25ODiP/qD6RFI3+2zP6ioU6K9WW+VGutdDHL4olj9cS+09Hh5rvK2hdJO2COiWEIZl6DtMmywHxgy5kpGt7K54x708QqQ3HYsocx4gJLfs0LdBfzgM50SFQmqjJNT7hVL0z8BaxQ7ceoA3alyJEmcHYlZgTwyFkG402mto0cCzGuvo484cNq8ixvn6pqEtL+g/drBOJ0kdizSc1tHRey6XFZTDyOtGCCvxJFVtYx/yn0x5L+VBsFQVKyinbXpPQYPDTnnL00qRJe8HtjIqvA4GKY8NRm7XFyWtAYPwGLxKov50DOfug53HymLEiiSAv844MmgrhpJ13X1JYFMLvl0MFWAOh2jcjR12I96RG7xTWWb/1f9lFty3UbgQArezEauA0IWRXCpGWRWByhuXvIGAXTjdXelE2DA2MqcgE0leDJ0jVwtCEHhpLsE38YVFFD8BS3U3fIZ2uQnKtMi7scLKA+GcZo+JzQNFz1D8iP55wZfrNxc90oncHRfHR96XGXvPckeNJjzsspleg1UitvJ6j8mrIjXBbsXslvXx8Xm/d+2UdKcsYFg6/Wwzy+q25FkpB/v3HICAGQzY8Rqqpngn2fg1fBGS8PCJQjxN6wDj/pEUsBOeAqwNYeefSLOhVO1cQNOY/C6jMHuMM=
