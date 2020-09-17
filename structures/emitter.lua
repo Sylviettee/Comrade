@@ -17,7 +17,7 @@ local new
 new = function(self, name, listener)
   local listeners = self.listeners[name]
   if not (listeners) then
-    listeners = {}
+    listeners = { }
     self.listeners[name] = listeners
   end
   insert(listeners, listener)
@@ -26,37 +26,66 @@ end
 do
   local _class_0
   local _base_0 = {
-    on = function(self, name, fn) return new(self, name, {fn = fn}) end,
-    once = function(self, name, fn) return new(self, name, {fn = fn, once = true}) end,
+    on = function(self, name, fn)
+      return new(self, name, {
+        fn = fn
+      })
+    end,
+    once = function(self, name, fn)
+      return new(self, name, {
+        fn = fn,
+        once = true
+      })
+    end,
     emit = function(self, name, ...)
       local listeners = self.listeners[name]
-      if not (listeners) then return end
+      if not (listeners) then
+        return 
+      end
       for i = 1, #listeners do
         local listener = listeners[i]
         if listener then
           local fn = listener.fn
-          if listener.once then listeners[i] = false end
+          if listener.once then
+            listeners[i] = false
+          end
           wrap(fn)(...)
         end
       end
       if listeners.removed then
-        for i = #listeners, 1, -1 do if not (listeners[i]) then remove(listeners, i) end end
-        if #listeners == 0 then self.listeners[name] = nil end
+        for i = #listeners, 1, -1 do
+          if not (listeners[i]) then
+            remove(listeners, i)
+          end
+        end
+        if #listeners == 0 then
+          self.listeners[name] = nil
+        end
         listeners.removed = nil
       end
     end,
     removeListener = function(self, name, fn)
       local listeners = self.listeners[name]
-      if not (listeners) then return end
-      for i, listener in ipairs(listeners) do if listener and listener.fn == fn then listeners[i] = false end end
+      if not (listeners) then
+        return 
+      end
+      for i, listener in ipairs(listeners) do
+        if listener and listener.fn == fn then
+          listeners[i] = false
+        end
+      end
       listeners.removed = true
     end,
     waitFor = function(self, name, timeout, predicate)
       local fn
       local thread = running()
       fn = self:on(name, function(...)
-        if predicate and not predicate(...) then return end
-        if timeout then clearTimeout(timeout) end
+        if predicate and not predicate(...) then
+          return 
+        end
+        if timeout then
+          clearTimeout(timeout)
+        end
         self:removeListener(name, fn)
         return assert(resume(thread, true, ...))
       end)
@@ -68,7 +97,13 @@ do
     end
   }
   _base_0.__index = _base_0
-  _class_0 = setmetatable({__init = function(self) self.listeners = {} end, __base = _base_0, __name = nil}, {
+  _class_0 = setmetatable({
+    __init = function(self)
+      self.listeners = { }
+    end,
+    __base = _base_0,
+    __name = nil
+  }, {
     __index = _base_0,
     __call = function(cls, ...)
       local _self_0 = setmetatable({}, _base_0)

@@ -5,8 +5,12 @@ do
   local _class_0
   local _parent_0 = Command
   local _base_0 = {
-    subcommand = function(self, msg, args, client) return msg:reply('Subcommand!') end,
-    execute = function(self, msg, args, client) return self:help(msg.channel) end
+    subcommand = function(self, msg, args, client)
+      return msg:reply('Subcommand!')
+    end,
+    execute = function(self, msg, args, client)
+      return self:help(msg.channel)
+    end
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
@@ -14,8 +18,12 @@ do
     __init = function(self)
       _class_0.__parent.__init(self)
       self.name = ''
-      self.aliases = {''}
-      self.permissions = {''}
+      self.aliases = {
+        ''
+      }
+      self.permissions = {
+        ''
+      }
       self.hidden = false
       self.allowDMS = false
       self.cooldown = 3000
@@ -24,14 +32,16 @@ do
       self.example = ''
     end,
     __base = _base_0,
-    __name = 'commandname',
+    __name = "commandname",
     __parent = _parent_0
   }, {
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        local parent = rawget(cls, '__parent')
-        if parent then return parent[name] end
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end
@@ -43,7 +53,9 @@ do
     end
   })
   _base_0.__class = _class_0
-  if _parent_0.__inherited then _parent_0.__inherited(_parent_0, _class_0) end
+  if _parent_0.__inherited then
+    _parent_0.__inherited(_parent_0, _class_0)
+  end
   commandname = _class_0
 end
 return commandname()

@@ -4,9 +4,13 @@ do
   local _class_0
   local _base_0 = {
     run = function(self, env)
-      if env == nil then env = {} end
+      if env == nil then
+        env = { }
+      end
       local funcEnv = getfenv(self.fn)
-      for i, v in pairs(env) do funcEnv[i] = v end
+      for i, v in pairs(env) do
+        funcEnv[i] = v
+      end
       local succ, err = pcall(self.fn)
       return logger.test(self.name, not succ and err)
     end
@@ -19,7 +23,7 @@ do
       self.fn = fn
     end,
     __base = _base_0,
-    __name = 'It'
+    __name = "It"
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -36,11 +40,15 @@ do
   local _class_0
   local _base_0 = {
     run = function(self, env)
-      if env == nil then env = {} end
-      if not (self.canLoad) then return end
+      if env == nil then
+        env = { }
+      end
+      if not (self.canLoad) then
+        return 
+      end
       for _, v in pairs(self.cases) do
         table.insert(self.out, v:run(env))
-        collectgarbage('collect')
+        collectgarbage("collect")
       end
       return print(table.concat(self.out, '\n'))
     end
@@ -49,19 +57,25 @@ do
   _class_0 = setmetatable({
     __init = function(self, test, fn)
       self.name = test
-      self.cases = {}
-      self.out = {}
+      self.cases = { }
+      self.out = { }
       self.canLoad = true
       local env = getfenv(fn)
-      env.it = function(name, fn) return table.insert(self.cases, It(self, name, fn)) end
-      env.depend = function(name) return require(name) end
+      env.it = function(name, fn)
+        return table.insert(self.cases, It(self, name, fn))
+      end
+      env.depend = function(name)
+        return require(name)
+      end
       local succ, err = pcall(fn)
       self.canLoad = succ
       table.insert(self.out, logger.case(test))
-      if not (self.canLoad) then return table.insert(self.out, logger.test('Load tests', err)) end
+      if not (self.canLoad) then
+        return table.insert(self.out, logger.test('Load tests', err))
+      end
     end,
     __base = _base_0,
-    __name = 'Describe'
+    __name = "Describe"
   }, {
     __index = _base_0,
     __call = function(cls, ...)

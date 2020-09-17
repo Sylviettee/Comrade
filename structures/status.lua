@@ -11,25 +11,40 @@ do
   local _parent_0 = command
   local _base_0 = {
     execute = function(self, msg, _, client)
-      local commands = {}
+      local commands = { }
       client.commands:forEach(function(command)
-        commands[command.name] = {errors = command.errors, tested = command.tested}
+        commands[command.name] = {
+          errors = command.errors,
+          tested = command.tested
+        }
       end)
       local content = tabular({
-        ['Cache'] = {['Guilds'] = #client.guilds, ['Users'] = #client.users, ['Dms'] = #client.privateChannels},
+        ['Cache'] = {
+          ['Guilds'] = #client.guilds,
+          ['Users'] = #client.users,
+          ['Dms'] = #client.privateChannels
+        },
         ['Commands'] = commands,
-        ['Memory Usage'] = tostring(math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100) .. ' MB'
+        ['Memory Usage'] = tostring(math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100) .. " MB"
       })
       if #content < 1990 then
-        return msg:reply('```\n' .. tostring(content) .. '```')
+        return msg:reply("```\n" .. tostring(content) .. "```")
       else
         local res
-        _, res = request('POST', tostring(haste) .. 'documents',
-                         {{'Content-Type', 'text/plain'}, {'Content-Length', #content}}, content)
+        _, res = request('POST', tostring(haste) .. "documents", {
+          {
+            'Content-Type',
+            'text/plain'
+          },
+          {
+            'Content-Length',
+            #content
+          }
+        }, content)
         local body = parse(res)
         local key
         key = body.key
-        return msg:reply('Content too large;\nPlease see: ' .. tostring(haste) .. tostring(key) .. '.txt')
+        return msg:reply("Content too large;\nPlease see: " .. tostring(haste) .. tostring(key) .. ".txt")
       end
     end
   }
@@ -44,14 +59,16 @@ do
       self.hidden = true
     end,
     __base = _base_0,
-    __name = 'status',
+    __name = "status",
     __parent = _parent_0
   }, {
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        local parent = rawget(cls, '__parent')
-        if parent then return parent[name] end
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end
@@ -63,7 +80,9 @@ do
     end
   })
   _base_0.__class = _class_0
-  if _parent_0.__inherited then _parent_0.__inherited(_parent_0, _class_0) end
+  if _parent_0.__inherited then
+    _parent_0.__inherited(_parent_0, _class_0)
+  end
   status = _class_0
 end
 return status()

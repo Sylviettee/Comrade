@@ -2,6 +2,7 @@ do
   local _class_0
   local _base_0 = {
     use = function(self, client)
+      self.client = client
       if not (self.once) then
         return client:on(self.name, self.execute)
       else

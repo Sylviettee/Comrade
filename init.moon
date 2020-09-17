@@ -48,6 +48,9 @@ require('./helpers/extensions') !
   --- @see Template
   Template: require './structures/template'
 
+  --- @see Emitter
+  Emitter: require './structures/emitter'
+
   -- Faker
 
   faker: require './faker'
@@ -71,6 +74,10 @@ require('./helpers/extensions') !
 
   --- @see color
   color: require './constants/color' --- color
+
+  tabular: require './libs/tabular'
+
+  lustache: require './libs/lustache'
 
   --- @see lua
   lua: require './lua' --- lua

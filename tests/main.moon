@@ -1,6 +1,8 @@
 import Client, faker, dotenv from require '../init'
 
-dotenv.config!
+
+unless process.env.TOKEN -- If they are already added we don't need to check for an env
+  dotenv.config!
 
 prefix = '='
 

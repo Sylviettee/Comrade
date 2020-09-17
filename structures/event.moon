@@ -12,6 +12,7 @@ class
   --- Use the event, takes in a client object
   -- @tparam client client The client your going to listen on
   use: (client) =>
+    @client = client
     unless @once
       client\on @name, @execute
     else

@@ -10,55 +10,98 @@ do
     help = function(self, channel)
       if not (self.formatted) then
         local formatted = ''
-        if type(self.example) == 'string' then self.example = {self.example} end
-        for i, v in pairs(self.example) do formatted = formatted .. tostring(i) .. '. ' .. tostring(v) .. '\n' end
+        if type(self.example) == 'string' then
+          self.example = {
+            self.example
+          }
+        end
+        for i, v in pairs(self.example) do
+          formatted = formatted .. tostring(i) .. ". " .. tostring(v) .. "\n"
+        end
         self.formatted = formatted
       end
-      local helpEmbed = embed():setTitle('Help'):addFields({'Description', self.description}, {
-        'Aliases', (table.concat(self.aliases, ', ') == '' and 'None') or
-            (table.concat(self.aliases, ', ') ~= '' and table.concat(self.aliases, ', '))
+      local helpEmbed = embed():setTitle('Help'):addFields({
+        'Description',
+        self.description
       }, {
-        'Subcommands', (table.concatIndex(self.subcommands, ', ') == '' and 'None') or
-            (table.concatIndex(self.subcommands, ', ') ~= '' and table.concatIndex(self.subcommands, ', '))
-      }, {'Usage', self.usage}, {'Example', self.formatted})
+        'Aliases',
+        (table.concat(self.aliases, ', ') == '' and 'None') or (table.concat(self.aliases, ', ') ~= '' and table.concat(self.aliases, ', '))
+      }, {
+        'Subcommands',
+        (table.concatIndex(self.subcommands, ', ') == '' and 'None') or (table.concatIndex(self.subcommands, ', ') ~= '' and table.concatIndex(self.subcommands, ', '))
+      }, {
+        'Usage',
+        self.usage
+      }, {
+        'Example',
+        self.formatted
+      })
       return helpEmbed:send(channel)
     end,
     pre = function(self)
       assert(self.name, 'No name found')
       assert(self.execute, 'No execute command found')
-      self.aliases = {}
-      self.permissions = {}
-      self.subcommands = {}
-      self.cooldowns = {}
-      self.errors = {}
-      self.tested = {}
+      self.aliases = { }
+      self.permissions = { }
+      self.subcommands = { }
+      self.cooldowns = { }
+      self.errors = { }
+      self.tested = { }
       self.allowDMS = false
       self.hidden = false
       self.description = 'None'
       self.usage = tostring(self.name)
-      self.example = {tostring(self.name)}
-      local ignore = {'pre', 'new', 'check', 'run', 'execute'}
+      self.example = {
+        tostring(self.name)
+      }
+      local ignore = {
+        'pre',
+        'new',
+        'check',
+        'run',
+        'execute'
+      }
       for i, v in pairs(self.__class.__base) do
-        if type(v) == 'function' then if not (table.search(ignore, i)) then self.subcommands[i] = v end end
+        if type(v) == 'function' then
+          if not (table.search(ignore, i)) then
+            self.subcommands[i] = v
+          end
+        end
       end
-      if #self.permissions > 0 then self.allowDMS = false end
+      if #self.permissions > 0 then
+        self.allowDMS = false
+      end
     end,
     check = function(self, command, msg, client)
       local isValid = command:lower() == self.name or table.search(self.aliases, command:lower())
-      if not (isValid) then return false end
+      if not (isValid) then
+        return false
+      end
       isValid = not (self.allowDMS and msg.channel.type == 1)
-      if not (isValid) then return false end
-      if self.hidden then if not (table.search(client.owners, msg.author.id)) then return false end end
-      if not (self.allowDMS) then isValid = util.checkPerm(msg.member, msg.channel, self.permissions) end
-      if not (isValid) then return false end
+      if not (isValid) then
+        return false
+      end
+      if self.hidden then
+        if not (table.search(client.owners, msg.author.id)) then
+          return false
+        end
+      end
+      if not (self.allowDMS) then
+        isValid = util.checkPerm(msg.member, msg.channel, self.permissions)
+      end
+      if not (isValid) then
+        return false
+      end
       if self.cooldown then
         if self.cooldowns[msg.author.id] then
           local secondsLeft = self.cooldown - (self.cooldowns[msg.author.id] - Date()):toMilliseconds()
-          msg:reply('You are on cooldown, ' .. tostring(util.formatLong(secondsLeft)) .. ' left.')
+          msg:reply("You are on cooldown, " .. tostring(util.formatLong(secondsLeft)) .. " left.")
           return false
         else
           self.cooldowns[msg.author.id] = Date()
-          setTimeout(self.cooldown, function() self.cooldowns[msg.author.id] = false end)
+          setTimeout(self.cooldown, function()
+            self.cooldowns[msg.author.id] = false
+          end)
         end
       end
       return isValid
@@ -75,8 +118,10 @@ do
           succ, err = pcall(self.execute, self, msg, args, client)
         end
         if not (succ) then
-          client:error('Command error: ' .. tostring(err))
-          if not (self.errors[ran]) then self.errors[ran] = {} end
+          client:error("Command error: " .. tostring(err))
+          if not (self.errors[ran]) then
+            self.errors[ran] = { }
+          end
           table.insert(self.errors[ran], err)
         end
         self.tested[ran] = true
