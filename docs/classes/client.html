@@ -13,23 +13,6 @@
 </head>
 <body>
 
-  <div class="p-navigation">
-    <div class="p-navigation__row">
-      <nav class="p-navigation__nav">
-        <ul class="p-navigation__items">
-          <li class="navigation__item">
-            <a href="../index.html" class="navigation__link">Home</a>
-          </li>
-        </ul>
-
-        <form class="p-search-box">
-          <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="">
-          <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close"></i></button>
-          <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
-        </form>
-      </nav>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-3">
@@ -54,14 +37,6 @@
               <h3>Classes</h3>
 
               <ul>
-
-                  <li>
-                    <a href="../classes/prompt.html">
-                      prompt
-                    </a>
-
-
-                  </li>
 
                   <li>
                     <a href="../classes/Array.html">
@@ -152,6 +127,14 @@
                   </li>
 
                   <li>
+                    <a href="../classes/prompt.html">
+                      prompt
+                    </a>
+
+
+                  </li>
+
+                  <li>
                     <a href="../classes/status.html">
                       status
                     </a>
@@ -176,22 +159,6 @@
                   </li>
 
                   <li>
-                    <a href="../modules/logger.html">
-                      logger
-                    </a>
-
-
-                  </li>
-
-                  <li>
-                    <a href="../modules/util.html">
-                      util
-                    </a>
-
-
-                  </li>
-
-                  <li>
                     <a href="../modules/helper.html">
                       helper
                     </a>
@@ -200,8 +167,24 @@
                   </li>
 
                   <li>
+                    <a href="../modules/logger.html">
+                      logger
+                    </a>
+
+
+                  </li>
+
+                  <li>
                     <a href="../modules/lua.html">
                       lua
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/util.html">
+                      util
                     </a>
 
 
@@ -216,8 +199,8 @@
               <ul>
 
                   <li>
-                    <a href="../topics/readme.md.html">
-                      readme
+                    <a href="../topics/simple.md.html">
+                      Simple bot
                     </a>
 
 
@@ -280,7 +263,9 @@
         </h1>
 
         <p> The helper client, extends a Discordia client </p>
-        <p>  </p>
+        <p>
+
+ </p>
 
 
 
@@ -457,7 +442,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The Discord bot token
+                                 The Discord bot token
 
 
 
@@ -472,7 +457,7 @@
                                   <span><a class="type" href="../classes/client.html#client.config">config</a></span>
 
 
-                                The configuration of the client
+                                 The configuration of the client
 
 
                                   <em>default</em> {}
@@ -518,6 +503,8 @@
                                 <span>status</span>
 
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
 
 
 
@@ -594,6 +581,8 @@
 
 
 
+
+
                               </li>
 
 
@@ -633,6 +622,8 @@
                                 <span>command</span>
 
                                   <span><a class="type" href="../classes/command.html#">command</a></span>
+
+
 
 
 
@@ -695,6 +686,8 @@
 
 
 
+
+
                               </li>
 
 
@@ -703,6 +696,8 @@
                                 <span>check</span>
 
                                   <span>optional <span class="type">function</span></span>
+
+
 
 
 
@@ -749,6 +744,8 @@
                                 <span>event</span>
 
                                   <span><a class="type" href="../classes/event.html#">event</a></span>
+
+
 
 
 
@@ -811,6 +808,8 @@
 
 
 
+
+
                               </li>
 
 
@@ -819,6 +818,8 @@
                                 <span>check</span>
 
                                   <span>optional <span class="type">function</span></span>
+
+
 
 
 
@@ -865,6 +866,8 @@
                                 <span>name</span>
 
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
 
 
 
@@ -927,7 +930,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The prefix the bot will use
+                                 The prefix the bot will use
 
 
                                   <em>default</em> '!'
@@ -944,7 +947,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Whether to use the default help or not
+                                 Whether to use the default help or not
 
 
                                   <em>default</em> true
@@ -961,7 +964,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
-                                The owners of this bot
+                                 The owners of this bot
 
 
                                   <em>default</em> {}
@@ -978,7 +981,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Weather the bot is in testing or not
+                                 Weather the bot is in testing or not
 
 
                                   <em>default</em> false
@@ -995,7 +998,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Weather this current bot is a test bot
+                                 Weather this current bot is a test bot
 
 
                                   <em>default</em> false
@@ -1012,7 +1015,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The bot testing this current bot
+                                 The bot testing this current bot
 
 
                                   <em>default</em> nil
@@ -1029,7 +1032,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Weather to store error information within a table
+                                 Weather to store error information within a table
 
 
                                   <em>default</em> false
@@ -1046,7 +1049,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Weather to disable the default command handler (Usually for custom prefixes)
+                                 Weather to disable the default command handler (Usually for custom prefixes)
 
 
                                   <em>default</em> false
@@ -1063,7 +1066,7 @@
                                   <span><span class="type">number</span></span>
 
 
-                                Minimum time in milliseconds to wait between HTTP requests per-route
+                                 Minimum time in milliseconds to wait between HTTP requests per-route
 
 
                                   <em>default</em> 300
@@ -1080,7 +1083,7 @@
                                   <span><span class="type">number</span></span>
 
 
-                                The maximum number of retries to attempt after an HTTP request fails
+                                 The maximum number of retries to attempt after an HTTP request fails
 
 
                                   <em>default</em> 5
@@ -1097,7 +1100,7 @@
                                   <span><span class="type">number</span></span>
 
 
-                                The total number of shards the application is using (0 signals to use the recommended count)
+                                 The total number of shards the application is using (0 signals to use the recommended count)
 
 
                                   <em>default</em> 0
@@ -1114,7 +1117,7 @@
                                   <span><span class="type">number</span></span>
 
 
-                                The ID of the first shard to run on the client (0 is the minimum)
+                                 The ID of the first shard to run on the client (0 is the minimum)
 
 
                                   <em>default</em> 0
@@ -1131,7 +1134,7 @@
                                   <span><span class="type">number</span></span>
 
 
-                                The ID of the last shard to run on the client (-1 signals to use shardCount - 1)
+                                 The ID of the last shard to run on the client (-1 signals to use shardCount - 1)
 
 
                                   <em>default</em> -1
@@ -1148,7 +1151,7 @@
                                   <span><span class="type">number</span></span>
 
 
-                                Limit to how many members are initially fetched per-guild on start-up
+                                 Limit to how many members are initially fetched per-guild on start-up
 
 
                                   <em>default</em> 100
@@ -1165,7 +1168,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Whether to cache all members (If false, offline members may not be cached)
+                                 Whether to cache all members (If false, offline members may not be cached)
 
 
                                   <em>default</em> false
@@ -1182,7 +1185,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Whether to attempt to reconnect after an unexpected gateway disconnection
+                                 Whether to attempt to reconnect after an unexpected gateway disconnection
 
 
                                   <em>default</em> true
@@ -1199,7 +1202,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Whether to allow for compressed gateway payloads
+                                 Whether to allow for compressed gateway payloads
 
 
                                   <em>default</em> true
@@ -1216,7 +1219,7 @@
                                   <span><span class="type">number</span></span>
 
 
-                                The default bitrate to use for voice connections, from 8000 to 128000
+                                 The default bitrate to use for voice connections, from 8000 to 128000
 
 
                                   <em>default</em> 64000
@@ -1233,7 +1236,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The file to use for logging
+                                 The file to use for logging
 
 
                                   <em>default</em> 'discordia.log'
@@ -1250,7 +1253,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The level to use for logging (see Enumerations)
+                                 The level to use for logging (see Enumerations)
 
 
                                   <em>default</em> logLevel.info
@@ -1267,7 +1270,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The date and time format to use logging
+                                 The date and time format to use logging
 
 
                                   <em>default</em> '%F %T'
@@ -1284,7 +1287,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                Whether to automatically sync all guilds on start up (user-accounts only)
+                                 Whether to automatically sync all guilds on start up (user-accounts only)
 
 
                                   <em>default</em> false

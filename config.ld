@@ -1,10 +1,16 @@
 project = 'Comrade'
-title = 'Comrade Documentation'
 description = 'A Discord bot framework build on Discordia'
+title = 'Comrade Documentation'
+
+dir='docs'
+topics = 'topics'
+
 format = 'lunamark'
 pretty = 'lxsh'
-readme = 'readme.md'
-dir='docs'
+
+sort_modules=true
+use_markdown_titles = true
+
 examples = {
   './examples/command.moon',
   './examples/embeds.moon',

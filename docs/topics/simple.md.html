@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
+
+  <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+
+  <title>Comrade</title>
+</head>
+<body>
+
+
+  <div class="row">
+    <div class="col-3">
+      <div class="p-side-navigation--raw-html">
+
+        <ul>
+          <h2> Comrade </h2>
+
+            <ul>
+              <li>
+                <a href="../index.html">
+                  Index
+                </a>
+              </li>
+            </ul>
+
+
+
+
+
+
+              <h3>Topics</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../topics/simple.md.html">
+                      Simple bot
+                    </a>
+
+
+                      <ul>
+
+                          <li>
+                            <a href="#Setup">
+                              Setup
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#Installation">
+                              Installation
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#Starting_up">
+                              Starting up
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#First_command">
+                              First command
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#Client_options">
+                              Client options
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#First_plugin">
+                              First plugin
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#Resources">
+                              Resources
+                            </a>
+                          </li>
+
+                      </ul>
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Modules</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../modules/dotenv.html">
+                      dotenv
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/helper.html">
+                      helper
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/logger.html">
+                      logger
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/lua.html">
+                      lua
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/util.html">
+                      util
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Classes</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../classes/Array.html">
+                      Array
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/client.html">
+                      client
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/command.html">
+                      command
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/embed.html">
+                      embed
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/emitter.html">
+                      emitter
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/event.html">
+                      event
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/help.html">
+                      help
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/luaCommand.html">
+                      luaCommand
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/plugin.html">
+                      plugin
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/prompt.html">
+                      prompt
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/status.html">
+                      status
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Examples</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../examples/command.moon.html">
+                      command.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../examples/embeds.moon.html">
+                      embeds.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../examples/event.moon.html">
+                      event.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../examples/plugin.moon.html">
+                      plugin.moon
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+        </ul>
+
+      </div>
+    </div>
+    <div class="col-9">
+
+
+<h1>Simple bot</h1>
+
+<blockquote>
+    <p>Comrade is a lightweight, safe framework built with MoonScript. </p>
+</blockquote>
+
+<p>Today we are going to make a simple Discord bot with Comrade and Discordia.</p>
+
+<p><a name="Setup"></a></p>
+<h2>Setup</h2>
+
+<p>Before we can even start programming we need to get a bot token. </p>
+
+<p>Go to <a href="https://discord.com/developers">discord.com/developers</a> and create a new application by clicking the <code>New Application</code> button.</p>
+
+<p>Give it a good name like <code>Fun Bot</code>. Now go navigate to the tab named <code>Bot</code> then click <code>Add Bot</code>. Make sure you confirm with <code>Yes, do it!</code></p>
+
+<p>Now you should see <code>TOKEN</code> and under it <code>Copy</code>. Click the copy button and write it down somewhere.</p>
+
+<p><a name="Installation"></a></p>
+<h2>Installation</h2>
+
+<h3>Luvit</h3>
+
+<p>You are going to need <a href="http://luvit.io/install.html">Luvit</a>. </p>
+
+<p>Now you need to add it to your path.</p>
+
+<h4>On Windows</h4>
+
+<p>These are the steps to add Luvit (that is luvit, luvi, lit) to your system PATH on Windows. I recommend you follw this <a href="https://bit.ly/2QfZ8Ii">general guide</a>.</p>
+
+<h4>On Unix based systems</h4>
+
+<p>Lets say you installed it at ~/luvit/</p>
+
+<p>You can just do in your shell. You can also put it in your <code>.profile</code></p>
+
+<pre>
+export PATH=<span class="hljs-string">"$HOME/luvit/:$PATH"</span>
+</pre>
+
+
+<p>If you added it to your <code>.profile</code></p>
+
+<pre>
+source ~/.profile
+</pre>
+
+
+<h3>Git</h3>
+
+<p>Another thing you are going to need is <a href="https://git-scm.com/">git</a>.</p>
+
+<h4>On Windows</h4>
+
+<p>If you use windows then you want to use <a href="https://gitforwindows.org/">git bash</a></p>
+
+<p>Run it and install it. You can use this terminal instead of the command prompt.</p>
+
+<h4>On Unix based systems</h4>
+
+<p>If you are on a Unix based system then follow the instructions on the <a href="https://git-scm.com/download/linux">download page</a></p>
+
+<h3>Comrade</h3>
+
+<p>Now you need to install Comrade. This is mostly done with a git submodule. You can also git clone it into a directory.</p>
+
+<p>Make a new folder and open it in something like Visual Studio Code. If you are using Visual Studio Code you can press control + shift + `</p>
+
+<p>This brings up the terminal, now with the terminal open you want to type <code>git init</code>. You want to now run <code>lit install SinisterRectus/discordia</code>. This installs discordia which Comrade depends on. Once that is done you can run <code>git submodule add https://github.com/comrade-project/Comrade.git deps/Comrade</code>. Now you should see some new files. These new files should be <code>.gitmodules</code> and a folder in deps called Comrade.</p>
+
+<p><a name="Starting_up"></a></p>
+<h2>Starting up</h2>
+
+<p>Now we can create a new file called <code>main.lua</code> and <code>.env</code>. Make sure that these files don't have <code>.txt</code> at the end or something.</p>
+
+<p>In <code>.env</code> we have</p>
+
+<pre>
+TOKEN=&lt;Your bot token&gt;
+</pre>
+
+<p>Make sure you replace <code>&lt;Your bot token&gt;</code> with your actual bot token we got from <a href="#setup">setup</a></p>
+
+<p>In our <code>main.lua</code> we can have</p>
+
+<pre>
+<span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> client, dotenv = comrade.Client, comrade.dotenv <span class="hljs-comment">-- Import what we need from the module
+</span>
+dotenv.config() <span class="hljs-comment">-- Load our .env
+</span>
+<span class="hljs-keyword">local</span> bot = client(process.env.TOKEN) <span class="hljs-comment">-- Create a client
+</span>
+bot:login() <span class="hljs-comment">-- Log into Discord</span>
+</pre>
+
+
+<p>If we run it we should get 2 files generated. A <code>discordia.log</code> and a <code>gateway.json</code>. Around about now we should create a <code>.gitignore</code></p>
+
+<p>This file prevents us from committing our private data. </p>
+
+
+<pre>
+*.log
+*.env
+gateway.json
+</pre>
+
+
+<p>In Visual Studio Code you should see these items go gray. This means that its ignored.</p>
+
+<p><a name="First_command"></a></p>
+<h2>First command</h2>
+
+<p>Now we want some functionality from this bot. We do with with a command.</p>
+
+
+<pre>
+<span class="hljs-comment">-- command.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> command = comrade.LuaCommand <span class="hljs-comment">-- The Lua helper
+</span>
+<span class="hljs-keyword">local</span> comm = command <span class="hljs-string">'example'</span> <span class="hljs-comment">-- Create a command named example
+</span>
+<span class="hljs-keyword">function</span> comm:execute(msg) <span class="hljs-comment">-- Create our executer function
+</span>  msg:reply <span class="hljs-string">'Some command'</span> <span class="hljs-comment">-- When its called reply with Some command
+</span><span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">return</span> comm:make() <span class="hljs-comment">-- Generate a readable command</span>
+</pre>
+
+
+<p>A lot of it is boilerplate and all you really need is the execute function. If you want to know more about this you can check out the <a href="https://comrade-project.github.io/Comrade/classes/command.html">Command</a> class.</p>
+
+<p>Now in our <code>main.lua</code> we can import it.</p>
+
+
+<pre>
+<span class="hljs-comment">-- main.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> client, dotenv = comrade.Client, comrade.dotenv <span class="hljs-comment">-- Import what we need from the module
+</span>
+dotenv.config() <span class="hljs-comment">-- Load our .env
+</span>
+<span class="hljs-keyword">local</span> bot = client(process.env.TOKEN) <span class="hljs-comment">-- Create a client
+</span>
+bot:addCommand(<span class="hljs-global">require</span> <span class="hljs-string">'./command'</span>()) <span class="hljs-comment">-- Add the command to the bot
+</span>
+bot:login() <span class="hljs-comment">-- Log into Discord</span>
+</pre>
+
+
+<p>Now we can go into a server with the bot. If we type <code>!help</code> we should see</p>
+<pre><code> example, help
+</code></pre>
+
+
+<p>Now run <code>!example</code> and you should see <code>Some command</code>.</p>
+
+<p>If this all went to plan you have made your first command!</p>
+
+<p><a name="Client_options"></a></p>
+<h2>Client options</h2>
+
+<p>You probably want to change the prefix and some other things.</p>
+
+<p>This is done with a client config, here is some self explanatory code.</p>
+
+
+<pre>
+<span class="hljs-keyword">local</span> bot = client(process.env.TOKEN, {
+  prefix = <span class="hljs-string">'!'</span>, <span class="hljs-comment">-- The prefix which the bot will respond to
+</span>  defaultHelp = <span class="hljs-keyword">true</span>, <span class="hljs-comment">-- To have the default help command loaded
+</span>  owners = {}, <span class="hljs-comment">-- People who have complete control of the bot
+</span>  testing = <span class="hljs-keyword">false</span>, <span class="hljs-comment">-- If the bot is in testing mode or not
+</span>  testbot = <span class="hljs-keyword">false</span>, <span class="hljs-comment">-- If the current bot is a test bot
+</span>  botid = <span class="hljs-keyword">nil</span>, <span class="hljs-comment">-- The test bot id
+</span>  storeErrors = <span class="hljs-keyword">false</span>, <span class="hljs-comment">-- To store errors in a table
+</span>  disableDefaultCH = <span class="hljs-keyword">false</span>, <span class="hljs-comment">-- To disable the default command handler, mostly for custom prefixes
+</span>  <span class="hljs-comment">-- Rest are from https://github.com/SinisterRectus/Discordia/wiki/Client-options
+</span>})
+</pre>
+
+
+<p><a name="First_plugin"></a></p>
+<h2>First plugin</h2>
+
+<p>A plugin is a collection of events and commands. For example a plugin used in little commander is a welcoming plugin.</p>
+
+<p>In lua, currently its not so pretty.</p>
+
+
+<pre>
+<span class="hljs-comment">-- plugin.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> plugin, lua = comrade.Plugin, comrade.lua <span class="hljs-comment">-- Import what we need
+</span>
+<span class="hljs-keyword">return</span> lua.class(<span class="hljs-string">'name'</span>, {}, plugin, <span class="hljs-keyword">function</span>(self) <span class="hljs-comment">-- Create our plugin
+</span>  self:super(self, <span class="hljs-string">'new'</span>) <span class="hljs-comment">-- Super it
+</span>
+  lua.class(<span class="hljs-string">'example'</span>, { <span class="hljs-comment">-- Create our command
+</span>    execute = <span class="hljs-keyword">function</span>(_,msg, args) <span class="hljs-comment">-- We drop first argument as its self
+</span>      msg:reply <span class="hljs-string">'Some command'</span>
+    <span class="hljs-keyword">end</span>
+  }, self.command, <span class="hljs-keyword">function</span>(self) <span class="hljs-comment">-- Our setup function
+</span>    self:super(self,<span class="hljs-string">'new'</span>)
+
+    <span class="hljs-comment">-- Command options
+</span>  <span class="hljs-keyword">end</span>)
+<span class="hljs-keyword">end</span>)
+</pre>
+
+
+<p>Now in our <code>main.lua</code> we comment out the loading of our command. Plugins are loaded differently to commands. Instead of telling the client to load it, we tell the plugin to load it.</p>
+
+
+<pre>
+<span class="hljs-comment">-- main.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> client, dotenv = comrade.Client, comrade.dotenv <span class="hljs-comment">-- Import what we need from the module
+</span>
+dotenv.config() <span class="hljs-comment">-- Load our .env
+</span>
+<span class="hljs-keyword">local</span> bot = client(process.env.TOKEN) <span class="hljs-comment">-- Create a client
+</span>
+<span class="hljs-comment">--bot:addCommand(require './command'()) -- Add the command to the bot
+</span>
+<span class="hljs-global">require</span> <span class="hljs-string">'./plugin'</span>:use(bot) <span class="hljs-comment">-- Load the plugin
+</span>
+bot:login() <span class="hljs-comment">-- Log into Discord</span>
+</pre>
+
+
+<p>Thats about it besides events. Next tutorial we will get more in depth with some of the classes.</p>
+
+<p><a name="Resources"></a></p>
+<h2>Resources</h2>
+
+<ul>
+    <li><a href="https://comrade-project.github.io/Comrade/index.html">Comrade</a></li>
+    <li><a href="https://github.com/SinisterRectus/Discordia/wiki">Discordia</a></li>
+    <li><a href="http://luvit.io/api/">Luvit</a></li>
+    <li><a href="https://www.lua.org/manual/5.1/">Lua</a></li>
+</ul>
+
+
+
+    </div>
+  </div>
+</body>
+</html>

@@ -13,23 +13,6 @@
 </head>
 <body>
 
-  <div class="p-navigation">
-    <div class="p-navigation__row">
-      <nav class="p-navigation__nav">
-        <ul class="p-navigation__items">
-          <li class="navigation__item">
-            <a href="../index.html" class="navigation__link">Home</a>
-          </li>
-        </ul>
-
-        <form class="p-search-box">
-          <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="">
-          <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close"></i></button>
-          <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
-        </form>
-      </nav>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-3">
@@ -54,14 +37,6 @@
               <h3>Classes</h3>
 
               <ul>
-
-                  <li>
-                    <a href="../classes/prompt.html">
-                      prompt
-                    </a>
-
-
-                  </li>
 
                   <li>
                     <a href="../classes/Array.html">
@@ -152,6 +127,14 @@
                   </li>
 
                   <li>
+                    <a href="../classes/prompt.html">
+                      prompt
+                    </a>
+
+
+                  </li>
+
+                  <li>
                     <a href="../classes/status.html">
                       status
                     </a>
@@ -176,22 +159,6 @@
                   </li>
 
                   <li>
-                    <a href="../modules/logger.html">
-                      logger
-                    </a>
-
-
-                  </li>
-
-                  <li>
-                    <a href="../modules/util.html">
-                      util
-                    </a>
-
-
-                  </li>
-
-                  <li>
                     <a href="../modules/helper.html">
                       helper
                     </a>
@@ -200,8 +167,24 @@
                   </li>
 
                   <li>
+                    <a href="../modules/logger.html">
+                      logger
+                    </a>
+
+
+                  </li>
+
+                  <li>
                     <a href="../modules/lua.html">
                       lua
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/util.html">
+                      util
                     </a>
 
 
@@ -216,8 +199,8 @@
               <ul>
 
                   <li>
-                    <a href="../topics/readme.md.html">
-                      readme
+                    <a href="../topics/simple.md.html">
+                      Simple bot
                     </a>
 
 
@@ -280,7 +263,9 @@
         </h1>
 
         <p> A embed helper class </p>
-        <p>  </p>
+        <p>
+
+ </p>
 
 
 
@@ -501,7 +486,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The name of the field
+                                 The name of the field
 
 
 
@@ -516,7 +501,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The value of the field
+                                 The value of the field
 
 
 
@@ -531,7 +516,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                If the field is inline
+                                 If the field is inline
 
 
                                   <em>default</em> false
@@ -593,7 +578,7 @@
                                   <span><a class="type" href="../classes/embed.html#embed.field">field</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The name of the field or an embed object
+                                 The name of the field or an embed object
 
 
 
@@ -608,7 +593,7 @@
                                   <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The value of the field, optional if name is field
+                                 The value of the field, optional if name is field
 
 
 
@@ -623,7 +608,7 @@
                                   <span><span class="type">boolean</span></span>
 
 
-                                If the field is inline
+                                 If the field is inline
 
 
                                   <em>default</em> false
@@ -645,6 +630,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -690,7 +677,7 @@
                                   <span><a class="type" href="../classes/embed.html#embed.field">{field,...}</a> or <span class="type">{name,value,inline}...</span></span>
 
 
-                                The fields to add, max 25
+                                 The fields to add, max 25
 
 
 
@@ -710,6 +697,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -755,7 +744,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The author name
+                                 The author name
 
 
 
@@ -770,7 +759,7 @@
                                   <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The icon of the author
+                                 The icon of the author
 
 
 
@@ -785,7 +774,7 @@
                                   <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The url of the author
+                                 The url of the author
 
 
 
@@ -805,6 +794,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -850,7 +841,7 @@
                                   <span><span class="type">hex</span></span>
 
 
-                                The color in hex eg 0xFFFFFF
+                                 The color in hex eg 0xFFFFFF
 
 
 
@@ -870,6 +861,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -915,7 +908,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The description of the embed
+                                 The description of the embed
 
 
 
@@ -935,6 +928,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -980,7 +975,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The footer text
+                                 The footer text
 
 
 
@@ -995,7 +990,7 @@
                                   <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The icon of the footer
+                                 The icon of the footer
 
 
 
@@ -1015,6 +1010,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -1060,7 +1057,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The image url of the embed
+                                 The image url of the embed
 
 
 
@@ -1080,6 +1077,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -1125,7 +1124,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The thumbnail url of the embed
+                                 The thumbnail url of the embed
 
 
 
@@ -1145,6 +1144,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -1190,7 +1191,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The timestamp in ISO 8601
+                                 The timestamp in ISO 8601
 
 
                                   <em>default</em> Date().toISO()
@@ -1212,6 +1213,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -1257,7 +1260,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The title of the embed
+                                 The title of the embed
 
 
 
@@ -1277,6 +1280,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -1322,7 +1327,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                The url of the embed
+                                 The url of the embed
 
 
 
@@ -1342,6 +1347,8 @@
 
 
                             <span><a class="type" href="../classes/embed.html#">embed</a></span>
+
+
 
 
 
@@ -1391,6 +1398,8 @@
 
 
 
+
+
                       </ol>
 
 
@@ -1429,7 +1438,7 @@
                                   <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
-                                The channel to send the embed into
+                                 The channel to send the embed into
 
 
 
