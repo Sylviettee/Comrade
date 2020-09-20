@@ -1,3 +1,8 @@
+# 1.2.2
+
+* Added blua, a better way to use MoonScript classes
+* Passed client to events
+
 # 1.2.1
 
 * Added option to disable command handler

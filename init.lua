@@ -25,5 +25,6 @@ return {
   color = require('./constants/color'),
   tabular = require('./libs/tabular'),
   lustache = require('./libs/lustache'),
-  lua = require('./lua')
+  lua = require('./lua'),
+  blua = require('./blua')
 }
