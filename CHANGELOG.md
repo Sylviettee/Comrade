@@ -2,6 +2,8 @@
 
 * Allowed templates to output another template
 * Allow prompts to render templates with the prompts current state
+* Allowed for the use of etlua of a renderer
+* Added docs for template
 
 # 1.2.2
 

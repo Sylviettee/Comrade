@@ -52,6 +52,16 @@
                     </a>
 
 
+                      <ul>
+
+                          <li>
+                            <a href="#Methods">
+                              Methods
+                            </a>
+                          </li>
+
+                      </ul>
+
                   </li>
 
                   <li>
@@ -91,16 +101,6 @@
                       event
                     </a>
 
-
-                      <ul>
-
-                          <li>
-                            <a href="#Methods">
-                              Methods
-                            </a>
-                          </li>
-
-                      </ul>
 
                   </li>
 
@@ -260,11 +260,11 @@
         <h1>
           Class
           <code>
-            event
+            Template
           </code>
         </h1>
 
-        <p> An event class, should be extended </p>
+        <p> A template for creating embeds and more templates </p>
         <p>
 
  </p>
@@ -287,12 +287,34 @@
 
                 <tr>
                   <td>
-                    <a href="#event\use">
-                      event\use (client)
+                    <a href="#Template\new">
+                      Template\new (start, useEtLua)
                     </a>
                   </td>
                   <td>
-                    Use the event, takes in a client object
+                    Create a new template
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#Template\render">
+                      Template\render (env)
+                    </a>
+                  </td>
+                  <td>
+                    Render the template into an embed
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <a href="#Template\construct">
+                      Template\construct (env)
+                    </a>
+                  </td>
+                  <td>
+                    Render the template into another template
                   </td>
                 </tr>
 
@@ -313,14 +335,14 @@
             <dl>
 
                 <dt>
-                  <a name="event\use"></a>
-                  <strong>event\use (client)</strong>
+                  <a name="Template\new"></a>
+                  <strong>Template\new (start, useEtLua)</strong>
 
 
                 </dt>
 
                 <dd>
-                  Use the event, takes in a client object
+                  Create a new template
 
 
 
@@ -332,12 +354,119 @@
                     <ul>
 
                               <li>
-                                <span>client</span>
+                                <span>start</span>
 
-                                  <span><a class="type" href="../classes/client.html#">client</a></span>
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
-                                 The client your going to listen on
+                                 The starting point of the embed
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>useEtLua</span>
+
+                                  <span><span class="type">boolean</span></span>
+
+
+                                 To use etlua as the renderer, mustache is the default renderer
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Template\render"></a>
+                  <strong>Template\render (env)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Render the template into an embed
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>env</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+                                 The table to pass to the renderer
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+
+                </dd>
+
+                <dt>
+                  <a name="Template\construct"></a>
+                  <strong>Template\construct (env)</strong>
+
+
+                </dt>
+
+                <dd>
+                  Render the template into another template
+
+
+
+
+
+                      <h3>Parameters: </h3>
+
+
+                    <ul>
+
+                              <li>
+                                <span>env</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+                                 The table to pass to the renderer
 
 
 

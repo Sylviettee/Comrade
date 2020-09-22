@@ -1,4 +1,5 @@
 local lustache = require('../libs/lustache')
+local etlua = require('../libs/etlua')
 local Embed = require('./embed')
 local deepScan
 deepScan = function(tbl, fn)
@@ -20,7 +21,7 @@ do
     render = function(self, env)
       local tbl = deepScan(self:toJSON(), function(val)
         if type(val) == 'string' then
-          return lustache:render(val, env)
+          return self:render(val, env)
         end
       end)
       return Embed(tbl)
@@ -28,7 +29,7 @@ do
     construct = function(self, env)
       local tbl = deepScan(self:toJSON(), function(val)
         if type(val) == 'string' then
-          return lustache:render(val, env)
+          return self:render(val, env)
         end
       end)
       return Template(tbl)
@@ -37,8 +38,17 @@ do
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
-    __init = function(self, start)
-      return _class_0.__parent.__init(self, start)
+    __init = function(self, start, useEtLua)
+      _class_0.__parent.__init(self, start)
+      if useEtLua then
+        self.render = function(self, ...)
+          return etlua.render(...)
+        end
+      else
+        self.render = function(self, ...)
+          return lustache:render(...)
+        end
+      end
     end,
     __base = _base_0,
     __name = "Template",
