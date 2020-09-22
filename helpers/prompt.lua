@@ -84,7 +84,13 @@ do
           return self:handle()
         elseif message ~= 'none' then
           if self.embed then
-            return message:send(self.channel)
+            if not (message.render) then
+              return message:send(self.channel)
+            else
+              return message:render({
+                prompt = self
+              }):send(self.channel)
+            end
           else
             return self.message:reply(message)
           end

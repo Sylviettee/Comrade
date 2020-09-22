@@ -132,7 +132,13 @@ class
       elseif message == 'now'
         @handle!
       elseif message ~= 'none'
-        message\send @channel if @embed else @message\reply message
+        if @embed 
+          unless message.render
+            message\send @channel
+          else
+            message\render({prompt: @})\send @channel
+        else 
+          @message\reply message
 
 --- Prompt global actions
 -- @param check A function that prompts the user to check their input data, to make data private prefix it with an underscore

@@ -1,3 +1,8 @@
+# 1.2.3
+
+* Allowed templates to output another template
+* Allow prompts to render templates with the prompts current state
+
 # 1.2.2
 
 * Added blua, a better way to use MoonScript classes

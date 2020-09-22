@@ -12,8 +12,7 @@ deepScan = (tbl, fn) ->
 
   clone
 
-class extends Embed
-  @__name = 'Template'
+class Template extends Embed
   new: (start) =>
     super start
   render: (env) =>
@@ -21,3 +20,8 @@ class extends Embed
       lustache\render val, env if type(val) == 'string'
 
     Embed tbl
+  construct: (env) =>
+    tbl = deepScan @toJSON!, (val) ->
+      lustache\render val, env if type(val) == 'string'
+    
+    Template tbl
