@@ -88,7 +88,11 @@ do
               return message:send(self.channel)
             else
               return message:render({
-                prompt = self
+                get = function(text, render)
+                  return render(self:get(text))
+                end,
+                step = self.step,
+                timeout = self.timeout
               }):send(self.channel)
             end
           else

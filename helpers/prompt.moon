@@ -136,7 +136,12 @@ class
           unless message.render
             message\send @channel
           else
-            message\render({prompt: @})\send @channel
+            message\render({
+              get: (text, render) ->
+                render @get text
+              step: @step
+              timeout: @timeout
+            })\send @channel
         else 
           @message\reply message
 
