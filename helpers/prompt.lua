@@ -97,11 +97,12 @@ do
                   return self:get(text)
                 end
               end
-              return message:render({
+              local rendered = message:render({
                 get = get,
                 step = self.step,
                 timeout = self.timeout
-              }):send(self.channel)
+              })
+              return rendred:send(self.channel)
             end
           else
             return self.message:reply(message)

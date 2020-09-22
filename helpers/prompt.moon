@@ -145,11 +145,13 @@ class
               get = (text) ->
                 @get text
             
-            message\render({
+            rendered = message\render({
               :get
               step: @step
               timeout: @timeout
-            })\send @channel
+            })
+
+            rendred\send @channel
         else 
           @message\reply message
 
