@@ -87,10 +87,18 @@ do
             if not (message.render) then
               return message:send(self.channel)
             else
-              return message:render({
+              local get
+              if not (message.usingEtLua) then
                 get = function(text, render)
                   return render(self:get(text))
-                end,
+                end
+              else
+                get = function(text)
+                  return self:get(text)
+                end
+              end
+              return message:render({
+                get = get,
                 step = self.step,
                 timeout = self.timeout
               }):send(self.channel)

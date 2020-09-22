@@ -19,33 +19,49 @@ do
   local _parent_0 = Embed
   local _base_0 = {
     render = function(self, env)
+      if env == nil then
+        env = { }
+      end
       local tbl = deepScan(self:toJSON(), function(val)
         if type(val) == 'string' then
-          return self:render(val, env)
+          return self:renderer(val, env)
         end
       end)
       return Embed(tbl)
     end,
-    construct = function(self, env)
+    construct = function(self, env, useEtLua)
+      if env == nil then
+        env = { }
+      end
+      if useEtLua == nil then
+        useEtLua = false
+      end
       local tbl = deepScan(self:toJSON(), function(val)
         if type(val) == 'string' then
-          return self:render(val, env)
+          return self:renderer(val, env)
         end
       end)
-      return Template(tbl)
+      return Template(tbl, useEtLua)
     end
   }
   _base_0.__index = _base_0
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
     __init = function(self, start, useEtLua)
+      if start == nil then
+        start = { }
+      end
+      if useEtLua == nil then
+        useEtLua = false
+      end
       _class_0.__parent.__init(self, start)
-      if useEtLua then
-        self.render = function(self, ...)
+      self.usingEtLua = useEtLua
+      if self.usingEtLua then
+        self.renderer = function(self, ...)
           return etlua.render(...)
         end
       else
-        self.render = function(self, ...)
+        self.renderer = function(self, ...)
           return lustache:render(...)
         end
       end

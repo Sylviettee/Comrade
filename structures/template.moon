@@ -19,27 +19,30 @@ deepScan = (tbl, fn) ->
 
 class Template extends Embed
   --- Create a new template
-  -- @tparam table start The starting point of the embed
-  -- @tparam boolean useEtLua To use etlua as the renderer, mustache is the default renderer
+  -- @tparam ?table start The starting point of the embed
+  -- @tparam ?boolean useEtLua To use etlua as the renderer, mustache is the default renderer
   new: (start = {}, useEtLua = false) =>
     super start
 
-    if useEtLua
-      @render = (...) => etlua.render ...
+    @usingEtLua = useEtLua
+
+    if @usingEtLua
+      @renderer = (...) => etlua.render ...
     else 
-      @render = (...) => lustache\render ...
+      @renderer = (...) => lustache\render ...
 
   --- Render the template into an embed
-  -- @tparam table env The table to pass to the renderer
-  render: (env) =>
+  -- @tparam ?table env The table to pass to the renderer
+  render: (env = {}) =>
     tbl = deepScan @toJSON!, (val) ->
-      @render val, env if type(val) == 'string'
+      @renderer val, env if type(val) == 'string'
 
     Embed tbl
   --- Render the template into another template
-  -- @tparam table env The table to pass to the renderer
-  construct: (env) =>
+  -- @tparam ?table env The table to pass to the renderer
+  -- @tparam ?boolean useEtLua To use etlua as the renderer, mustache is the default renderer
+  construct: (env = {}, useEtLua = false) =>
     tbl = deepScan @toJSON!, (val) ->
-      @render val, env if type(val) == 'string'
+      @renderer val, env if type(val) == 'string'
     
-    Template tbl
+    Template tbl, useEtLua

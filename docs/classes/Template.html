@@ -310,7 +310,7 @@
                 <tr>
                   <td>
                     <a href="#Template\construct">
-                      Template\construct (env)
+                      Template\construct (env, useEtLua)
                     </a>
                   </td>
                   <td>
@@ -356,7 +356,7 @@
                               <li>
                                 <span>start</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
                                  The starting point of the embed
@@ -371,7 +371,7 @@
                               <li>
                                 <span>useEtLua</span>
 
-                                  <span><span class="type">boolean</span></span>
+                                  <span>optional <span class="type">boolean</span></span>
 
 
                                  To use etlua as the renderer, mustache is the default renderer
@@ -417,7 +417,7 @@
                               <li>
                                 <span>env</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
                                  The table to pass to the renderer
@@ -443,7 +443,7 @@
 
                 <dt>
                   <a name="Template\construct"></a>
-                  <strong>Template\construct (env)</strong>
+                  <strong>Template\construct (env, useEtLua)</strong>
 
 
                 </dt>
@@ -463,10 +463,25 @@
                               <li>
                                 <span>env</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+                                  <span>optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
                                  The table to pass to the renderer
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>useEtLua</span>
+
+                                  <span>optional <span class="type">boolean</span></span>
+
+
+                                 To use etlua as the renderer, mustache is the default renderer
 
 
 

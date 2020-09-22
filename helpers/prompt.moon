@@ -136,9 +136,17 @@ class
           unless message.render
             message\send @channel
           else
-            message\render({
-              get: (text, render) ->
+            local get
+
+            unless message.usingEtLua
+              get = (text, render) ->
                 render @get text
+            else
+              get = (text) ->
+                @get text
+            
+            message\render({
+              :get
               step: @step
               timeout: @timeout
             })\send @channel
