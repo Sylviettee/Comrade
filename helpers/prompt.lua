@@ -102,7 +102,7 @@ do
                 step = self.step,
                 timeout = self.timeout
               })
-              return rendred:send(self.channel)
+              return rendered:send(self.channel)
             end
           else
             return self.message:reply(message)

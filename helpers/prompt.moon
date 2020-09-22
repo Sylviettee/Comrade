@@ -151,7 +151,7 @@ class
               timeout: @timeout
             })
 
-            rendred\send @channel
+            rendered\send @channel
         else 
           @message\reply message
 
