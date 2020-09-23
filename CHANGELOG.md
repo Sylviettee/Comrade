@@ -4,6 +4,8 @@
 * Allow prompts to render templates with the prompts current state
 * Allowed for the use of etlua of a renderer
 * Added docs for template
+* Fixed bug where it won't send embeds in dms
+* Fixed bug where the prompt will not check what channel
 
 # 1.2.2
 

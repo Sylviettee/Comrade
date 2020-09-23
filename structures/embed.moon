@@ -147,7 +147,7 @@ class
 
     if channel.type == enums.channelType.private
       return channel\send {
-        embed: @toJSON
+        embed: @toJSON!
       }
     else
       perms = channel.guild.me\getPermissions channel

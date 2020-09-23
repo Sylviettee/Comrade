@@ -133,7 +133,7 @@ do
         loop = function()
           local called
           called, msg = client:waitFor('messageCreate', self.timeout, function(recieved)
-            return recieved.author.id == msg.author.id and not self.closed
+            return recieved.author.id == msg.author.id and recieved.channel.id == msg.channel.id and not self.closed
           end)
           if not (called) then
             if not (self.closed) then

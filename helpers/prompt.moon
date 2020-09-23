@@ -48,7 +48,7 @@ class
     @co = coroutine.create () ->
       loop = () ->
         called, msg = client\waitFor 'messageCreate', @timeout, (recieved) ->
-          recieved.author.id == msg.author.id and not @closed
+          recieved.author.id == msg.author.id and recieved.channel.id == msg.channel.id and not @closed
         unless called
           @channel\send 'Closing prompt!' unless @closed
           @close! unless @closed

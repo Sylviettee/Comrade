@@ -99,7 +99,7 @@ do
     send = function(self, channel)
       if channel.type == enums.channelType.private then
         return channel:send({
-          embed = self.toJSON
+          embed = self:toJSON()
         })
       else
         local perms = channel.guild.me:getPermissions(channel)
