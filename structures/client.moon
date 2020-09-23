@@ -88,7 +88,7 @@ helper.__init = (token,config={}) =>
       if msg.author.bot and msg.author.id != @_botid
         return nil 
 
-      perms = msg.guild.me\getPermissions msg.channel
+      perms = (msg.guild and msg.guild.me\getPermissions msg.channel) or {has: () -> true}
       
       return @\debug "Comrade : No send messages" unless perms\has enums.permission.sendMessages -- If we can't send messages then just reject
 

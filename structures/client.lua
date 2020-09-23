@@ -71,7 +71,11 @@ helper.__init = function(self, token, config)
       if msg.author.bot and msg.author.id ~= self._botid then
         return nil
       end
-      local perms = msg.guild.me:getPermissions(msg.channel)
+      local perms = (msg.guild and msg.guild.me:getPermissions(msg.channel)) or {
+        has = function()
+          return true
+        end
+      }
       if not (perms:has(enums.permission.sendMessages)) then
         return self:debug("Comrade : No send messages")
       end
