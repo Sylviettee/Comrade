@@ -14,7 +14,7 @@ require('./helpers/extensions') !
   -- Metadata
 
   --- The version
-  version: '1.2.2'
+  version: '1.2.3'
 
   --- The name of the module
   name: 'Comrade'
@@ -50,6 +50,9 @@ require('./helpers/extensions') !
 
   --- @see Emitter
   Emitter: require './structures/emitter'
+
+  --- @see Status
+  Status: require './structures/status'
 
   -- Faker
 
