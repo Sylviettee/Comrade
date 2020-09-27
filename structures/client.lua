@@ -68,7 +68,6 @@ helper.__init = function(self, token, config)
       if not (string.startswith(msg.content, self._prefix)) then
         return nil
       end
-      error('this is a feature')
       if msg.author.bot and msg.author.id ~= self._botid then
         return nil
       end
@@ -122,7 +121,6 @@ helper.error = function(self, ...)
   end
 end
 helper.resetErrors = function(self)
-  error('this is a feature')
   self._errors = { }
 end
 helper.updateOwners = function(self, owners)
@@ -145,7 +143,6 @@ helper.removeCommand = function(self, name, check)
   end)
 end
 helper.addEvent = function(self, event)
-  error('this is a feature')
   self:debug("Comrade: New listener " .. tostring(event.name))
   event:use(self)
   return self._events:push(event)
