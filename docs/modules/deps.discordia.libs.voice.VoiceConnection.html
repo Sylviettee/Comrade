@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
 
   <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
 
   <title>Comrade</title>
 </head>
@@ -48,6 +48,72 @@
 
 
 
+
+
+
+              <h3>Modules</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../modules/deps.discordia.libs.voice.VoiceConnection.html">
+                      deps.discordia.libs.voice.VoiceConnection
+                    </a>
+
+
+                      <ul>
+
+                          <li>
+                            <a href="#Functions">
+                              Functions
+                            </a>
+                          </li>
+
+                      </ul>
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/dotenv.html">
+                      dotenv
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/helper.html">
+                      helper
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/logger.html">
+                      logger
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/lua.html">
+                      lua
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/util.html">
+                      util
+                    </a>
+
+
+                  </li>
+
+              </ul>
 
 
 
@@ -117,16 +183,6 @@
                     </a>
 
 
-                      <ul>
-
-                          <li>
-                            <a href="#Methods">
-                              Methods
-                            </a>
-                          </li>
-
-                      </ul>
-
                   </li>
 
                   <li>
@@ -156,54 +212,6 @@
                   <li>
                     <a href="../classes/status.html">
                       status
-                    </a>
-
-
-                  </li>
-
-              </ul>
-
-
-
-              <h3>Modules</h3>
-
-              <ul>
-
-                  <li>
-                    <a href="../modules/dotenv.html">
-                      dotenv
-                    </a>
-
-
-                  </li>
-
-                  <li>
-                    <a href="../modules/helper.html">
-                      helper
-                    </a>
-
-
-                  </li>
-
-                  <li>
-                    <a href="../modules/logger.html">
-                      logger
-                    </a>
-
-
-                  </li>
-
-                  <li>
-                    <a href="../modules/lua.html">
-                      lua
-                    </a>
-
-
-                  </li>
-
-                  <li>
-                    <a href="../modules/util.html">
-                      util
                     </a>
 
 
@@ -283,13 +291,13 @@
     <div class="col-9">
 
         <h1>
-          Class
+          Module
           <code>
-            help
+            deps.discordia.libs.voice.VoiceConnection
           </code>
         </h1>
 
-        <p> The default help, extends command </p>
+        <p> debugging </p>
         <p>
 
  </p>
@@ -305,41 +313,19 @@
 
 
             <h2>
-              <a href="7">Methods</a>
+              <a href="9">Functions</a>
             </h2>
 
             <table>
 
                 <tr>
                   <td>
-                    <a href="#help\new">
-                      help\new ()
+                    <a href="#_play">
+                      _play (stream, duration)
                     </a>
                   </td>
                   <td>
-                    Sets the usage, example, and description of the command
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <a href="#help\all">
-                      help\all (msg, _, client)
-                    </a>
-                  </td>
-                  <td>
-                    Returns a list of all the commands
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <a href="#help\execute">
-                      help\execute (msg, args, client)
-                    </a>
-                  </td>
-                  <td>
-                    Search for the command giving if one was given
+                    debugging
                   </td>
                 </tr>
 
@@ -349,48 +335,25 @@
 
 
             <h2>
-              <a name="Methods"></a>
-              Methods
+              <a name="Functions"></a>
+              Functions
             </h2>
 
-
+            Methods
 
 
 
             <dl>
 
                 <dt>
-                  <a name="help\new"></a>
-                  <strong>help\new ()</strong>
+                  <a name="_play"></a>
+                  <strong>_play (stream, duration)</strong>
 
 
                 </dt>
 
                 <dd>
-                  Sets the usage, example, and description of the command
-
-
-
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="help\all"></a>
-                  <strong>help\all (msg, _, client)</strong>
-
-
-                </dt>
-
-                <dd>
-                  Returns a list of all the commands
+                  debugging
 
 
 
@@ -402,7 +365,7 @@
                     <ul>
 
                               <li>
-                                <span>msg</span>
+                                <span>stream</span>
 
 
 
@@ -417,98 +380,7 @@
 
 
                               <li>
-                                <span>_</span>
-
-
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>client</span>
-
-
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                    </ul>
-
-
-
-
-
-
-
-
-
-                </dd>
-
-                <dt>
-                  <a name="help\execute"></a>
-                  <strong>help\execute (msg, args, client)</strong>
-
-
-                </dt>
-
-                <dd>
-                  Search for the command giving if one was given
-
-
-
-
-
-                      <h3>Parameters: </h3>
-
-
-                    <ul>
-
-                              <li>
-                                <span>msg</span>
-
-
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>args</span>
-
-
-
-
-
-
-
-
-
-                              </li>
-
-
-
-                              <li>
-                                <span>client</span>
+                                <span>duration</span>
 
 
 

@@ -7,12 +7,29 @@
   <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
 
   <link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
 
   <title>Comrade</title>
 </head>
 <body>
 
+  <div class="p-navigation">
+    <div class="p-navigation__row">
+      <nav class="p-navigation__nav">
+        <ul class="p-navigation__items">
+          <li class="navigation__item">
+            <a href="../index.html" class="navigation__link">Home</a>
+          </li>
+        </ul>
+
+        <form class="p-search-box">
+          <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="">
+          <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close"></i></button>
+          <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
+        </form>
+      </nav>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-3">
@@ -37,6 +54,14 @@
               <h3>Topics</h3>
 
               <ul>
+
+                  <li>
+                    <a href="../topics/embed-events.md.html">
+                      Embeds and events
+                    </a>
+
+
+                  </li>
 
                   <li>
                     <a href="../topics/simple.md.html">

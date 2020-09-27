@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.17.0.min.css" />
+
+  <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+
+  <title>Comrade</title>
+</head>
+<body>
+
+  <div class="p-navigation">
+    <div class="p-navigation__row">
+      <nav class="p-navigation__nav">
+        <ul class="p-navigation__items">
+          <li class="navigation__item">
+            <a href="../index.html" class="navigation__link">Home</a>
+          </li>
+        </ul>
+
+        <form class="p-search-box">
+          <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="">
+          <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close"></i></button>
+          <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
+        </form>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+      <div class="p-side-navigation--raw-html">
+
+        <ul>
+          <h2> Comrade </h2>
+
+            <ul>
+              <li>
+                <a href="../index.html">
+                  Index
+                </a>
+              </li>
+            </ul>
+
+
+
+
+
+
+              <h3>Topics</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../topics/embed-events.md.html">
+                      Embeds and events
+                    </a>
+
+
+                      <ul>
+
+                          <li>
+                            <a href="#Embeds">
+                              Embeds
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#Events">
+                              Events
+                            </a>
+                          </li>
+
+                      </ul>
+
+                  </li>
+
+                  <li>
+                    <a href="../topics/simple.md.html">
+                      Simple bot
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Modules</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../modules/dotenv.html">
+                      dotenv
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/helper.html">
+                      helper
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/logger.html">
+                      logger
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/lua.html">
+                      lua
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/util.html">
+                      util
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Classes</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../classes/Array.html">
+                      Array
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/Template.html">
+                      Template
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/client.html">
+                      client
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/command.html">
+                      command
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/embed.html">
+                      embed
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/emitter.html">
+                      emitter
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/event.html">
+                      event
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/help.html">
+                      help
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/luaCommand.html">
+                      luaCommand
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/plugin.html">
+                      plugin
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/prompt.html">
+                      prompt
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../classes/status.html">
+                      status
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+
+              <h3>Examples</h3>
+
+              <ul>
+
+                  <li>
+                    <a href="../examples/command.moon.html">
+                      command.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../examples/embeds.moon.html">
+                      embeds.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../examples/event.moon.html">
+                      event.moon
+                    </a>
+
+
+                  </li>
+
+                  <li>
+                    <a href="../examples/plugin.moon.html">
+                      plugin.moon
+                    </a>
+
+
+                  </li>
+
+              </ul>
+
+
+        </ul>
+
+      </div>
+    </div>
+    <div class="col-9">
+
+
+<h1>Embeds and events</h1>
+
+<p>This tutorial assumes that you have followed part 1, <a href="./simple.md">Simple bot</a></p>
+
+<p><a name="Embeds"></a></p>
+<h2>Embeds</h2>
+
+<p>So, there are 2 forms of embeds. This is the standard embed and the template embed. We are going to start with the normal embed.</p>
+
+<p>Now we want to open our plugin we made.</p>
+
+
+<pre>
+<span class="hljs-comment">-- plugin.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> plugin, Embed, lua = comrade.Plugin, comrade.Embed, comrade.lua <span class="hljs-comment">-- Import what we need
+</span>
+<span class="hljs-keyword">return</span> lua.class(<span class="hljs-string">'name'</span>, {}, plugin, <span class="hljs-keyword">function</span>(self) <span class="hljs-comment">-- Create our plugin
+</span>  self:super(self, <span class="hljs-string">'new'</span>) <span class="hljs-comment">-- Super it
+</span>
+  lua.class(<span class="hljs-string">'example'</span>, { <span class="hljs-comment">-- Create our command
+</span>    execute = <span class="hljs-keyword">function</span>(_,msg, args) <span class="hljs-comment">-- We drop first argument as its self
+</span>      <span class="hljs-keyword">local</span> myEmbed = Embed() <span class="hljs-comment">-- Create our embed
+</span>    <span class="hljs-keyword">end</span>
+  }, self.command, <span class="hljs-keyword">function</span>(self) <span class="hljs-comment">-- Our setup function
+</span>    self:super(self,<span class="hljs-string">'new'</span>)
+
+    <span class="hljs-comment">-- Command options
+</span>  <span class="hljs-keyword">end</span>)
+<span class="hljs-keyword">end</span>)
+</pre>
+
+
+<p>The change we did is bringing in Embed and creating one. Now, embed takes an optional method.</p>
+
+<p>This would be the initial state, usually you would do this with small embeds.</p>
+
+
+<pre>
+<span class="hljs-comment">-- plugin.lua
+</span><span class="hljs-comment">-- ...
+</span>execute = <span class="hljs-keyword">function</span>(_,msg, args) <span class="hljs-comment">-- We drop first argument as its self
+</span>  <span class="hljs-keyword">local</span> myEmbed = Embed({
+    title = <span class="hljs-string">'Fun embed'</span>
+  }) <span class="hljs-comment">-- Create our embed
+</span><span class="hljs-keyword">end</span>
+<span class="hljs-comment">-- ...</span>
+</pre>
+
+
+<p>We can't send this embed down to the channel like this.</p>
+
+<pre>
+msg:reply(myEmbed)
+</pre>
+
+
+<p>This is since Discordia will not read the embed data from the embed class. It does not understand what it is.</p>
+
+<p>In order to make Discordia send this there are 2 ways.</p>
+
+
+<pre>
+<span class="hljs-comment">-- Way 1
+</span>
+msg:reply(myEmbed:toJSON())
+
+<span class="hljs-comment">-- Way 2
+</span>
+myEmbed:send(msg.channel)
+</pre>
+
+
+<p>Way 2 is usually the better method as it runs checks. It checks if it can,</p>
+
+<ul>
+    <li>Send messages</li>
+    <li>Read messages</li>
+    <li>Embed links</li>
+</ul>
+
+<p>This makes it harder to get a 403 error. It still can happen like with dms but thats a given.</p>
+
+<p>Now, lets look at the <a href="https://comrade-project.github.io/Comrade/classes/embed.html">docs for the embed</a>. We see there are quite a lot of methods.</p>
+
+<p>All of these methods edit the look of the embed. Instead of setting title in the initial state we can do</p>
+
+
+<pre>
+<span class="hljs-keyword">local</span> myEmbed = Embed()
+myEmbed:setTitle(<span class="hljs-string">'Fun embed'</span>)
+</pre>
+
+
+<p>Usually you want to use these set methods. This is since, like with sending, they have limits put into place.</p>
+
+<ul>
+    <li>Titles are cut at 256 characters</li>
+    <li>Descriptions are cut at 2048 characters</li>
+    <li>Fields are limited to 25 fields</li>
+    <li>Names of fields are cut at 256 characters</li>
+    <li>Value of fields are cut as 1024 characters</li>
+    <li>Footers are cut at 2048 characters</li>
+    <li>Author names are cut at 256 characters</li>
+</ul>
+
+<p>The only limit not followed is the 6000 character limit. This is since it would lower performance checking every since text field when editing text.</p>
+
+<p>You can also chain methods as so</p>
+
+<pre>
+<span class="hljs-keyword">local</span> myEmbed = Embed()
+  :setColor(<span class="hljs-number">0x0099ff</span>)
+  :setTitle(<span class="hljs-string">'Some title'</span>)
+  :setURL(<span class="hljs-string">'https://comrade-project.github.io/Comrade'</span>)
+  :setAuthor(<span class="hljs-string">'Some name'</span>, <span class="hljs-string">'https://i.imgur.com/54BWIT5.png'</span>, <span class="hljs-string">'https://comrade-project.github.io/Comrade'</span>)
+  :setDescription(<span class="hljs-string">'Some description here'</span>)
+  :setThumbnail(<span class="hljs-string">'https://comrade-project.github.io/Comrade'</span>)
+  :addFields(
+    {name = <span class="hljs-string">'Regular field title'</span>, value = <span class="hljs-string">'Some value here'</span>},
+    {name = <span class="hljs-string">'Inline field title'</span>, value = <span class="hljs-string">'Some value here'</span>, inline = <span class="hljs-keyword">true</span>}
+  )
+  :addField(<span class="hljs-string">'Inline field title'</span>, <span class="hljs-string">'Some value here'</span>, <span class="hljs-keyword">true</span>)
+  :setImage(<span class="hljs-string">'https://i.imgur.com/54BWIT5.png'</span>)
+  :setTimestamp()
+  :setFooter(<span class="hljs-string">'Some footer text here'</span>, <span class="hljs-string">'https://i.imgur.com/54BWIT5.png'</span>)
+
+myEmbed:send(msg.channel)
+</pre>
+
+
+<p>This chaining allows for some neat syntactical sugar. This is very cool and stuff but we can step it up to another level.</p>
+
+<h3>Templates</h3>
+
+<p>Now, you may ask, what is a template? A template is an embed in which we can use to either make more embeds or an embed itself.</p>
+
+<p>You have 2 choices of template languages, <a href="https://mustache.github.io/">mustache</a> and <a href="https://github.com/leafo/etlua">etlua</a>.</p>
+
+<p>Here is an example of a mustache template</p>
+
+
+<pre>
+<span class="hljs-keyword">local</span> level = Template { <span class="hljs-comment">-- They extend embeds meaning that they allow for starting points
+</span>  title = <span class="hljs-string">'{{user}} just got to level {{level}}'</span>
+  description = <span class="hljs-string">'{{user}} got to level {{level}}! You now have {{coins}} coins!'</span>
+}
+
+level:render({
+  user = <span class="hljs-string">'4 times 1 is even less than 0#3870'</span>,
+  level = <span class="hljs-number">5</span>,
+  coins = <span class="hljs-string">'2'</span>
+}):send(channel)
+</pre>
+
+
+<p>This will fill in any of the {{template}} variables if they exist. In order to use etlua you need to pass the second variable as true.</p>
+
+
+<pre>
+<span class="hljs-keyword">local</span> level = Template({
+  title = <span class="hljs-string">'&lt;%- fun %&gt;'</span>
+}, <span class="hljs-keyword">true</span>)
+
+level:render({
+  fun = <span class="hljs-string">'yes'</span>
+}):send(channel)
+</pre>
+
+
+<p>These templates come in handy <strong>A LOT</strong> when it comes to prompts (Branched prompts). Next tutorial or so we will talk about prompts.</p>
+
+<p>There is a time to use etlua vs mustache. If you don't have to use etlua, then don't use it. Etlua is a generally heavier renderer as it compiles the templates down to lua.</p>
+
+<p>This makes it take more time than mustache which does not have to load any lua code whatsoever.</p>
+
+<p><a name="Events"></a></p>
+<h2>Events</h2>
+
+<p>Now, how might we listen to events you may ask. Well its actually quite simple.</p>
+
+<p>Lets go create a file named <code>reactionAdd.lua</code>. You should name your events what they are listening for. This is strictly not needed but it helps sort them out. We are going to do some organization in the next tutorial as well.</p>
+
+
+<pre>
+<span class="hljs-comment">-- reactionAdd.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span><span class="hljs-keyword">local</span> lua = comrade.lua <span class="hljs-comment">-- The lua helper
+</span>
+lua.class(<span class="hljs-string">'reactionAdd'</span>, {
+    execute = <span class="hljs-keyword">function</span>(channel, messageId, hash, userId)
+      <span class="hljs-comment">-- Do something
+</span>    <span class="hljs-keyword">end</span>
+  },
+  event,
+  <span class="hljs-keyword">function</span>(self)
+    self:super(self,<span class="hljs-string">'new'</span>)
+
+    <span class="hljs-comment">-- Options aka once
+</span>    self.once = <span class="hljs-keyword">false</span> <span class="hljs-comment">-- If this should be done only once
+</span>  <span class="hljs-keyword">end</span>
+)
+</pre>
+
+
+<p>Now, you may ask, how do we add it? Well its quite trivial. Its almost the same way you add a command.</p>
+
+
+<pre>
+<span class="hljs-comment">-- main.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> client, dotenv = comrade.Client, comrade.dotenv <span class="hljs-comment">-- Import what we need from the module
+</span>
+dotenv.config() <span class="hljs-comment">-- Load our .env
+</span>
+<span class="hljs-keyword">local</span> bot = client(process.env.TOKEN) <span class="hljs-comment">-- Create a client
+</span>
+<span class="hljs-comment">--bot:addCommand(require './command'()) -- Add the command to the bot
+</span>
+bot:addEvent(<span class="hljs-global">require</span> <span class="hljs-string">'./reactionAdd'</span>()) <span class="hljs-comment">-- Add the event to the bot
+</span>
+<span class="hljs-global">require</span> <span class="hljs-string">'./plugin'</span>:use(bot) <span class="hljs-comment">-- Load the plugin
+</span>
+bot:login() <span class="hljs-comment">-- Log into Discord</span>
+</pre>
+
+
+<p>Something else we can do is put it into a plugin.</p>
+
+
+<pre>
+<span class="hljs-comment">-- plugin.lua
+</span><span class="hljs-keyword">local</span> comrade = <span class="hljs-global">require</span> <span class="hljs-string">'Comrade'</span> <span class="hljs-comment">-- Bring in our module
+</span>
+<span class="hljs-keyword">local</span> plugin, lua = comrade.Plugin, comrade.lua <span class="hljs-comment">-- Import what we need
+</span>
+<span class="hljs-keyword">return</span> lua.class(<span class="hljs-string">'name'</span>, {}, plugin, <span class="hljs-keyword">function</span>(self) <span class="hljs-comment">-- Create our plugin
+</span>  self:super(self, <span class="hljs-string">'new'</span>) <span class="hljs-comment">-- Super it
+</span>
+  lua.class(<span class="hljs-string">'example'</span>, { <span class="hljs-comment">-- Create our command
+</span>    execute = <span class="hljs-keyword">function</span>(_,msg, args) <span class="hljs-comment">-- We drop first argument as its self
+</span>      msg:reply <span class="hljs-string">'Some command'</span>
+    <span class="hljs-keyword">end</span>
+  }, self.command, <span class="hljs-keyword">function</span>(self) <span class="hljs-comment">-- Our setup function
+</span>    self:super(self,<span class="hljs-string">'new'</span>)
+
+    <span class="hljs-comment">-- Command options
+</span>  <span class="hljs-keyword">end</span>)
+
+  lua.class(<span class="hljs-string">'reactionAdd'</span>, {
+    execute = <span class="hljs-keyword">function</span>(channel, messageId, hash, userId)
+      <span class="hljs-comment">-- Do something
+</span>    <span class="hljs-keyword">end</span>
+  }, self.event, <span class="hljs-keyword">function</span>(self)
+    self:super(self,<span class="hljs-string">'new'</span>)
+
+    <span class="hljs-comment">-- Options aka once
+</span>    self.once = <span class="hljs-keyword">false</span> <span class="hljs-comment">-- If this should be done only once
+</span>  <span class="hljs-keyword">end</span>)
+<span class="hljs-keyword">end</span>)
+</pre>
+
+
+<p>And we can comment out the require on our event</p>
+
+
+<pre>
+<span class="hljs-comment">-- main.lua
+</span><span class="hljs-comment">-- ...
+</span>
+<span class="hljs-comment">-- bot:addEvent(require './reactionAdd'()) -- Add the event to the bot
+</span>
+<span class="hljs-comment">-- ...</span>
+</pre>
+
+
+<p>Now, next tutorial as I said will be some cleaning up and prompts.</p>
+
+
+
+    </div>
+  </div>
+</body>
+</html>
