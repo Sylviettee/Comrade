@@ -4,7 +4,7 @@ if not (succ) then
 end
 require('./helpers/extensions')()
 return {
-  version = '1.2.3',
+  version = '1.2.4',
   name = 'Comrade',
   Array = require('./structures/array'),
   Client = require('./structures/client'),
