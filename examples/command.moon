@@ -1,7 +1,7 @@
 import Command from require 'comrade'
 
 class commandname extends Command
-  new: () =>
+  new: =>
     super!
 
     @name = '' -- Override class name

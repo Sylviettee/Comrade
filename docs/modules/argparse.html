@@ -61,14 +61,6 @@
                     </a>
 
 
-                  </li>
-
-                  <li>
-                    <a href="../modules/dotenv.html">
-                      dotenv
-                    </a>
-
-
                       <ul>
 
                           <li>
@@ -77,7 +69,27 @@
                             </a>
                           </li>
 
+                          <li>
+                            <a href="#Tables">
+                              Tables
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="#Fields">
+                              Fields
+                            </a>
+                          </li>
+
                       </ul>
+
+                  </li>
+
+                  <li>
+                    <a href="../modules/dotenv.html">
+                      dotenv
+                    </a>
+
 
                   </li>
 
@@ -301,17 +313,30 @@
         <h1>
           Module
           <code>
-            dotenv
+            argparse
           </code>
         </h1>
 
-        <p> A module to parse a .env file </p>
+        <p> A module to parse arguments into a table </p>
         <p>
 
  </p>
 
 
 
+
+
+
+          <h3>See also: </h3>
+          <ul>
+
+
+                <a href="../examples/advanced-arguments.moon.html#">
+                  advanced-arguments.moon
+                </a>
+
+
+          </ul>
 
 
 
@@ -328,23 +353,50 @@
 
                 <tr>
                   <td>
-                    <a href="#parse">
-                      parse (src, options)
+                    <a href="#new">
+                      new (tbl, command)
                     </a>
                   </td>
                   <td>
-                    Parses a .env file, does&#039;t support everything yet
+                    Construct an argument parser
                   </td>
                 </tr>
 
+            </table>
+
+            <h2>
+              <a href="6">Tables</a>
+            </h2>
+
+            <table>
+
                 <tr>
                   <td>
-                    <a href="#config">
-                      config (options)
+                    <a href="#argument">
+                      argument
                     </a>
                   </td>
                   <td>
-                    Automatically read, parse, and inject a .env file
+                    An argument
+                  </td>
+                </tr>
+
+            </table>
+
+            <h2>
+              <a href="6">Fields</a>
+            </h2>
+
+            <table>
+
+                <tr>
+                  <td>
+                    <a href="#int">
+                      int
+                    </a>
+                  </td>
+                  <td>
+                    The built in types; They are automatically type casted to what they are named
                   </td>
                 </tr>
 
@@ -365,14 +417,14 @@
             <dl>
 
                 <dt>
-                  <a name="parse"></a>
-                  <strong>parse (src, options)</strong>
+                  <a name="new"></a>
+                  <strong>new (tbl, command)</strong>
 
 
                 </dt>
 
                 <dd>
-                  Parses a .env file, does&#039;t support everything yet
+                  Construct an argument parser
 
 
 
@@ -384,12 +436,12 @@
                     <ul>
 
                               <li>
-                                <span>src</span>
+                                <span>tbl</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+                                  <span><a class="type" href="../modules/argparse.html#argument">argument[]</a></span>
 
 
-                                 The contents of the .env file
+                                 The argument table to parse
 
 
 
@@ -399,12 +451,12 @@
 
 
                               <li>
-                                <span>options</span>
+                                <span>command</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+                                  <span><a class="type" href="../classes/command.html#">command</a></span>
 
 
-                                 Contains if it is debug mode or not
+                                 The command which you are using this on
 
 
 
@@ -414,25 +466,6 @@
 
 
                     </ul>
-
-
-
-                    <h3>Returns:</h3>
-
-                      <ol>
-
-
-
-                            <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-
-
-                          The parsed .env file
-
-
-
-
-                      </ol>
-
 
 
 
@@ -444,33 +477,79 @@
 
                 </dd>
 
+            </dl>
+
+
+            <h2>
+              <a name="Tables"></a>
+              Tables
+            </h2>
+
+
+
+
+
+            <dl>
+
                 <dt>
-                  <a name="config"></a>
-                  <strong>config (options)</strong>
+                  <a name="argument"></a>
+                  <strong>argument</strong>
 
 
                 </dt>
 
                 <dd>
-                  Automatically read, parse, and inject a .env file
+                  An argument
 
 
 
 
 
-                      <h3>Parameters: </h3>
+                      <h3>Fields: </h3>
 
 
                     <ul>
 
                               <li>
-                                <span>options</span>
+                                <span>id</span>
 
-                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
-                                 The options on how to parse the file
+                                 The key of where to put the argument
 
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>type</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+                                 The type of the argument
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>default</span>
+
+                                  <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">function</span></span>
+
+
+                                 The default argument, if passed a function it will be passed the argument and message
+
+
+                                  <em>default</em> nil
 
 
 
@@ -482,22 +561,202 @@
 
 
 
-                    <h3>Returns:</h3>
-
-                      <ol>
-
-
-
-                            <span><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-
-
-                          The parsed .env file
 
 
 
 
-                      </ol>
 
+
+                </dd>
+
+            </dl>
+
+
+            <h2>
+              <a name="Fields"></a>
+              Fields
+            </h2>
+
+
+
+
+
+            <dl>
+
+                <dt>
+                  <a name="int"></a>
+                  <strong>int</strong>
+
+
+                </dt>
+
+                <dd>
+                  The built in types; They are automatically type casted to what they are named
+
+
+
+
+
+
+                    <ul>
+
+                              <li>
+                                <span>int</span>
+
+
+                                 Check if the input is a number
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>string</span>
+
+
+                                 Does nothing as all inputs are strings
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>boolean</span>
+
+
+                                 Check if the input is true or false
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>ban</span>
+
+
+                                 Check if the input is a valid ban
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>channel</span>
+
+
+                                 Check if the input is a channel; does not allow searching
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>emoji</span>
+
+
+                                 Check if the input is a emoji
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>guild</span>
+
+
+                                 Check if the input is a guild, will preform a search if the input is a string
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>invite</span>
+
+
+                                 Check if the input is a invite code
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>member</span>
+
+
+                                 Check if the input is a member; does not allow searching
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>message</span>
+
+
+                                 Check if the input is message jump link or an id
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>role</span>
+
+
+                                 Check if the input is a role, will preform a search if the input is a string
+
+
+
+
+                              </li>
+
+
+
+                              <li>
+                                <span>textchannel</span>
+
+
+                                 Check if the input is a text channel, will preform a search if the input is a string
+
+
+
+
+                              </li>
+
+
+
+                    </ul>
 
 
 

@@ -47,6 +47,7 @@ do
       self.cooldowns = { }
       self.errors = { }
       self.tested = { }
+      self.middleware = { }
       self.allowDMS = false
       self.hidden = false
       self.description = 'None'
@@ -106,17 +107,29 @@ do
       end
       return isValid
     end,
+    addMiddleware = function(self, middleware)
+      return table.insert(self.middleware, middleware)
+    end,
     run = function(self, msg, args, client)
       if (self.preconditions and self:preconditions(msg, args, client)) or true then
         local subcommand = args[1]
         local ran = self.subcommands[subcommand] and subcommand or 'main'
         local succ, err
+        local toRun
         if self.subcommands[subcommand] then
           args = table.slice(args, 2)
-          succ, err = pcall(self.subcommands[subcommand], self, msg, args, client)
+          toRun = self.subcommands[subcommand]
         else
-          succ, err = pcall(self.execute, self, msg, args, client)
+          toRun = self.execute
         end
+        for _, v in pairs(self.middleware) do
+          local res
+          args, res = v:execute(msg, args, client)
+          if res and res.invalid then
+            return 
+          end
+        end
+        succ, err = pcall(toRun, self, msg, args, client)
         if not (succ) then
           client:error("Command error: " .. tostring(err))
           if not (self.errors[ran]) then

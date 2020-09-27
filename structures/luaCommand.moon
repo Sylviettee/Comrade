@@ -11,10 +11,10 @@ class
   new: (name) =>
     @name = name
   --- Makes the command, remember that you should set the properties
-  make: () =>
+  make: =>
     data = @
     class extends Command
-      new: () =>
+      new: =>
         @@__name = data.name
         for i,v in pairs data
           if i != 'name'

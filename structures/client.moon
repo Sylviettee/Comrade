@@ -136,7 +136,7 @@ helper.error = (...) =>
     table.insert @_errors, string.format ...
 
 --- Reset the errors back to an empty array
-helper.resetErrors = () =>
+helper.resetErrors = =>
   @_errors = {}
 
 --- Update the owners list
@@ -184,19 +184,19 @@ helper.removePlugin = (name) =>
   @removeEvent '', (event) ->
     event.parent == name
 
-get.start = () =>
+get.start = =>
   @_start
-get.commands = () =>
+get.commands = =>
   @_commands
-get.version = () ->
+get.version = ->
   version
-get.owners = () =>
+get.owners = =>
   @_owners
-get.ready = () =>
+get.ready = =>
   @_ready
-get.prefix = () =>
+get.prefix = =>
   @_prefix
-get.errors = () =>
+get.errors = =>
   @_errors
 
 helper

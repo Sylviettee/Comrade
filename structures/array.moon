@@ -7,11 +7,11 @@ class Array
   new: (...) =>
     @data = {...}
   --- Length of the list
-  __len: () =>
+  __len: =>
     #@data
 
   --- Loop over the list
-  __pairs: () =>
+  __pairs: =>
     func = (tbl,k) ->
       local v
 
@@ -66,7 +66,7 @@ class Array
     table.slice @data, start,stop,step
 
   --- Remove the first in an array
-  shift: () =>
+  shift: =>
     table.remove @data, 1
 
   --- Remove the last or an index piece of data from an array

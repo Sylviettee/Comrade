@@ -11,7 +11,7 @@ import Date from require 'discordia'
 class
   @__name = 'Command'
   --- Create a command
-  new: () =>
+  new: =>
     @name = @@__name or '_temp_'
 
     @pre!
@@ -44,7 +44,7 @@ class
     helpEmbed\send channel
 
   --- An internal function to fill in all the data
-  pre: () =>
+  pre: =>
     assert @name, 'No name found'
     assert @execute, 'No execute command found'
     
@@ -56,6 +56,7 @@ class
     @cooldowns = {}
     @errors = {}
     @tested = {}
+    @middleware = {}
 
     @allowDMS = false
     @hidden = false
@@ -107,6 +108,11 @@ class
           @cooldowns[msg.author.id] = false
 
     isValid
+
+  --- A function that can be used to add extra functionality to commands like more advanced argument parsing
+  -- @tparam middleware middleware The middleware to add, should have execute function
+  addMiddleware: (middleware) =>
+    table.insert @middleware, middleware
   --- An internal function to run the command, it will check against preconditions if it exists
   -- @tparam table msg The message that called the command
   -- @tparam string[] args The arguments of the message
@@ -121,11 +127,21 @@ class
 
       local succ, err
 
+      local toRun
+
       if @subcommands[subcommand]
         args = table.slice args, 2
-        succ, err = pcall @subcommands[subcommand], @, msg,args,client
+        toRun = @subcommands[subcommand]
       else
-        succ, err = pcall @execute, @, msg,args,client
+        toRun = @execute
+
+      -- Run middleware --
+      for _,v in pairs @middleware
+        args, res = v\execute msg,args,client
+        if res and res.invalid
+          return -- Stop execution
+
+      succ, err = pcall toRun, @, msg,args,client
 
       unless succ
         client\error "Command error: #{err}"

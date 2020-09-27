@@ -29,7 +29,7 @@ faker.__init = (token, config = {}) =>
     if @_defaultChannel
       @_defaultChannel = @\getChannel @_defaultChannel
 
-faker.deauth = () =>
+faker.deauth = =>
   current = @_mainbot.owners
 
   new = {}
@@ -39,7 +39,7 @@ faker.deauth = () =>
 
   @_mainbot\updateOwners new
 
-faker.auth = () =>
+faker.auth = =>
   current = table.clone @_mainbot.owners
 
   table.insert current, @user.id
@@ -87,7 +87,7 @@ faker.load = (dir) =>
 
     return logger.test file, err unless succ
 
-faker.executeTests = () =>
+faker.executeTests = =>
   current = coroutine.running!
 
   co = coroutine.create () ->
@@ -110,10 +110,10 @@ faker.executeTests = () =>
 
   logger.finish!
 
-get.errored = () =>
+get.errored = =>
   #@_mainbot.errors > 0 or #@_errors > 0
 
-get.channel = () =>
+get.channel = =>
   @_defaultChannel
 
 faker

@@ -14,7 +14,7 @@ require('./helpers/extensions') !
   -- Metadata
 
   --- The version
-  version: '1.2.3'
+  version: '1.2.4'
 
   --- The name of the module
   name: 'Comrade'
@@ -84,7 +84,4 @@ require('./helpers/extensions') !
 
   --- @see lua
   lua: require './lua' --- lua
-
-  --- @see blua
-  blua: require './blua'
 }

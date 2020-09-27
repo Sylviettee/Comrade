@@ -4,7 +4,7 @@
 class
   --- Create an event, class should have execute field
   @__name = 'event'
-  new: () =>
+  new: =>
     assert @execute, 'No execution for event was found'
 
     @name = @@__name

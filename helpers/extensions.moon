@@ -4,11 +4,11 @@ import char, gmatch, match, find, sub from string
 
 table = {}
 
-table.count = (tbl) ->
+table.count = (tbl, fn=() -> true) ->
   n = 0
 
-  for _ in pairs tbl
-    n += 1
+  for i,v in pairs tbl
+    n += 1 if fn i,v
   n
 
 table.clone = (tbl) ->
@@ -163,20 +163,20 @@ ext = setmetatable {
   string: string
   math: math
 }, {
-  __call: () =>
+  __call: =>
     for _, v in pairs @
       v!
 }
 
 for n, m in pairs(ext) do
   setmetatable m, {
-    __call: () =>
+    __call: =>
       for k, v in pairs @
         _G[n][k] = v
   }
 
 return setmetatable {}, {
-  __call: () =>
+  __call: =>
     ext.string!
     ext.math!
     ext.table!

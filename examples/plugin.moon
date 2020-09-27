@@ -1,11 +1,11 @@
 import plugin from require 'comrade'
 
 class pluginname extends plugin
-  new: () =>
+  new: =>
     super!
     
     class commandname extends @command -- Plugins hold a command method which automatically registers itself to the plugin
-      new: () =>
+      new: =>
         super!
 
         @name = '' -- Override class name

@@ -9,7 +9,7 @@ return {
       end
     end)()
   },
-  moonscript = {'moonc .'},
+  moonscript = {'moonp ./faker ./helpers ./libs ./structures ./tests'},
   lint = {'luacheck .'},
   format = {'lua-format *.lua ./**/*.lua -i -c .luaformat.yaml'},
   test = {'cd tests && luvit main.lua'}

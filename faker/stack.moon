@@ -3,17 +3,17 @@ class
   new: (initialState = {}) =>
     @data = initialState
   
-  __len: () =>
+  __len: =>
     #@data
 
-  peek: () =>
+  peek: =>
     @data[#@data]
 
   push: (...) =>
     for _,v in pairs {...}
       table.insert @data, v
 
-  pop: () =>
+  pop: =>
     table.remove @data
 
   forEach: (fn) => -- You can only read thats at the top of the stack

@@ -24,7 +24,8 @@
 * Unit testing support
 * Unopinionated
 * Moonscript support
-* Lightweight and strippable
+* Lightweight
+* Argument parsing system
 
 ## Bots using Comrade
 
@@ -44,34 +45,6 @@ If you have any issues you can join the support Discord [here](https://discord.g
 
 The Comrade library takes up very little space already, being less than an mb.
 
-However, if you feel as though thats too much you can do this to make your own lightweight version of Comrade.
-
-```sh
-git clone https://github.com/Comrade-project/Comrade.git # Or make a fork so its easy to transport
-
-cd Comrade
-
-rm -rf docs examples faker tests # Delete all unneeded folders
-
-# If you don't need templates, logger, tabular, and status
-# rm -rf libs
-# rm ./structures/status.lua ./structures/template.lua ./helpers/logger.lua
-# Edit init.lua to remove those requires
-
-rm .gitignore .luacheckrc .luaformat.yaml .travis.yml CHANGELOG.md config.ld Makefile parse.lua readme.md # Delete all unneeded files
-
-find . -name "*.moon" -type f -delete # Remove all source files
-
-# Run your minifier
-
-# If you made a fork
-# git add .
-# git commit -m "Minify"
-# git push -u origin master
-```
-
-The size after this is less than 100K! (When this was written)
-
 ## Credits
 
 * Olivine Labs for [lustache](https://github.com/Olivine-Labs/lustache)
@@ -84,7 +57,10 @@ The size after this is less than 100K! (When this was written)
 - [x] Check embed limits
 - [x] Unload events and separation for plugin and commands
 - [x] Examples for documentation
+- [x] More advanced argument parsing system
 - [ ] More test cases
 - [ ] Pagination
-- [ ] Branched prompts
-- [ ] More advanced argument parsing system
+
+## Scrapped
+
+- Branched prompts Phased out by etlua prompts, check an example. [here](https://github.com/Roblox-Developers-CodeSkids/RobloxDevelopers/blob/master/commands/post.command.lua)

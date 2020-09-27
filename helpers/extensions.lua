@@ -14,10 +14,17 @@ do
   char, gmatch, match, find, sub = _obj_0.char, _obj_0.gmatch, _obj_0.match, _obj_0.find, _obj_0.sub
 end
 local table = { }
-table.count = function(tbl)
+table.count = function(tbl, fn)
+  if fn == nil then
+    fn = function()
+      return true
+    end
+  end
   local n = 0
-  for _ in pairs(tbl) do
-    n = n + 1
+  for i, v in pairs(tbl) do
+    if fn(i, v) then
+      n = n + 1
+    end
   end
   return n
 end

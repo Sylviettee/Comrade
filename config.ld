@@ -15,5 +15,6 @@ examples = {
   './examples/command.moon',
   './examples/embeds.moon',
   './examples/event.moon',
-  './examples/plugin.moon'
+  './examples/plugin.moon',
+  './examples/advanced-arguments.moon'
 }

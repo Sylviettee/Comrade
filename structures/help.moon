@@ -7,7 +7,7 @@ embed = require './embed'
 
 class help extends command
   --- Sets the usage, example, and description of the command
-  new: () =>
+  new: =>
     super!
 
     @usage = '[all | command name]'

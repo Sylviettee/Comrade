@@ -9,20 +9,20 @@ class plguinCommand extends command
   @commands = {}
   @__inherited: (klass) =>
     table.insert @@commands, klass!
-  @clear: () =>
+  @clear: =>
     @@commands = {}
 
 class pluginEvent extends event
   @events = {}
   @__inherited: (klass) =>
     table.insert @@events, klass!
-  @clear: () =>
+  @clear: =>
     @@events = {}
 
 class
   @__name = 'Plugin'
   --- Create a new plugin, sets 2 properties, @command and @event. These should be used inplace of command and event
-  new: () =>
+  new: =>
     @command = plguinCommand
     @event = pluginEvent
   --- Allows the plugin to be used by the client

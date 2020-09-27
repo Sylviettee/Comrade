@@ -13,7 +13,7 @@ haste = 'https://hasteb.in/'
 
 class status extends command
   --- Sets the usage, example, and description of the command
-  new: () =>
+  new: =>
     super!
 
     @usage = "#{@name}"
@@ -37,7 +37,7 @@ class status extends command
         ['Dms']: #client.privateChannels
       }
       ['Commands']: commands
-      ['Memory Usage']: "#{math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100} MB"
+      ['Memory Usage']: "#{math.round((process.memoryUsage!.heapUsed / 1024 / 1024) * 100) / 100} MB"
     })
 
     if #content < 1990

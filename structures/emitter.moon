@@ -20,7 +20,7 @@ new = (name, listener) =>
 class
   @__name = 'Emitter'
   --- Create a new emitter
-  new: () =>
+  new: =>
     @listeners = {}
 
   --- Listen to the emitter

@@ -112,9 +112,9 @@ class
     @
   
   --- Set the timestamp of the embed, defaults to right now
-  -- @tparam[opt=Date().toISO()] string timestamp The timestamp in ISO 8601
+  -- @tparam[opt=Date!.toISO!] string timestamp The timestamp in ISO 8601
   -- @treturn embed
-  setTimestamp: (timestamp = Date().toISO()) =>
+  setTimestamp: (timestamp = Date!.toISO!) =>
     @embed.timestamp = timestamp
 
     @
@@ -137,7 +137,7 @@ class
   
   --- Returns the embed object without any metatables
   -- @treturn table
-  toJSON: () =>
+  toJSON: =>
     @embed
   
   --- Sends the embed and checks if we have permissions to

@@ -46,7 +46,7 @@ class
     @closed = false
 
     @co = coroutine.create () ->
-      loop = () ->
+      loop = ->
         called, msg = client\waitFor 'messageCreate', @timeout, (recieved) ->
           recieved.author.id == msg.author.id and recieved.channel.id == msg.channel.id and not @closed
         unless called
@@ -64,21 +64,21 @@ class
   -- Progression
 
   --- Move on the prompt
-  next: () =>
+  next: =>
     @stage += 1
     @update!
 
   --- Go back on the prompt
-  back: () =>
+  back: =>
     @stage -= 1
     @update!
 
   --- Redo the current prompt task
-  redo: () =>
+  redo: =>
     @update!
 
   --- Close the prompt
-  close: () =>
+  close: =>
     @closed = true
 
     prompts[@id] = false
@@ -105,7 +105,7 @@ class
   -- Sending
 
   --- Internal; Handle the message
-  update: () =>
+  update: =>
     message = @tasks[@stage].message
     unless @message
       return @channel\send 'Error: No tasks found' unless @tasks[@stage]
