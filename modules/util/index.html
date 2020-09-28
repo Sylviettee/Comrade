@@ -1,0 +1,1443 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>util - Comrade</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="teal" data-md-color-accent="teal">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-util" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Comrade" class="md-header-nav__button md-logo" aria-label="Comrade">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M571.31 193.94l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31-28.9-28.9c5.63-21.31.36-44.9-16.35-61.61l-45.25-45.25c-62.48-62.48-163.79-62.48-226.28 0l90.51 45.25v18.75c0 16.97 6.74 33.25 18.75 45.25l49.14 49.14c16.71 16.71 40.3 21.98 61.61 16.35l28.9 28.9-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l90.51-90.51c6.23-6.24 6.23-16.37-.02-22.62zm-286.72-15.2c-3.7-3.7-6.84-7.79-9.85-11.95L19.64 404.96c-25.57 23.88-26.26 64.19-1.53 88.93s65.05 24.05 88.93-1.53l238.13-255.07c-3.96-2.91-7.9-5.87-11.44-9.41l-49.14-49.14z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Comrade
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              util
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/comrade-project/Comrade" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    comrade-project/comrade
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link md-tabs__link--active">
+          Documentation
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../topics/simple/" class="md-tabs__link">
+          Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../examples/command.moon/" class="md-tabs__link">
+          Examples
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Comrade" class="md-nav__button md-logo" aria-label="Comrade">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M571.31 193.94l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31-28.9-28.9c5.63-21.31.36-44.9-16.35-61.61l-45.25-45.25c-62.48-62.48-163.79-62.48-226.28 0l90.51 45.25v18.75c0 16.97 6.74 33.25 18.75 45.25l49.14 49.14c16.71 16.71 40.3 21.98 61.61 16.35l28.9 28.9-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l90.51-90.51c6.23-6.24 6.23-16.37-.02-22.62zm-286.72-15.2c-3.7-3.7-6.84-7.79-9.85-11.95L19.64 404.96c-25.57 23.88-26.26 64.19-1.53 88.93s65.05 24.05 88.93-1.53l238.13-255.07c-3.96-2.91-7.9-5.87-11.44-9.41l-49.14-49.14z"/></svg>
+
+    </a>
+    Comrade
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/comrade-project/Comrade" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    comrade-project/comrade
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Documentation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helper/" title="Root" class="md-nav__link">
+      Root
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Classes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Classes" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        <span class="md-nav__icon md-icon"></span>
+        Classes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/Array/" title="Array" class="md-nav__link">
+      Array
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/client/" title="Client" class="md-nav__link">
+      Client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/command/" title="Command" class="md-nav__link">
+      Command
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/embed/" title="Embed" class="md-nav__link">
+      Embed
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/emitter/" title="Emitter" class="md-nav__link">
+      Emitter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/event/" title="Event" class="md-nav__link">
+      Event
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/help/" title="Help" class="md-nav__link">
+      Help
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/luaCommand/" title="LuaCommand" class="md-nav__link">
+      LuaCommand
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/plugin/" title="Plugin" class="md-nav__link">
+      Plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/prompt/" title="Prompt" class="md-nav__link">
+      Prompt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/status/" title="Status" class="md-nav__link">
+      Status
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/Template/" title="Template" class="md-nav__link">
+      Template
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4" checked>
+    
+    <label class="md-nav__link" for="nav-1-4">
+      Modules
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Modules" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-4">
+        <span class="md-nav__icon md-icon"></span>
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../argparse/" title="argparse" class="md-nav__link">
+      argparse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dotenv/" title="dotenv" class="md-nav__link">
+      dotenv
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../logger/" title="logger" class="md-nav__link">
+      logger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lua/" title="lua" class="md-nav__link">
+      lua
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        util
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="util" class="md-nav__link md-nav__link--active">
+      util
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#years-years" class="md-nav__link">
+    years (years)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-weeks" class="md-nav__link">
+    weeks (weeks)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#days-days" class="md-nav__link">
+    days (days)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hours-hours" class="md-nav__link">
+    hours (hours)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minutes-minutes" class="md-nav__link">
+    minutes (minutes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seconds-seconds" class="md-nav__link">
+    seconds (seconds)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatlong-milliseconds" class="md-nav__link">
+    formatLong (milliseconds)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plural-ms-msabs-n-name" class="md-nav__link">
+    plural (ms, msAbs, n, name)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulkdelete-msg-messages" class="md-nav__link">
+    bulkDelete (msg, messages)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compareroles-role1-role2" class="md-nav__link">
+    compareRoles (role1, role2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manageable-member" class="md-nav__link">
+    manageable (member)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkperm-member-channel-permissions" class="md-nav__link">
+    checkPerm (member, channel, permissions)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../topics/simple/" title="Simple bot" class="md-nav__link">
+      Simple bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../topics/embed-events/" title="Embeds and events" class="md-nav__link">
+      Embeds and events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Examples
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Examples" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/command.moon/" title="Command.moon" class="md-nav__link">
+      Command.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/event.moon/" title="Event.moon" class="md-nav__link">
+      Event.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/plugin.moon/" title="Plugin.moon" class="md-nav__link">
+      Plugin.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/embeds.moon/" title="Embeds.moon" class="md-nav__link">
+      Embeds.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/advanced-arguments.moon/" title="Advanced arguments.moon" class="md-nav__link">
+      Advanced arguments.moon
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#years-years" class="md-nav__link">
+    years (years)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weeks-weeks" class="md-nav__link">
+    weeks (weeks)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#days-days" class="md-nav__link">
+    days (days)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hours-hours" class="md-nav__link">
+    hours (hours)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minutes-minutes" class="md-nav__link">
+    minutes (minutes)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seconds-seconds" class="md-nav__link">
+    seconds (seconds)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatlong-milliseconds" class="md-nav__link">
+    formatLong (milliseconds)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plural-ms-msabs-n-name" class="md-nav__link">
+    plural (ms, msAbs, n, name)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulkdelete-msg-messages" class="md-nav__link">
+    bulkDelete (msg, messages)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compareroles-role1-role2" class="md-nav__link">
+    compareRoles (role1, role2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manageable-member" class="md-nav__link">
+    manageable (member)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkperm-member-channel-permissions" class="md-nav__link">
+    checkPerm (member, channel, permissions)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="module-util">Module <code>util</code></h1>
+<p>A utility module for time, moderation, and permissions</p>
+<h3 id="functions"><a href="#Functions">Functions</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Descritpion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>years (years)</td>
+<td>Convert years into milliseconds</td>
+</tr>
+<tr>
+<td>weeks (weeks)</td>
+<td>Convert weeks into milliseconds</td>
+</tr>
+<tr>
+<td>days (days)</td>
+<td>Convert days into milliseconds</td>
+</tr>
+<tr>
+<td>hours (hours)</td>
+<td>Convert hours into milliseconds</td>
+</tr>
+<tr>
+<td>minutes (minutes)</td>
+<td>Convert minutes into milliseconds</td>
+</tr>
+<tr>
+<td>seconds (seconds)</td>
+<td>Convert seconds into milliseconds</td>
+</tr>
+<tr>
+<td>formatLong (milliseconds)</td>
+<td>Convert milliseconds into a long formatted time; eg 10 days</td>
+</tr>
+<tr>
+<td>plural (ms, msAbs, n, name)</td>
+<td>Check if a time should be plural</td>
+</tr>
+<tr>
+<td>bulkDelete (msg, messages)</td>
+<td>Bulk delete messages in a channel using getMessages</td>
+</tr>
+<tr>
+<td>compareRoles (role1, role2)</td>
+<td>Compare 2 roles positions</td>
+</tr>
+<tr>
+<td>manageable (member)</td>
+<td>Compare 2 roles positions</td>
+</tr>
+<tr>
+<td>checkPerm (member, channel, permissions)</td>
+<td>Check if the member has permissions or a role override</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions_1"><a href="#Functions">Functions</a></h2>
+<h3 id="years-years"><a href="#years">years (years)</a></h3>
+<p>Convert years into milliseconds</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>years</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <span class="type">number</span> millisecon</p>
+<h3 id="weeks-weeks"><a href="#weeks">weeks (weeks)</a></h3>
+<p>Convert weeks into milliseconds</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>weeks</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <span class="type">number</span> millisecon</p>
+<h3 id="days-days"><a href="#days">days (days)</a></h3>
+<p>Convert days into milliseconds</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>days</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <span class="type">number</span> millisecon</p>
+<h3 id="hours-hours"><a href="#hours">hours (hours)</a></h3>
+<p>Convert hours into milliseconds</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hours</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <span class="type">number</span> millisecon</p>
+<h3 id="minutes-minutes"><a href="#minutes">minutes (minutes)</a></h3>
+<p>Convert minutes into milliseconds</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>minutes</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <span class="type">number</span> millisecon</p>
+<h3 id="seconds-seconds"><a href="#seconds">seconds (seconds)</a></h3>
+<p>Convert seconds into milliseconds</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>seconds</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <span class="type">number</span> millisecon</p>
+<h3 id="formatlong-milliseconds"><a href="#formatLong">formatLong (milliseconds)</a></h3>
+<p>Convert milliseconds into a long formatted time; eg 10 days</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>milliseconds</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> formatt</p>
+<h3 id="plural-ms-msabs-n-name"><a href="#plural">plural (ms, msAbs, n, name)</a></h3>
+<p>Check if a time should be plural</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ms</td>
+<td><span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|
+| msAbs | <span class="type">number</span> | ❌ | <code>none</code> |  Absolute value of the milliseconds |
+| n | <span class="type">number</span> | ❌ | <code>none</code> |  The amount of milliseconds in the unit |
+| name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | <code>none</code> |  The name of the unit eg <code>second</code> |</p>
+<p><strong>Returns:</strong> <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> Name with possibly an</p>
+<h3 id="bulkdelete-msg-messages"><a href="#bulkDelete">bulkDelete (msg, messages)</a></h3>
+<p>Bulk delete messages in a channel using getMessages</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msg</td>
+<td></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td>The message you got the call to bulk delete</td>
+</tr>
+<tr>
+<td>messages</td>
+<td><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">number</span></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>|</p>
+<p><strong>Returns:</strong> <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">{table,...}</a> The messages that were delet</p>
+<h3 id="compareroles-role1-role2"><a href="#compareRoles">compareRoles (role1, role2)</a></h3>
+<p>Compare 2 roles positions</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>role1</td>
+<td></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td>The first role to compare</td>
+</tr>
+<tr>
+<td>role2</td>
+<td></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td>The second role to compare</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <span class="type">number</span> The distance from first role to seco</p>
+<h3 id="manageable-member"><a href="#manageable">manageable (member)</a></h3>
+<p>Compare 2 roles positions</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>member</td>
+<td></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td>The member to see if the bot can manage</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <span class="type">boolean</span> If true, the bot can manage the member, else than n</p>
+<h3 id="checkperm-member-channel-permissions"><a href="#checkPerm">checkPerm (member, channel, permissions)</a></h3>
+<p>Check if the member has permissions or a role override</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Optional</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>member</td>
+<td></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td>The member to check the permissions of</td>
+</tr>
+<tr>
+<td>channel</td>
+<td></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td>The channel that the member is using</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></td>
+<td>❌</td>
+<td><code>none</code></td>
+<td>The permissions you want to check, eg kickMembers</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../lua/" title="lua" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                lua
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../topics/simple/" title="Simple bot" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Simple bot
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/SovietKitsune" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://discord.gg/uCDq5mw" target="_blank" rel="noopener" title="discord.gg" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>

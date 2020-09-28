@@ -1,0 +1,1117 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+    
+    
+      
+        <title>Embeds and events - Comrade</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="teal" data-md-color-accent="teal">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#embeds-and-events" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Comrade" class="md-header-nav__button md-logo" aria-label="Comrade">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M571.31 193.94l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31-28.9-28.9c5.63-21.31.36-44.9-16.35-61.61l-45.25-45.25c-62.48-62.48-163.79-62.48-226.28 0l90.51 45.25v18.75c0 16.97 6.74 33.25 18.75 45.25l49.14 49.14c16.71 16.71 40.3 21.98 61.61 16.35l28.9 28.9-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l90.51-90.51c6.23-6.24 6.23-16.37-.02-22.62zm-286.72-15.2c-3.7-3.7-6.84-7.79-9.85-11.95L19.64 404.96c-25.57 23.88-26.26 64.19-1.53 88.93s65.05 24.05 88.93-1.53l238.13-255.07c-3.96-2.91-7.9-5.87-11.44-9.41l-49.14-49.14z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Comrade
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Embeds and events
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/comrade-project/Comrade" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    comrade-project/comrade
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          Documentation
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../simple/" class="md-tabs__link md-tabs__link--active">
+          Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../examples/command.moon/" class="md-tabs__link">
+          Examples
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Comrade" class="md-nav__button md-logo" aria-label="Comrade">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M571.31 193.94l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31-28.9-28.9c5.63-21.31.36-44.9-16.35-61.61l-45.25-45.25c-62.48-62.48-163.79-62.48-226.28 0l90.51 45.25v18.75c0 16.97 6.74 33.25 18.75 45.25l49.14 49.14c16.71 16.71 40.3 21.98 61.61 16.35l28.9 28.9-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l90.51-90.51c6.23-6.24 6.23-16.37-.02-22.62zm-286.72-15.2c-3.7-3.7-6.84-7.79-9.85-11.95L19.64 404.96c-25.57 23.88-26.26 64.19-1.53 88.93s65.05 24.05 88.93-1.53l238.13-255.07c-3.96-2.91-7.9-5.87-11.44-9.41l-49.14-49.14z"/></svg>
+
+    </a>
+    Comrade
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/comrade-project/Comrade" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    comrade-project/comrade
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Documentation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modules/helper/" title="Root" class="md-nav__link">
+      Root
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-3" type="checkbox" id="nav-1-3">
+    
+    <label class="md-nav__link" for="nav-1-3">
+      Classes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Classes" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-3">
+        <span class="md-nav__icon md-icon"></span>
+        Classes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/Array/" title="Array" class="md-nav__link">
+      Array
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/client/" title="Client" class="md-nav__link">
+      Client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/command/" title="Command" class="md-nav__link">
+      Command
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/embed/" title="Embed" class="md-nav__link">
+      Embed
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/emitter/" title="Emitter" class="md-nav__link">
+      Emitter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/event/" title="Event" class="md-nav__link">
+      Event
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/help/" title="Help" class="md-nav__link">
+      Help
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/luaCommand/" title="LuaCommand" class="md-nav__link">
+      LuaCommand
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/plugin/" title="Plugin" class="md-nav__link">
+      Plugin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/prompt/" title="Prompt" class="md-nav__link">
+      Prompt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/status/" title="Status" class="md-nav__link">
+      Status
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../classes/Template/" title="Template" class="md-nav__link">
+      Template
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1-4" type="checkbox" id="nav-1-4">
+    
+    <label class="md-nav__link" for="nav-1-4">
+      Modules
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Modules" data-md-level="2">
+      <label class="md-nav__title" for="nav-1-4">
+        <span class="md-nav__icon md-icon"></span>
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modules/argparse/" title="argparse" class="md-nav__link">
+      argparse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modules/dotenv/" title="dotenv" class="md-nav__link">
+      dotenv
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modules/logger/" title="logger" class="md-nav__link">
+      logger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modules/lua/" title="lua" class="md-nav__link">
+      lua
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modules/util/" title="util" class="md-nav__link">
+      util
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simple/" title="Simple bot" class="md-nav__link">
+      Simple bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Embeds and events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Embeds and events" class="md-nav__link md-nav__link--active">
+      Embeds and events
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embeds" class="md-nav__link">
+    Embeds
+  </a>
+  
+    <nav class="md-nav" aria-label="Embeds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Examples
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Examples" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/command.moon/" title="Command.moon" class="md-nav__link">
+      Command.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/event.moon/" title="Event.moon" class="md-nav__link">
+      Event.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/plugin.moon/" title="Plugin.moon" class="md-nav__link">
+      Plugin.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/embeds.moon/" title="Embeds.moon" class="md-nav__link">
+      Embeds.moon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/advanced-arguments.moon/" title="Advanced arguments.moon" class="md-nav__link">
+      Advanced arguments.moon
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embeds" class="md-nav__link">
+    Embeds
+  </a>
+  
+    <nav class="md-nav" aria-label="Embeds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="embeds-and-events">Embeds and events</h1>
+<p>This tutorial assumes that you have followed part 1, <a href="../simple/">Simple bot</a></p>
+<h2 id="embeds">Embeds</h2>
+<p>So, there are 2 forms of embeds. This is the standard embed and the template embed. We are going to start with the normal embed.</p>
+<p>Now we want to open our plugin we made.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- plugin.lua</span>
+<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+
+<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">Embed</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Embed</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
+
+<span class="kr">return</span> <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">plugin</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="c1">-- Create our plugin</span>
+  <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">)</span> <span class="c1">-- Super it</span>
+
+  <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="c1">-- Create our command</span>
+    <span class="n">execute</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="n">msg</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="c1">-- We drop first argument as its self</span>
+      <span class="kd">local</span> <span class="n">myEmbed</span> <span class="o">=</span> <span class="n">Embed</span><span class="p">()</span> <span class="c1">-- Create our embed</span>
+    <span class="kr">end</span>
+  <span class="p">},</span> <span class="n">self</span><span class="p">.</span><span class="n">command</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="c1">-- Our setup function</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="s1">&#39;new&#39;</span><span class="p">)</span>
+
+    <span class="c1">-- Command options</span>
+  <span class="kr">end</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+
+<p>The change we did is bringing in Embed and creating one. Now, embed takes an optional method.</p>
+<p>This would be the initial state, usually you would do this with small embeds.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- plugin.lua</span>
+<span class="c1">-- ...</span>
+<span class="n">execute</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="n">msg</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="c1">-- We drop first argument as its self</span>
+  <span class="kd">local</span> <span class="n">myEmbed</span> <span class="o">=</span> <span class="n">Embed</span><span class="p">({</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Fun embed&#39;</span>
+  <span class="p">})</span> <span class="c1">-- Create our embed</span>
+<span class="kr">end</span>
+<span class="c1">-- ...</span>
+</code></pre></div>
+
+<p>We can't send this embed down to the channel like this.
+<div class="highlight"><pre><span></span><code><span class="n">msg</span><span class="p">:</span><span class="n">reply</span><span class="p">(</span><span class="n">myEmbed</span><span class="p">)</span>
+</code></pre></div></p>
+<p>This is since Discordia will not read the embed data from the embed class. It does not understand what it is.</p>
+<p>In order to make Discordia send this there are 2 ways.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Way 1</span>
+
+<span class="n">msg</span><span class="p">:</span><span class="n">reply</span><span class="p">(</span><span class="n">myEmbed</span><span class="p">:</span><span class="n">toJSON</span><span class="p">())</span>
+
+<span class="c1">-- Way 2</span>
+
+<span class="n">myEmbed</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">channel</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Way 2 is usually the better method as it runs checks. It checks if it can,</p>
+<ul>
+<li>Send messages</li>
+<li>Read messages</li>
+<li>Embed links</li>
+</ul>
+<p>This makes it harder to get a 403 error. It still can happen like with dms but thats a given.</p>
+<p>Now, lets look at the <a href="https://comrade-project.github.io/Comrade/classes/embed.html">docs for the embed</a>. We see there are quite a lot of methods.</p>
+<p>All of these methods edit the look of the embed. Instead of setting title in the initial state we can do</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">myEmbed</span> <span class="o">=</span> <span class="n">Embed</span><span class="p">()</span>
+<span class="n">myEmbed</span><span class="p">:</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Fun embed&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Usually you want to use these set methods. This is since, like with sending, they have limits put into place.</p>
+<ul>
+<li>Titles are cut at 256 characters</li>
+<li>Descriptions are cut at 2048 characters</li>
+<li>Fields are limited to 25 fields</li>
+<li>Names of fields are cut at 256 characters</li>
+<li>Value of fields are cut as 1024 characters</li>
+<li>Footers are cut at 2048 characters</li>
+<li>Author names are cut at 256 characters</li>
+</ul>
+<p>The only limit not followed is the 6000 character limit. This is since it would lower performance checking every since text field when editing text.</p>
+<p>You can also chain methods as so
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">myEmbed</span> <span class="o">=</span> <span class="n">Embed</span><span class="p">()</span>
+  <span class="p">:</span><span class="n">setColor</span><span class="p">(</span><span class="mh">0x0099ff</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Some title&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setURL</span><span class="p">(</span><span class="s1">&#39;https://comrade-project.github.io/Comrade&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setAuthor</span><span class="p">(</span><span class="s1">&#39;Some name&#39;</span><span class="p">,</span> <span class="s1">&#39;https://i.imgur.com/54BWIT5.png&#39;</span><span class="p">,</span> <span class="s1">&#39;https://comrade-project.github.io/Comrade&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setDescription</span><span class="p">(</span><span class="s1">&#39;Some description here&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setThumbnail</span><span class="p">(</span><span class="s1">&#39;https://comrade-project.github.io/Comrade&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">addFields</span><span class="p">(</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Regular field title&#39;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;Some value here&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Inline field title&#39;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;Some value here&#39;</span><span class="p">,</span> <span class="n">inline</span> <span class="o">=</span> <span class="kc">true</span><span class="p">}</span>
+  <span class="p">)</span>
+  <span class="p">:</span><span class="n">addField</span><span class="p">(</span><span class="s1">&#39;Inline field title&#39;</span><span class="p">,</span> <span class="s1">&#39;Some value here&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setImage</span><span class="p">(</span><span class="s1">&#39;https://i.imgur.com/54BWIT5.png&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setTimestamp</span><span class="p">()</span>
+  <span class="p">:</span><span class="n">setFooter</span><span class="p">(</span><span class="s1">&#39;Some footer text here&#39;</span><span class="p">,</span> <span class="s1">&#39;https://i.imgur.com/54BWIT5.png&#39;</span><span class="p">)</span>
+
+<span class="n">myEmbed</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">channel</span><span class="p">)</span>
+</code></pre></div></p>
+<p>This chaining allows for some neat syntactical sugar. This is very cool and stuff but we can step it up to another level.</p>
+<h3 id="templates">Templates</h3>
+<p>Now, you may ask, what is a template? A template is an embed in which we can use to either make more embeds or an embed itself.</p>
+<p>You have 2 choices of template languages, <a href="https://mustache.github.io/">mustache</a> and <a href="https://github.com/leafo/etlua">etlua</a>.</p>
+<p>Here is an example of a mustache template</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">level</span> <span class="o">=</span> <span class="n">Template</span> <span class="p">{</span> <span class="c1">-- They extend embeds meaning that they allow for starting points</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;{{user}} just got to level {{level}}&#39;</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;{{user}} got to level {{level}}! You now have {{coins}} coins!&#39;</span>
+<span class="p">}</span>
+
+<span class="n">level</span><span class="p">:</span><span class="n">render</span><span class="p">({</span>
+  <span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;4 times 1 is even less than 0#3870&#39;</span><span class="p">,</span>
+  <span class="n">level</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="n">coins</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
+<span class="p">}):</span><span class="n">send</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This will fill in any of the {{template}} variables if they exist. In order to use etlua you need to pass the second variable as true.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">level</span> <span class="o">=</span> <span class="n">Template</span><span class="p">({</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&lt;%- fun %&gt;&#39;</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">)</span>
+
+<span class="n">level</span><span class="p">:</span><span class="n">render</span><span class="p">({</span>
+  <span class="n">fun</span> <span class="o">=</span> <span class="s1">&#39;yes&#39;</span>
+<span class="p">}):</span><span class="n">send</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+</code></pre></div>
+
+<p>These templates come in handy <strong>A LOT</strong> when it comes to prompts (Branched prompts). Next tutorial or so we will talk about prompts.</p>
+<p>There is a time to use etlua vs mustache. If you don't have to use etlua, then don't use it. Etlua is a generally heavier renderer as it compiles the templates down to lua.</p>
+<p>This makes it take more time than mustache which does not have to load any lua code whatsoever.</p>
+<h2 id="events">Events</h2>
+<p>Now, how might we listen to events you may ask. Well its actually quite simple.</p>
+<p>Lets go create a file named <code>reactionAdd.lua</code>. You should name your events what they are listening for. This is strictly not needed but it helps sort them out. We are going to do some organization in the next tutorial as well.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- reactionAdd.lua</span>
+<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- The lua helper</span>
+
+<span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;reactionAdd&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="n">execute</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">messageId</span><span class="p">,</span> <span class="n">hash</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
+      <span class="c1">-- Do something</span>
+    <span class="kr">end</span>
+  <span class="p">},</span>
+  <span class="n">event</span><span class="p">,</span>
+  <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="s1">&#39;new&#39;</span><span class="p">)</span>
+
+    <span class="c1">-- Options aka once</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">once</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">-- If this should be done only once</span>
+  <span class="kr">end</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Now, you may ask, how do we add it? Well its quite trivial. Its almost the same way you add a command.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- main.lua</span>
+<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+
+<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
+
+<span class="n">dotenv</span><span class="p">.</span><span class="n">config</span><span class="p">()</span> <span class="c1">-- Load our .env</span>
+
+<span class="kd">local</span> <span class="n">bot</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="n">process</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">TOKEN</span><span class="p">)</span> <span class="c1">-- Create a client</span>
+
+<span class="c1">--bot:addCommand(require &#39;./command&#39;()) -- Add the command to the bot</span>
+
+<span class="n">bot</span><span class="p">:</span><span class="n">addEvent</span><span class="p">(</span><span class="nb">require</span> <span class="s1">&#39;./reactionAdd&#39;</span><span class="p">())</span> <span class="c1">-- Add the event to the bot</span>
+
+<span class="nb">require</span> <span class="s1">&#39;./plugin&#39;</span><span class="p">:</span><span class="n">use</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span> <span class="c1">-- Load the plugin</span>
+
+<span class="n">bot</span><span class="p">:</span><span class="n">login</span><span class="p">()</span> <span class="c1">-- Log into Discord</span>
+</code></pre></div>
+
+<p>Something else we can do is put it into a plugin.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- plugin.lua</span>
+<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+
+<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
+
+<span class="kr">return</span> <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">plugin</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="c1">-- Create our plugin</span>
+  <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">)</span> <span class="c1">-- Super it</span>
+
+  <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="c1">-- Create our command</span>
+    <span class="n">execute</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="n">msg</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="c1">-- We drop first argument as its self</span>
+      <span class="n">msg</span><span class="p">:</span><span class="n">reply</span> <span class="s1">&#39;Some command&#39;</span>
+    <span class="kr">end</span>
+  <span class="p">},</span> <span class="n">self</span><span class="p">.</span><span class="n">command</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="c1">-- Our setup function</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="s1">&#39;new&#39;</span><span class="p">)</span>
+
+    <span class="c1">-- Command options</span>
+  <span class="kr">end</span><span class="p">)</span>
+
+  <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;reactionAdd&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="n">execute</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">messageId</span><span class="p">,</span> <span class="n">hash</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
+      <span class="c1">-- Do something</span>
+    <span class="kr">end</span>
+  <span class="p">},</span> <span class="n">self</span><span class="p">.</span><span class="n">event</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+    <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="s1">&#39;new&#39;</span><span class="p">)</span>
+
+    <span class="c1">-- Options aka once</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">once</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">-- If this should be done only once</span>
+  <span class="kr">end</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
+
+<p>And we can comment out the require on our event</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- main.lua</span>
+<span class="c1">-- ...</span>
+
+<span class="c1">-- bot:addEvent(require &#39;./reactionAdd&#39;()) -- Add the event to the bot</span>
+
+<span class="c1">-- ...</span>
+</code></pre></div>
+
+<p>Now, next tutorial as I said will be some cleaning up and prompts.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../simple/" title="Simple bot" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Simple bot
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../examples/command.moon/" title="Command.moon" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Command.moon
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/SovietKitsune" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://discord.gg/uCDq5mw" target="_blank" rel="noopener" title="discord.gg" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>
