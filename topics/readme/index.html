@@ -13,7 +13,7 @@
     
     
       
-        <title>Command.moon - Comrade</title>
+        <title>Discordia Tutorial - Comrade</title>
       
     
     
@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#discordia-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -87,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Command.moon
+              Discordia Tutorial
             
           </span>
         </div>
@@ -147,9 +152,7 @@
         
           
 
-  
-
-<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -171,7 +174,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../topics/01-simple-bot/" class="md-tabs__link">
+        <a href="../01-simple-bot/" class="md-tabs__link">
           Guide
         </a>
       
@@ -184,7 +187,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" class="md-tabs__link md-tabs__link--active">
+        <a href="../../examples/command.moon/" class="md-tabs__link">
           Examples
         </a>
       
@@ -563,7 +566,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../topics/01-simple-bot/" title="Simple bot" class="md-nav__link">
+    <a href="../01-simple-bot/" title="Simple bot" class="md-nav__link">
       Simple bot
     </a>
   </li>
@@ -575,7 +578,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../topics/02-embed-events/" title="Embeds and events" class="md-nav__link">
+    <a href="../02-embed-events/" title="Embeds and events" class="md-nav__link">
       Embeds and events
     </a>
   </li>
@@ -590,12 +593,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Examples
@@ -613,18 +614,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Command.moon" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../examples/command.moon/" title="Command.moon" class="md-nav__link">
       Command.moon
     </a>
-    
   </li>
 
         
@@ -634,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../event.moon/" title="Event.moon" class="md-nav__link">
+    <a href="../../examples/event.moon/" title="Event.moon" class="md-nav__link">
       Event.moon
     </a>
   </li>
@@ -646,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../plugin.moon/" title="Plugin.moon" class="md-nav__link">
+    <a href="../../examples/plugin.moon/" title="Plugin.moon" class="md-nav__link">
       Plugin.moon
     </a>
   </li>
@@ -658,7 +652,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../embeds.moon/" title="Embeds.moon" class="md-nav__link">
+    <a href="../../examples/embeds.moon/" title="Embeds.moon" class="md-nav__link">
       Embeds.moon
     </a>
   </li>
@@ -670,7 +664,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../advanced-arguments.moon/" title="Advanced arguments.moon" class="md-nav__link">
+    <a href="../../examples/advanced-arguments.moon/" title="Advanced arguments.moon" class="md-nav__link">
       Advanced arguments.moon
     </a>
   </li>
@@ -688,45 +682,77 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    Tutorials
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-bot" class="md-nav__link">
+    Simple bot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embed-events" class="md-nav__link">
+    Embed events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Command.moon</h1>
-                
-                <h2>command.moon</h2>
-
-<pre>
-<code class="hljs moon">
-import Command from <span class="hljs-global">require</span> <span class="hljs-string">'comrade'</span>
-
-class commandname extends Command
-  new: =&gt;
-    super!
-
-    @name = <span class="hljs-string">''</span> <span class="hljs-comment">-- Override class name
-</span>    @aliases = {<span class="hljs-string">''</span>}
-    @permissions = {<span class="hljs-string">''</span>} <span class="hljs-comment">-- Uses overrides like if they have Moderation we can override them not having kick members
-</span>    @hidden = <span class="hljs-keyword">false</span> <span class="hljs-comment">-- It won't appear in help and can only be ran by an owner
-</span>    @allowDMS = <span class="hljs-keyword">false</span>
-    @cooldown = <span class="hljs-number">3000</span> <span class="hljs-comment">-- Comes in with a built in MS parser so it can say '3 minutes remaining' or '3 hours'
-</span>
-    @description = <span class="hljs-string">''</span>
-    @usage = <span class="hljs-string">''</span>
-    @example = <span class="hljs-string">''</span>
-
-  subcommand: (msg, args, client) =&gt;
-    <span class="hljs-comment">-- I only run when you say commandname subcommand
-</span>    msg\reply <span class="hljs-string">'Subcommand!'</span>
-
-  execute: (msg, args, client) =&gt;
-    <span class="hljs-comment">-- Command logic
-</span>    @help msg.channel <span class="hljs-comment">-- Send the help message
-</span>
-commandname!</code>
-</pre>
+                <h1 id="discordia-tutorial">Discordia Tutorial</h1>
+<p>This tutorial series goes over making a bot using <a href="https://github.com/comrade-project/Comrade">Comrade</a>, a helper library.</p>
+<h2 id="tutorials">Tutorials</h2>
+<h3 id="simple-bot">Simple bot</h3>
+<ul>
+<li>Setup</li>
+<li>Basic command</li>
+<li>Basic plugin</li>
+</ul>
+<h3 id="embed-events">Embed events</h3>
+<ul>
+<li>Embeds</li>
+<li>Templates</li>
+<li>Events</li>
+</ul>
                 
               
               
@@ -741,41 +767,6 @@ commandname!</code>
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../../topics/02-embed-events/" title="Embeds and events" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Embeds and events
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../event.moon/" title="Event.moon" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Event.moon
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
