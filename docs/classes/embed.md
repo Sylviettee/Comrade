@@ -98,7 +98,7 @@ Add fields to the embed
 
 
 
-**Returns:** <a class="type" href="../classes/embed.md#">embed</a> , <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> , <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> 
+**Returns:** <a class="type" href="../classes/embed.md#">embed</a>
 
 
 

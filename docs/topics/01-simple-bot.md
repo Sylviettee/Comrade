@@ -32,11 +32,13 @@ These are the steps to add Luvit (that is luvit, luvi, lit) to your system PATH 
 Lets say you installed it at ~/luvit/
 
 You can just do in your shell. You can also put it in your `.profile`
+
 ```sh
 export PATH="$HOME/luvit/:$PATH"
 ```
 
 If you added it to your `.profile`
+
 ```sh
 source ~/.profile
 ```
@@ -68,12 +70,15 @@ This brings up the terminal, now with the terminal open you want to type `git in
 Now we can create a new file called `main.lua` and `.env`. Make sure that these files don't have `.txt` at the end or something.
 
 In `.env` we have
+
 ```env
 TOKEN=<Your bot token>
 ```
+
 Make sure you replace `<Your bot token>` with your actual bot token we got from [setup](#setup)
 
 In our `main.lua` we can have
+
 ```lua
 local comrade = require 'Comrade' -- Bring in our module
 
@@ -137,9 +142,8 @@ bot:login() -- Log into Discord
 ```
 
 Now we can go into a server with the bot. If we type `!help` we should see
-```
-example, help
-```
+
+`example, help`
 
 Now run `!example` and you should see `Some command`.
 
@@ -219,4 +223,5 @@ Thats about it besides events. Next tutorial we will get more in depth with some
 * [Discordia](https://github.com/SinisterRectus/Discordia/wiki)
 * [Luvit](http://luvit.io/api/)
 * [Lua](https://www.lua.org/manual/5.1/)
+
 

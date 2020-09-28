@@ -24,8 +24,8 @@ nav:
       - lua: 'modules/lua.md'
       - util: 'modules/util.md'
   - Guide: 
-    - 'topics/simple.md'
-    - 'topics/embed-events.md'
+    - 'topics/01-simple-bot.md'
+    - 'topics/02-embed-events.md'
   - Examples:
     - 'examples/command.moon.md'
     - 'examples/event.moon.md'

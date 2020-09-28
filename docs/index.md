@@ -44,8 +44,9 @@
 
 | Module | Description |
 | ------ | ----------- |
-| [embed-events.md](topics/embed-events.md) |
-| [simple.md](topics/simple.md) |
+| [01-simple-bot.md](topics/01-simple-bot.md) |
+| [02-embed-events.md](topics/02-embed-events.md) |
+| [readme.md](topics/readme.md) |
 
 
 ### Examples

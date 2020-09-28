@@ -3,7 +3,7 @@ description = 'A Discord bot framework build on Discordia'
 title = 'Comrade Documentation'
 
 dir='docs'
-topics = 'topics'
+topics = 'guide'
 
 format = 'lunamark'
 pretty = 'lxsh'

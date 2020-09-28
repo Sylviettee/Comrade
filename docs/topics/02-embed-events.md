@@ -1,6 +1,7 @@
+
 # Embeds and events
 
-This tutorial assumes that you have followed part 1, [Simple bot](./simple.md)
+This tutorial assumes that you have followed part 1, [Simple bot](./02-embed-events.md)
 
 ## Embeds
 
@@ -45,6 +46,7 @@ end
 ```
 
 We can't send this embed down to the channel like this.
+
 ```lua
 msg:reply(myEmbed)
 ```
@@ -68,7 +70,7 @@ Way 2 is usually the better method as it runs checks. It checks if it can,
 * Send messages
 * Read messages
 * Embed links
-  
+
 This makes it harder to get a 403 error. It still can happen like with dms but thats a given.
 
 Now, lets look at the [docs for the embed](https://comrade-project.github.io/Comrade/classes/embed.html). We see there are quite a lot of methods.
@@ -93,6 +95,7 @@ Usually you want to use these set methods. This is since, like with sending, the
 The only limit not followed is the 6000 character limit. This is since it would lower performance checking every since text field when editing text.
 
 You can also chain methods as so
+
 ```lua
 local myEmbed = Embed()
   :setColor(0x0099ff)
@@ -130,8 +133,8 @@ local level = Template { -- They extend embeds meaning that they allow for start
 }
 
 level:render({
-  user = '4 times 1 is even less than 0#3870', 
-  level = 5, 
+  user = '4 times 1 is even less than 0#3870',
+  level = 5,
   coins = '2'
 }):send(channel)
 ```
@@ -169,8 +172,8 @@ lua.class('reactionAdd', {
     execute = function(channel, messageId, hash, userId)
       -- Do something
     end
-  }, 
-  event, 
+  },
+  event,
   function(self)
     self:super(self,'new')
 
@@ -247,3 +250,5 @@ And we can comment out the require on our event
 ```
 
 Now, next tutorial as I said will be some cleaning up and prompts.
+
+
