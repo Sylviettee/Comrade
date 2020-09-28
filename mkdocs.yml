@@ -1,0 +1,72 @@
+site_name: Comrade
+
+nav:
+  - Documentation:
+    - Home: index.md
+    - Root: 'modules/helper.md'
+    - Classes:
+      - Array: 'classes/Array.md'
+      - Client: 'classes/client.md'
+      - Command: 'classes/command.md'
+      - Embed: 'classes/embed.md'
+      - Emitter: 'classes/emitter.md'
+      - Event: 'classes/event.md'
+      - Help: 'classes/help.md'
+      - LuaCommand: 'classes/luaCommand.md'
+      - Plugin: 'classes/plugin.md'
+      - Prompt: 'classes/prompt.md'
+      - Status: 'classes/status.md'
+      - Template: 'classes/Template.md'
+    - Modules:
+      - argparse: 'modules/argparse.md' 
+      - dotenv: 'modules/dotenv.md'
+      - logger: 'modules/logger.md'
+      - lua: 'modules/lua.md'
+      - util: 'modules/util.md'
+  - Guide: 
+    - 'topics/simple.md'
+    - 'topics/embed-events.md'
+  - Examples:
+    - 'examples/command.moon.md'
+    - 'examples/event.moon.md'
+    - 'examples/plugin.moon.md'
+    - 'examples/embeds.moon.md'
+    - 'examples/advanced-arguments.moon.md'
+
+
+theme:
+  name: material
+  palette:
+    scheme: preference
+    primary: teal
+    accent: teal
+  icon:
+    logo: fontawesome/solid/hammer
+  features:
+    - navigation.tabs
+
+# Social
+
+repo_url: https://github.com/comrade-project/Comrade
+repo_name: comrade-project/comrade
+edit_uri: "" # LDoc comments generate the docs
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SovietKitsune
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/uCDq5mw
+
+# Extensions
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
+  - javascripts/config.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/atom-one-light.min.css
