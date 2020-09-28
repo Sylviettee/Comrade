@@ -61,12 +61,8 @@ Prompt configuration
 
 | Fields | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| embed | <span class="type">boolean</span> | ❌ | `none` |
-
- |
-| tasks | <a class="type" href="../classes/prompt.md#prompt.task">task[]</a> | ❌ | `none` |
-
- |
+| embed | <span class="type">boolean</span> | ❌ | `none` |      |
+| tasks | <a class="type" href="../classes/prompt.md#prompt.task">task[]</a> | ❌ | `none` |      |
 
 
 
@@ -176,9 +172,7 @@ Send a message in the prompt channel
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| content |  | ❌ | `none` |
-
- |
+| content |  | ❌ | `none` |      |
 
 
 
@@ -197,12 +191,8 @@ Save a value into the prompt
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| key |  | ❌ | `none` |
-
- |
-| value |  | ❌ | `none` |
-
- |
+| key |  | ❌ | `none` |      |
+| value |  | ❌ | `none` |      |
 
 
 
@@ -221,9 +211,7 @@ Get a value from the prompt
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| key |  | ❌ | `none` |
-
- |
+| key |  | ❌ | `none` |      |
 
 
 
@@ -242,9 +230,7 @@ Internal; Handle the action
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| msg |  | ❌ | `none` |
-
- |
+| msg |  | ❌ | `none` |      |
 
 
 

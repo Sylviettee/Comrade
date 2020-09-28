@@ -40,15 +40,9 @@ Returns a list of all the commands
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| msg |  | ❌ | `none` |
-
- |
-| _ |  | ❌ | `none` |
-
- |
-| client |  | ❌ | `none` |
-
- |
+| msg |  | ❌ | `none` |      |
+| _ |  | ❌ | `none` |      |
+| client |  | ❌ | `none` |      |
 
 
 
@@ -67,15 +61,9 @@ Search for the command giving if one was given
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| msg |  | ❌ | `none` |
-
- |
-| args |  | ❌ | `none` |
-
- |
-| client |  | ❌ | `none` |
-
- |
+| msg |  | ❌ | `none` |      |
+| args |  | ❌ | `none` |      |
+| client |  | ❌ | `none` |      |
 
 
 

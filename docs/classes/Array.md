@@ -40,9 +40,7 @@ Takes in a vararg to populate the table
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| ... |  | ❌ | `none` |
-
- |
+| ... |  | ❌ | `none` |      |
 
 
 
@@ -61,9 +59,7 @@ For every item in the array, call the function
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| func | <span class="type">function</span> | ❌ | `none` |
-
- |
+| func | <span class="type">function</span> | ❌ | `none` |      |
 
 
 
@@ -82,9 +78,7 @@ Loop through each item and each item that satifies the function gets added to an
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| func | <span class="type">function</span> | ❌ | `none` |
-
- |
+| func | <span class="type">function</span> | ❌ | `none` |      |
 
 
 
@@ -103,9 +97,7 @@ The first item to satify a function gets returned
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| func | <span class="type">function</span> | ❌ | `none` |
-
- |
+| func | <span class="type">function</span> | ❌ | `none` |      |
 
 
 
@@ -124,9 +116,7 @@ Create a new array based off what the passed function evaluates the data to
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| func | <span class="type">function</span> | ❌ | `none` |
-
- |
+| func | <span class="type">function</span> | ❌ | `none` |      |
 
 
 
@@ -145,9 +135,7 @@ Add an item to the array
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| item |  | ❌ | `none` |
-
- |
+| item |  | ❌ | `none` |      |
 
 
 

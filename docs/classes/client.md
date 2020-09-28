@@ -59,9 +59,7 @@ Login to Discord
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| status | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> | ❌ | `none` |
-
- |
+| status | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> | ❌ | `none` |      |
 
 
 
@@ -92,9 +90,7 @@ Update the owners list
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| owners | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> | ❌ | `none` |
-
- |
+| owners | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> | ❌ | `none` |      |
 
 
 
@@ -113,9 +109,7 @@ Add a command
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| command | <a class="type" href="../classes/command.md#">command</a> | ❌ | `none` |
-
- |
+| command | <a class="type" href="../classes/command.md#">command</a> | ❌ | `none` |      |
 
 
 
@@ -139,12 +133,8 @@ Remove a command
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | `none` |
-
- |
-| check | optional <span class="type">function</span> | ❌ | `none` |
-
- |
+| name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | `none` |      |
+| check | optional <span class="type">function</span> | ❌ | `none` |      |
 
 
 
@@ -163,9 +153,7 @@ Add an event
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| event | <a class="type" href="../classes/event.md#">event</a> | ❌ | `none` |
-
- |
+| event | <a class="type" href="../classes/event.md#">event</a> | ❌ | `none` |      |
 
 
 
@@ -189,12 +177,8 @@ Remove an event
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | `none` |
-
- |
-| check | optional <span class="type">function</span> | ❌ | `none` |
-
- |
+| name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | `none` |      |
+| check | optional <span class="type">function</span> | ❌ | `none` |      |
 
 
 
@@ -213,9 +197,7 @@ Remove plugin
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | `none` |
-
- |
+| name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | `none` |      |
 
 
 

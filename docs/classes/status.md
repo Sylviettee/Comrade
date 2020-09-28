@@ -39,15 +39,9 @@ Get all status informaton
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| msg |  | ❌ | `none` |
-
- |
-| _ |  | ❌ | `none` |
-
- |
-| client |  | ❌ | `none` |
-
- |
+| msg |  | ❌ | `none` |      |
+| _ |  | ❌ | `none` |      |
+| client |  | ❌ | `none` |      |
 
 
 

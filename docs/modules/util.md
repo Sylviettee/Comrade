@@ -37,9 +37,7 @@ Convert years into milliseconds
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| years | <span class="type">number</span> | ❌ | `none` |
-
- |
+| years | <span class="type">number</span> | ❌ | `none` |      |
 
 
 
@@ -63,9 +61,7 @@ Convert weeks into milliseconds
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| weeks | <span class="type">number</span> | ❌ | `none` |
-
- |
+| weeks | <span class="type">number</span> | ❌ | `none` |      |
 
 
 
@@ -89,9 +85,7 @@ Convert days into milliseconds
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| days | <span class="type">number</span> | ❌ | `none` |
-
- |
+| days | <span class="type">number</span> | ❌ | `none` |      |
 
 
 
@@ -115,9 +109,7 @@ Convert hours into milliseconds
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| hours | <span class="type">number</span> | ❌ | `none` |
-
- |
+| hours | <span class="type">number</span> | ❌ | `none` |      |
 
 
 
@@ -141,9 +133,7 @@ Convert minutes into milliseconds
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| minutes | <span class="type">number</span> | ❌ | `none` |
-
- |
+| minutes | <span class="type">number</span> | ❌ | `none` |      |
 
 
 
@@ -167,9 +157,7 @@ Convert seconds into milliseconds
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| seconds | <span class="type">number</span> | ❌ | `none` |
-
- |
+| seconds | <span class="type">number</span> | ❌ | `none` |      |
 
 
 
@@ -193,9 +181,7 @@ Convert milliseconds into a long formatted time; eg 10 days
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| milliseconds | <span class="type">number</span> | ❌ | `none` |
-
- |
+| milliseconds | <span class="type">number</span> | ❌ | `none` |      |
 
 
 
@@ -219,9 +205,7 @@ Check if a time should be plural
 
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
-| ms | <span class="type">number</span> | ❌ | `none` |
-
- |
+| ms | <span class="type">number</span> | ❌ | `none` |      |
 | msAbs | <span class="type">number</span> | ❌ | `none` |  Absolute value of the milliseconds |
 | n | <span class="type">number</span> | ❌ | `none` |  The amount of milliseconds in the unit |
 | name | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> | ❌ | `none` |  The name of the unit eg <code>second</code> |
@@ -249,9 +233,7 @@ Bulk delete messages in a channel using getMessages
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
 | msg |  | ❌ | `none` |  The message you got the call to bulk delete |
-| messages | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">number</span> | ❌ | `none` |
-
- |
+| messages | <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">number</span> | ❌ | `none` |      |
 
 
 
