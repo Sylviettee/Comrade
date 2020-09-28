@@ -11,14 +11,14 @@ A prompt helper class
 
 
 ### [Tables](#Tables)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | prompt.globalActions | Prompt global actions |
 | prompt.config | Prompt configuration |
 | prompt.task | A prompt task |
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | prompt\new (msg, client, config) | Construct a prompt to get user information |
 | prompt\next () | Move on the prompt |

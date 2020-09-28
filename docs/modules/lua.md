@@ -11,7 +11,7 @@ Allows lua to create and extend classes
 
 
 ### [Functions](#Functions)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | class (name, tbl, extend, setup) | Create a moonscript class |
 

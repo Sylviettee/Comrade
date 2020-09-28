@@ -16,17 +16,17 @@ A module to parse arguments into a table
 
 
 ### [Functions](#Functions)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | new (tbl, command) | Construct an argument parser |
 
 ### [Tables](#Tables)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | argument | An argument |
 
 ### [Fields](#Fields)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | int | The built in types; They are automatically type casted to what they are named |
 

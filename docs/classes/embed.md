@@ -11,12 +11,12 @@ A embed helper class
 
 
 ### [Tables](#Tables)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | embed.field | An embed field |
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | embed\addField (name, value[, inline=false]) | Add a field to the embed with name, value, and inline |
 | embed\addFields (fields) | Add fields to the embed |

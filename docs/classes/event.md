@@ -11,7 +11,7 @@ An event class, should be extended
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | event\use (client) | Use the event, takes in a client object |
 

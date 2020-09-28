@@ -11,7 +11,7 @@ The helper client, extends a Discordia client
 
 
 ### [Functions](#Functions)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | helper.__init (token[, config={}]) | Create a new helper client |
 | helper.login (status) | Login to Discord |
@@ -24,7 +24,7 @@ The helper client, extends a Discordia client
 | helper.removePlugin (name) | Remove plugin |
 
 ### [Tables](#Tables)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | client.config | The clients configuration (Most from Discordia client) |
 

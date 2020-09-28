@@ -6,6 +6,9 @@ Changes between each version.
 
 * Removed blua as it caused compile issues
 * Added more advanced argument parsing
+* Docs generation change
+* Moved advanced argument parsing test to examples
+* Make LuaCheck happy
 
 ## 1.2.3
 

@@ -1,4 +1,4 @@
-local logger = { }
+local logger = {}
 local getenv
 getenv = os.getenv
 local lustache = require('../libs/lustache')
@@ -24,39 +24,24 @@ logger.colors = {
     bright_cyan = '[36;1m',
     bright_white = '[37;1m'
   },
-  [256] = {
-    link = '[4;38;5;14m',
-    framed = '[51m'
-  }
+  [256] = {link = '[4;38;5;14m', framed = '[51m'}
 }
-logger.palette = { }
-local term = getenv("TERM")
-local color = getenv("COLORTERM")
+logger.palette = {}
+local term = getenv('TERM')
+local color = getenv('COLORTERM')
 local theme = 8
 local truecolor = (color and (color == 'truecolor' or color == '24bit')) or false
-if term and (term == 'xterm' or term:find('-256color$')) then
-  theme = 256
-end
+if term and (term == 'xterm' or term:find('-256color$')) then theme = 256 end
 for i, v in pairs(logger.colors) do
-  if i <= theme then
-    for color, code in pairs(v) do
-      logger.palette[color] = "\27" .. tostring(code)
-    end
-  end
+  if i <= theme then for color, code in pairs(v) do logger.palette[color] = '\27' .. tostring(code) end end
 end
 if truecolor then
-  logger.palette.rgb = function(text, render)
-    return render("\27[38;2;" .. tostring(text:gsub(', ', ';')) .. "m")
-  end
+  logger.palette.rgb = function(text, render) return render('\27[38;2;' .. tostring(text:gsub(', ', ';')) .. 'm') end
 end
 logger.render = function(text, env)
-  if env == nil then
-    env = { }
-  end
+  if env == nil then env = {} end
   local palette = logger.palette
-  for i, v in pairs(env) do
-    palette[i] = v
-  end
+  for i, v in pairs(env) do palette[i] = v end
   local data = lustache:render(text, palette)
   data = data:gsub('&#x2F;', '/')
   return data

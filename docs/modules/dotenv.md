@@ -11,7 +11,7 @@ A module to parse a .env file
 
 
 ### [Functions](#Functions)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | parse (src, options) | Parses a .env file, does&#039;t support everything yet |
 | config (options) | Automatically read, parse, and inject a .env file |

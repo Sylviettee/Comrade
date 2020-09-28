@@ -11,7 +11,7 @@ The root of all the modules
 
 
 ### [Functions](#Functions)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | version () | The version |
 | Array () |    |

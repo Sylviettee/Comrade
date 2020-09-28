@@ -10,7 +10,7 @@ format:
 	@lua-format *.lua ./**/*.lua -i -c .luaformat.yaml
 moonscript:
 	@echo -e '\033[32mRunning moonscript\033[0m'
-	@moonp ./faker ./helpers ./libs ./structures ./tests init.moon parse.moon lua.moon
+	@moonc .
 test:
 	@echo -e '\033[32mRunning test\033[0m'
 	@cd tests && luvit main.lua

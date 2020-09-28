@@ -11,7 +11,7 @@ A command helper class, should be extended
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | command\new () | Create a command |
 | command\help (channel) | An function to generate a help embed and send to to a channel |

@@ -11,7 +11,7 @@ A plugin that functions like a dpy cog, should be extended
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | plugin\new () | Create a new plugin, sets 2 properties, @command and @event. |
 | plugin\use (client) | Allows the plugin to be used by the client |

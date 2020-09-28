@@ -11,7 +11,7 @@ A template for creating embeds and more templates
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | Template\new (start, useEtLua) | Create a new template |
 | Template\render (env) | Render the template into an embed |

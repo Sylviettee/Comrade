@@ -11,7 +11,7 @@ A utility module for time, moderation, and permissions
 
 
 ### [Functions](#Functions)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | years (years) | Convert years into milliseconds |
 | weeks (weeks) | Convert weeks into milliseconds |

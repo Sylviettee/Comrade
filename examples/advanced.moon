@@ -20,7 +20,7 @@ class test extends Command
           msg.member
       }
     }, @
-  execute: (msg, args) => -- Middleware is passed what a command is parsed and as they are all tables, they use refrences. This means it just works
+  execute: (msg, args) =>
     -- Parses args into a table
     sum = args.numOne + args.numTwo
     msg\reply "The sum is #{sum} and the member is #{args.member.user.tag}!"

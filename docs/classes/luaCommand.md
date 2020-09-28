@@ -11,7 +11,7 @@ Makes creating commands with pure lua easier
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | luaCommand\new (name) | Takes in the name of the command |
 | luaCommand\make () | Makes the command, remember that you should set the properties |

@@ -11,7 +11,7 @@ The default help, extends command
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | help\new () | Sets the usage, example, and description of the command |
 | help\all (msg, _, client) | Returns a list of all the commands |

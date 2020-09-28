@@ -11,7 +11,7 @@ A embed helper class
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | emitter\new () | Create a new emitter |
 | emitter\on (name, fn) | Listen to the emitter |

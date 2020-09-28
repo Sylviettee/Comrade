@@ -11,7 +11,7 @@ A command for testing to check the status of your tests
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | status\new () | Sets the usage, example, and description of the command |
 | status\execute (msg, _, client) | Get all status informaton |

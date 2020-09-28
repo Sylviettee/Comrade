@@ -11,7 +11,7 @@ An array with helper functions
 
 
 ### [Methods](#Methods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | Array\new (...) | Takes in a vararg to populate the table |
 | Array\forEach (func) | For every item in the array, call the function |
@@ -24,7 +24,7 @@ An array with helper functions
 | Array\pop (pos) | Remove the last or an index piece of data from an array |
 
 ### [Metamethods](#Metamethods)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | Array\__len () | Length of the list |
 | Array\__pairs () | Loop over the list |

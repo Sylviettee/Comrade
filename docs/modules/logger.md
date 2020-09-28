@@ -11,13 +11,13 @@ A module to make logging with colors easier
 
 
 ### [Functions](#Functions)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | palette () | An internal table to store the current palette |
 | render (text, env) | Renders text put in |
 
 ### [Tables](#Tables)
-| Property | Descritpion |
+| Property | Description |
 | -------- | ----------- |
 | colors | A table containing color bit values |
 

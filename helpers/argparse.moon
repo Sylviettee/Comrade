@@ -19,7 +19,8 @@ isSnowflake = (id) ->
     #id <= 64 and 
     not id\match('%D')
 
-class Parser
+class
+  @__name = "Parser"
   @types = {
     int: (val) ->
       return tonumber val
@@ -164,15 +165,15 @@ class Parser
         else
           -- Add to invalid list to send to user
           invalid ..= "\n - No argument for `#{v.id}`"
-          continue -- Can't run checks against nil
 
-      itemType = v.type tostring(data), msg
+      if data
+        itemType = v.type tostring(data), msg
 
-      if itemType == nil
-        invalid ..= "\n - Invalid type for `#{v.id}`"
-      else
-        -- Passed all the checks
-        toReturn[v.id] = itemType
+        if itemType == nil
+          invalid ..= "\n - Invalid type for `#{v.id}`"
+        else
+          -- Passed all the checks
+          toReturn[v.id] = itemType
 
     unless invalid == ''
       msg\reply "Failed to run command#{invalid}"
