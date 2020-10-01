@@ -670,8 +670,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comrade" class="md-nav__link">
-    Comrade
+  <a href="#harmonia" class="md-nav__link">
+    Harmonia
   </a>
   
 </li>
@@ -919,8 +919,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comrade" class="md-nav__link">
-    Comrade
+  <a href="#harmonia" class="md-nav__link">
+    Harmonia
   </a>
   
 </li>
@@ -980,9 +980,9 @@
                 
                 <h1 id="simple-bot">Simple bot</h1>
 <blockquote>
-<p>Comrade is a lightweight, safe framework built with MoonScript.</p>
+<p>Harmonia is a lightweight, safe framework built with MoonScript.</p>
 </blockquote>
-<p>Today we are going to make a simple Discord bot with Comrade and Discordia.</p>
+<p>Today we are going to make a simple Discord bot with Harmonia and Discordia.</p>
 <h2 id="setup">Setup</h2>
 <p>Before we can even start programming we need to get a bot token.</p>
 <p>Go to <a href="https://discord.com/developers">discord.com/developers</a> and create a new application by clicking the <code>New Application</code> button.</p>
@@ -1011,10 +1011,10 @@
 <p>Run it and install it. You can use this terminal instead of the command prompt.</p>
 <h4 id="on-unix-based-systems_1">On Unix based systems</h4>
 <p>If you are on a Unix based system then follow the instructions on the <a href="https://git-scm.com/download/linux">download page</a></p>
-<h3 id="comrade">Comrade</h3>
-<p>Now you need to install Comrade. This is mostly done with a git submodule. You can also git clone it into a directory.</p>
+<h3 id="harmonia">Harmonia</h3>
+<p>Now you need to install Harmonia. This is mostly done with a git submodule. You can also git clone it into a directory.</p>
 <p>Make a new folder and open it in something like Visual Studio Code. If you are using Visual Studio Code you can press control + shift + `</p>
-<p>This brings up the terminal, now with the terminal open you want to type <code>git init</code>. You want to now run <code>lit install SinisterRectus/discordia</code>. This installs discordia which Comrade depends on. Once that is done you can run <code>git submodule add https://github.com/comrade-project/Comrade.git deps/Comrade</code>. Now you should see some new files. These new files should be <code>.gitmodules</code> and a folder in deps called Comrade.</p>
+<p>This brings up the terminal, now with the terminal open you want to type <code>git init</code>. You want to now run <code>lit install SinisterRectus/discordia</code>. This installs discordia which Harmonia depends on. Once that is done you can run <code>git submodule add https://github.com/harmonia-project/Harmonia.git deps/Harmonia</code>. Now you should see some new files. These new files should be <code>.gitmodules</code> and a folder in deps called Harmonia.</p>
 <h2 id="starting-up">Starting up</h2>
 <p>Now we can create a new file called <code>main.lua</code> and <code>.env</code>. Make sure that these files don't have <code>.txt</code> at the end or something.</p>
 <p>In <code>.env</code> we have</p>
@@ -1023,9 +1023,9 @@
 
 <p>Make sure you replace <code>&lt;Your bot token&gt;</code> with your actual bot token we got from <a href="#setup">setup</a></p>
 <p>In our <code>main.lua</code> we can have</p>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
+<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
 
 <span class="n">dotenv</span><span class="p">.</span><span class="n">config</span><span class="p">()</span> <span class="c1">-- Load our .env</span>
 
@@ -1045,9 +1045,9 @@ gateway.json
 <h2 id="first-command">First command</h2>
 <p>Now we want some functionality from this bot. We do with with a command.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- command.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">command</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">LuaCommand</span> <span class="c1">-- The Lua helper</span>
+<span class="kd">local</span> <span class="n">command</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">LuaCommand</span> <span class="c1">-- The Lua helper</span>
 
 <span class="kd">local</span> <span class="n">comm</span> <span class="o">=</span> <span class="n">command</span> <span class="s1">&#39;example&#39;</span> <span class="c1">-- Create a command named example</span>
 
@@ -1058,12 +1058,12 @@ gateway.json
 <span class="kr">return</span> <span class="n">comm</span><span class="p">:</span><span class="n">make</span><span class="p">()</span> <span class="c1">-- Generate a readable command</span>
 </code></pre></div>
 
-<p>A lot of it is boilerplate and all you really need is the execute function. If you want to know more about this you can check out the <a href="https://comrade-project.github.io/Comrade/classes/command.html">Command</a> class.</p>
+<p>A lot of it is boilerplate and all you really need is the execute function. If you want to know more about this you can check out the <a href="https://harmonia-project.github.io/harmonia/classes/command.html">Command</a> class.</p>
 <p>Now in our <code>main.lua</code> we can import it.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- main.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
+<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
 
 <span class="n">dotenv</span><span class="p">.</span><span class="n">config</span><span class="p">()</span> <span class="c1">-- Load our .env</span>
 
@@ -1098,9 +1098,9 @@ gateway.json
 <p>A plugin is a collection of events and commands. For example a plugin used in little commander is a welcoming plugin.</p>
 <p>In lua, currently its not so pretty.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- plugin.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
+<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
 
 <span class="kr">return</span> <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">plugin</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="c1">-- Create our plugin</span>
   <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">)</span> <span class="c1">-- Super it</span>
@@ -1119,9 +1119,9 @@ gateway.json
 
 <p>Now in our <code>main.lua</code> we comment out the loading of our command. Plugins are loaded differently to commands. Instead of telling the client to load it, we tell the plugin to load it.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- main.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
+<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
 
 <span class="n">dotenv</span><span class="p">.</span><span class="n">config</span><span class="p">()</span> <span class="c1">-- Load our .env</span>
 
@@ -1137,7 +1137,7 @@ gateway.json
 <p>Thats about it besides events. Next tutorial we will get more in depth with some of the classes.</p>
 <h2 id="resources">Resources</h2>
 <ul>
-<li><a href="https://comrade-project.github.io/Comrade/index.html">Comrade</a></li>
+<li><a href="https://Htrmonia-project.github.io/Harmonia/">Harmonia</a></li>
 <li><a href="https://github.com/SinisterRectus/Discordia/wiki">Discordia</a></li>
 <li><a href="http://luvit.io/api/">Luvit</a></li>
 <li><a href="https://www.lua.org/manual/5.1/">Lua</a></li>

@@ -806,9 +806,9 @@
 <p>So, there are 2 forms of embeds. This is the standard embed and the template embed. We are going to start with the normal embed.</p>
 <p>Now we want to open our plugin we made.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- plugin.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">Embed</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Embed</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
+<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">Embed</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Embed</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
 
 <span class="kr">return</span> <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">plugin</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="c1">-- Create our plugin</span>
   <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">)</span> <span class="c1">-- Super it</span>
@@ -859,7 +859,7 @@
 <li>Embed links</li>
 </ul>
 <p>This makes it harder to get a 403 error. It still can happen like with dms but thats a given.</p>
-<p>Now, lets look at the <a href="https://comrade-project.github.io/Comrade/classes/embed.html">docs for the embed</a>. We see there are quite a lot of methods.</p>
+<p>Now, lets look at the <a href="https://harmonia-project.github.io/Harmonia/classes/embed.html">docs for the embed</a>. We see there are quite a lot of methods.</p>
 <p>All of these methods edit the look of the embed. Instead of setting title in the initial state we can do</p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">myEmbed</span> <span class="o">=</span> <span class="n">Embed</span><span class="p">()</span>
 <span class="n">myEmbed</span><span class="p">:</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Fun embed&#39;</span><span class="p">)</span>
@@ -880,10 +880,10 @@
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">myEmbed</span> <span class="o">=</span> <span class="n">Embed</span><span class="p">()</span>
   <span class="p">:</span><span class="n">setColor</span><span class="p">(</span><span class="mh">0x0099ff</span><span class="p">)</span>
   <span class="p">:</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Some title&#39;</span><span class="p">)</span>
-  <span class="p">:</span><span class="n">setURL</span><span class="p">(</span><span class="s1">&#39;https://comrade-project.github.io/Comrade&#39;</span><span class="p">)</span>
-  <span class="p">:</span><span class="n">setAuthor</span><span class="p">(</span><span class="s1">&#39;Some name&#39;</span><span class="p">,</span> <span class="s1">&#39;https://i.imgur.com/54BWIT5.png&#39;</span><span class="p">,</span> <span class="s1">&#39;https://comrade-project.github.io/Comrade&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setURL</span><span class="p">(</span><span class="s1">&#39;https://harmonia-project.github.io/Harmonia&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setAuthor</span><span class="p">(</span><span class="s1">&#39;Some name&#39;</span><span class="p">,</span> <span class="s1">&#39;https://i.imgur.com/54BWIT5.png&#39;</span><span class="p">,</span> <span class="s1">&#39;https://harmonia-project.github.io/Harmonia&#39;</span><span class="p">)</span>
   <span class="p">:</span><span class="n">setDescription</span><span class="p">(</span><span class="s1">&#39;Some description here&#39;</span><span class="p">)</span>
-  <span class="p">:</span><span class="n">setThumbnail</span><span class="p">(</span><span class="s1">&#39;https://comrade-project.github.io/Comrade&#39;</span><span class="p">)</span>
+  <span class="p">:</span><span class="n">setThumbnail</span><span class="p">(</span><span class="s1">&#39;https://harmonia-project.github.io/Harmonia&#39;</span><span class="p">)</span>
   <span class="p">:</span><span class="n">addFields</span><span class="p">(</span>
     <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Regular field title&#39;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;Some value here&#39;</span><span class="p">},</span>
     <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Inline field title&#39;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;Some value here&#39;</span><span class="p">,</span> <span class="n">inline</span> <span class="o">=</span> <span class="kc">true</span><span class="p">}</span>
@@ -930,8 +930,8 @@
 <p>Now, how might we listen to events you may ask. Well its actually quite simple.</p>
 <p>Lets go create a file named <code>reactionAdd.lua</code>. You should name your events what they are listening for. This is strictly not needed but it helps sort them out. We are going to do some organization in the next tutorial as well.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- reactionAdd.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
-<span class="kd">local</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- The lua helper</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- The lua helper</span>
 
 <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;reactionAdd&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="n">execute</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">messageId</span><span class="p">,</span> <span class="n">hash</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
@@ -950,9 +950,9 @@
 
 <p>Now, you may ask, how do we add it? Well its quite trivial. Its almost the same way you add a command.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- main.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
+<span class="kd">local</span> <span class="n">client</span><span class="p">,</span> <span class="n">dotenv</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Client</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">dotenv</span> <span class="c1">-- Import what we need from the module</span>
 
 <span class="n">dotenv</span><span class="p">.</span><span class="n">config</span><span class="p">()</span> <span class="c1">-- Load our .env</span>
 
@@ -969,9 +969,9 @@
 
 <p>Something else we can do is put it into a plugin.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- plugin.lua</span>
-<span class="kd">local</span> <span class="n">comrade</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Comrade&#39;</span> <span class="c1">-- Bring in our module</span>
+<span class="kd">local</span> <span class="n">harmonia</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">&#39;Harmonia&#39;</span> <span class="c1">-- Bring in our module</span>
 
-<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">comrade</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">comrade</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
+<span class="kd">local</span> <span class="n">plugin</span><span class="p">,</span> <span class="n">lua</span> <span class="o">=</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="n">harmonia</span><span class="p">.</span><span class="n">lua</span> <span class="c1">-- Import what we need</span>
 
 <span class="kr">return</span> <span class="n">lua</span><span class="p">.</span><span class="n">class</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">plugin</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="c1">-- Create our plugin</span>
   <span class="n">self</span><span class="p">:</span><span class="n">super</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">)</span> <span class="c1">-- Super it</span>
