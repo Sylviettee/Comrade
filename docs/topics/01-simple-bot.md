@@ -1,9 +1,9 @@
 
 # Simple bot
 
-> Comrade is a lightweight, safe framework built with MoonScript.
+> Harmonia is a lightweight, safe framework built with MoonScript.
 
-Today we are going to make a simple Discord bot with Comrade and Discordia.
+Today we are going to make a simple Discord bot with Harmonia and Discordia.
 
 ## Setup
 
@@ -57,13 +57,13 @@ Run it and install it. You can use this terminal instead of the command prompt.
 
 If you are on a Unix based system then follow the instructions on the [download page](https://git-scm.com/download/linux)
 
-### Comrade
+### Harmonia
 
-Now you need to install Comrade. This is mostly done with a git submodule. You can also git clone it into a directory.
+Now you need to install Harmonia. This is mostly done with a git submodule. You can also git clone it into a directory.
 
 Make a new folder and open it in something like Visual Studio Code. If you are using Visual Studio Code you can press control + shift + `
 
-This brings up the terminal, now with the terminal open you want to type `git init`. You want to now run `lit install SinisterRectus/discordia`. This installs discordia which Comrade depends on. Once that is done you can run `git submodule add https://github.com/comrade-project/Comrade.git deps/Comrade`. Now you should see some new files. These new files should be `.gitmodules` and a folder in deps called Comrade.
+This brings up the terminal, now with the terminal open you want to type `git init`. You want to now run `lit install SinisterRectus/discordia`. This installs discordia which Harmonia depends on. Once that is done you can run `git submodule add https://github.com/harmonia-project/Harmonia.git deps/Harmonia`. Now you should see some new files. These new files should be `.gitmodules` and a folder in deps called Harmonia.
 
 ## Starting up
 
@@ -80,9 +80,9 @@ Make sure you replace `<Your bot token>` with your actual bot token we got from 
 In our `main.lua` we can have
 
 ```lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local client, dotenv = comrade.Client, comrade.dotenv -- Import what we need from the module
+local client, dotenv = harmonia.Client, harmonia.dotenv -- Import what we need from the module
 
 dotenv.config() -- Load our .env
 
@@ -109,9 +109,9 @@ Now we want some functionality from this bot. We do with with a command.
 
 ```lua
 -- command.lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local command = comrade.LuaCommand -- The Lua helper
+local command = harmonia.LuaCommand -- The Lua helper
 
 local comm = command 'example' -- Create a command named example
 
@@ -122,15 +122,15 @@ end
 return comm:make() -- Generate a readable command
 ```
 
-A lot of it is boilerplate and all you really need is the execute function. If you want to know more about this you can check out the [Command](https://comrade-project.github.io/Comrade/classes/command.html) class.
+A lot of it is boilerplate and all you really need is the execute function. If you want to know more about this you can check out the [Command](https://harmonia-project.github.io/harmonia/classes/command.html) class.
 
 Now in our `main.lua` we can import it.
 
 ```lua
 -- main.lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local client, dotenv = comrade.Client, comrade.dotenv -- Import what we need from the module
+local client, dotenv = harmonia.Client, harmonia.dotenv -- Import what we need from the module
 
 dotenv.config() -- Load our .env
 
@@ -177,9 +177,9 @@ In lua, currently its not so pretty.
 
 ```lua
 -- plugin.lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local plugin, lua = comrade.Plugin, comrade.lua -- Import what we need
+local plugin, lua = harmonia.Plugin, harmonia.lua -- Import what we need
 
 return lua.class('name', {}, plugin, function(self) -- Create our plugin
   self:super(self, 'new') -- Super it
@@ -200,9 +200,9 @@ Now in our `main.lua` we comment out the loading of our command. Plugins are loa
 
 ```lua
 -- main.lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local client, dotenv = comrade.Client, comrade.dotenv -- Import what we need from the module
+local client, dotenv = harmonia.Client, harmonia.dotenv -- Import what we need from the module
 
 dotenv.config() -- Load our .env
 
@@ -219,7 +219,7 @@ Thats about it besides events. Next tutorial we will get more in depth with some
 
 ## Resources
 
-* [Comrade](https://comrade-project.github.io/Comrade/index.html)
+* [Harmonia](https://Htrmonia-project.github.io/Harmonia/)
 * [Discordia](https://github.com/SinisterRectus/Discordia/wiki)
 * [Luvit](http://luvit.io/api/)
 * [Lua](https://www.lua.org/manual/5.1/)

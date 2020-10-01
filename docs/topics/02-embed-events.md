@@ -11,9 +11,9 @@ Now we want to open our plugin we made.
 
 ```lua
 -- plugin.lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local plugin, Embed, lua = comrade.Plugin, comrade.Embed, comrade.lua -- Import what we need
+local plugin, Embed, lua = harmonia.Plugin, harmonia.Embed, harmonia.lua -- Import what we need
 
 return lua.class('name', {}, plugin, function(self) -- Create our plugin
   self:super(self, 'new') -- Super it
@@ -73,7 +73,7 @@ Way 2 is usually the better method as it runs checks. It checks if it can,
 
 This makes it harder to get a 403 error. It still can happen like with dms but thats a given.
 
-Now, lets look at the [docs for the embed](https://comrade-project.github.io/Comrade/classes/embed.html). We see there are quite a lot of methods.
+Now, lets look at the [docs for the embed](https://harmonia-project.github.io/Harmonia/classes/embed.html). We see there are quite a lot of methods.
 
 All of these methods edit the look of the embed. Instead of setting title in the initial state we can do
 
@@ -100,10 +100,10 @@ You can also chain methods as so
 local myEmbed = Embed()
   :setColor(0x0099ff)
   :setTitle('Some title')
-  :setURL('https://comrade-project.github.io/Comrade')
-  :setAuthor('Some name', 'https://i.imgur.com/54BWIT5.png', 'https://comrade-project.github.io/Comrade')
+  :setURL('https://harmonia-project.github.io/Harmonia')
+  :setAuthor('Some name', 'https://i.imgur.com/54BWIT5.png', 'https://harmonia-project.github.io/Harmonia')
   :setDescription('Some description here')
-  :setThumbnail('https://comrade-project.github.io/Comrade')
+  :setThumbnail('https://harmonia-project.github.io/Harmonia')
   :addFields(
     {name = 'Regular field title', value = 'Some value here'},
     {name = 'Inline field title', value = 'Some value here', inline = true}
@@ -165,8 +165,8 @@ Lets go create a file named `reactionAdd.lua`. You should name your events what 
 
 ```lua
 -- reactionAdd.lua
-local comrade = require 'Comrade' -- Bring in our module
-local lua = comrade.lua -- The lua helper
+local harmonia = require 'Harmonia' -- Bring in our module
+local lua = harmonia.lua -- The lua helper
 
 lua.class('reactionAdd', {
     execute = function(channel, messageId, hash, userId)
@@ -187,9 +187,9 @@ Now, you may ask, how do we add it? Well its quite trivial. Its almost the same 
 
 ```lua
 -- main.lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local client, dotenv = comrade.Client, comrade.dotenv -- Import what we need from the module
+local client, dotenv = harmonia.Client, harmonia.dotenv -- Import what we need from the module
 
 dotenv.config() -- Load our .env
 
@@ -208,9 +208,9 @@ Something else we can do is put it into a plugin.
 
 ```lua
 -- plugin.lua
-local comrade = require 'Comrade' -- Bring in our module
+local harmonia = require 'Harmonia' -- Bring in our module
 
-local plugin, lua = comrade.Plugin, comrade.lua -- Import what we need
+local plugin, lua = harmonia.Plugin, harmonia.lua -- Import what we need
 
 return lua.class('name', {}, plugin, function(self) -- Create our plugin
   self:super(self, 'new') -- Super it

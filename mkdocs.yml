@@ -1,4 +1,4 @@
-site_name: Comrade
+site_name: Harmonia
 
 nav:
   - Documentation:
@@ -41,14 +41,14 @@ theme:
     primary: teal
     accent: teal
   icon:
-    logo: fontawesome/solid/hammer
+    logo: fontawesome/solid/moon
   features:
     - navigation.tabs
 
 # Social
 
-repo_url: https://github.com/comrade-project/Comrade
-repo_name: comrade-project/comrade
+repo_url: https://github.com/harmonia-project/Harmonia
+repo_name: harmonia-project/harmonia
 edit_uri: "" # LDoc comments generate the docs
 
 extra:

@@ -2,7 +2,7 @@
 <h2>embeds.moon</h2>
 <pre>
 <code class="hljs moon">
-import Template, Embed from <span class="hljs-global">require</span> <span class="hljs-string">'comrade'</span>
+import Template, Embed from <span class="hljs-global">require</span> <span class="hljs-string">'Harmonia'</span>
 
 <span class="hljs-comment">-- Normal embeds --
 </span>

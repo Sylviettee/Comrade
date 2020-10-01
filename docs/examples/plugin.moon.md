@@ -2,7 +2,7 @@
 <h2>plugin.moon</h2>
 <pre>
 <code class="hljs moon">
-import plugin from <span class="hljs-global">require</span> <span class="hljs-string">'comrade'</span>
+import plugin from <span class="hljs-global">require</span> <span class="hljs-string">'Harmonia'</span>
 
 class pluginname extends plugin
   new: =&gt;
