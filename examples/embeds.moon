@@ -1,4 +1,4 @@
-import Template, Embed from require 'comrade'
+import Template, Embed from require 'Harmonia'
 
 -- Normal embeds --
 

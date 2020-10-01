@@ -10,7 +10,7 @@ do
   local _base_0 = {
     execute = function(self, msg, args)
       local sum = args.numOne + args.numTwo
-      return msg:reply('The sum is ' .. tostring(sum) .. ' and the member is ' .. tostring(args.member.user.tag) .. '!')
+      return msg:reply("The sum is " .. tostring(sum) .. " and the member is " .. tostring(args.member.user.tag) .. "!")
     end
   }
   _base_0.__index = _base_0
@@ -19,19 +19,35 @@ do
     __init = function(self)
       _class_0.__parent.__init(self)
       return self:addMiddleware(ArgParse({
-        {id = 'numOne', type = 'int'}, {id = 'numTwo', type = 'int', default = 0},
-        {id = 'member', type = 'member', default = function(msg) return msg.member end}
+        {
+          id = 'numOne',
+          type = 'int'
+        },
+        {
+          id = 'numTwo',
+          type = 'int',
+          default = 0
+        },
+        {
+          id = 'member',
+          type = 'member',
+          default = function(msg)
+            return msg.member
+          end
+        }
       }, self))
     end,
     __base = _base_0,
-    __name = 'test',
+    __name = "test",
     __parent = _parent_0
   }, {
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        local parent = rawget(cls, '__parent')
-        if parent then return parent[name] end
+        local parent = rawget(cls, "__parent")
+        if parent then
+          return parent[name]
+        end
       else
         return val
       end
@@ -43,7 +59,9 @@ do
     end
   })
   _base_0.__class = _class_0
-  if _parent_0.__inherited then _parent_0.__inherited(_parent_0, _class_0) end
+  if _parent_0.__inherited then
+    _parent_0.__inherited(_parent_0, _class_0)
+  end
   test = _class_0
   return _class_0
 end

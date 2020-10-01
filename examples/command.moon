@@ -1,4 +1,4 @@
-import Command from require 'comrade'
+import Command from require 'Harmonia'
 
 class commandname extends Command
   new: =>

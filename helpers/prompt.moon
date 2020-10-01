@@ -21,7 +21,7 @@ class
   @__name = 'Prompt'
   --- Construct a prompt to get user information
   -- @param msg The message
-  -- @param client A Discordia or Comrade client
+  -- @param client A Discordia or Harmonia client
   -- @tparam config config A config containing the tasks, timeout, and if its an embed 
   new: (msg,client,config) =>
     return msg\reply 'Finish the currently open prompt' if prompts[msg.author.id]

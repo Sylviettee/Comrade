@@ -1,9 +1,11 @@
 local succ, err = pcall(require, 'discordia')
-if not (succ) then error('This module requires discordia!\n\n' .. tostring(err)) end
+if not (succ) then
+  error("This module requires discordia!\n\n" .. tostring(err))
+end
 require('./helpers/extensions')()
 return {
   version = '1.2.4',
-  name = 'Comrade',
+  name = 'Harmonia',
   Array = require('./structures/array'),
   Client = require('./structures/client'),
   Command = require('./structures/command'),
