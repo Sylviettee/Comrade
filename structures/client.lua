@@ -18,6 +18,7 @@ helper.__init = function(self, token, config)
   assert(token, 'A token is required!')
   self._token = token
   self._prefix = config.prefix or '!'
+  self._prefix = type(self._prefix) == 'string' and {self._prefix} or self._prefix
   self._defaultHelp = config.defaultHelp or true
   self._disableDefaultCH = config.disableDefaultCH or false
   self._owners = config.owners or {}
@@ -40,12 +41,19 @@ helper.__init = function(self, token, config)
   end)
   if not (self._testbot or self._disableDefaultCH) then
     return self:on('messageCreate', function(msg)
-      if not (string.startswith(msg.content, self._prefix)) then return nil end
+      local prefix
+      for _, p in pairs(self._prefix) do
+        if string.sub(msg.content, 0, #p) then
+          prefix = p
+          break
+        end
+      end
+      if not (prefix) then return nil end
       if msg.author.bot and msg.author.id ~= self._botid then return nil end
       local perms = (msg.guild and msg.guild.me:getPermissions(msg.channel)) or {has = function() return true end}
       if not (perms:has(enums.permission.sendMessages)) then return self:debug('Comrade : No send messages') end
       local command = string.split(msg.content, ' ')
-      command = string.gsub(command[1], self._prefix, '')
+      command = string.sub(command[1], #prefix + 1, #command[1])
       local args = table.slice(string.split(msg.content, ' '), 2)
       command = command:lower()
       local found = self._commands:find(function(val) return val:check(command, msg, self) end)

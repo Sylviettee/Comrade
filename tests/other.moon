@@ -7,9 +7,7 @@ unless process.env.TOKEN -- If they are already added we don't need to check for
   dotenv.config!
 
 bot = Client process.env.TOKEN, {
-    prefix: '='
+    prefix: {'=', 'a'}
 }
-
-bot\addCommand require('./advanced')!
 
 bot\login!

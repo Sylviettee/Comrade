@@ -49,6 +49,8 @@ helper.__init = (token,config={}) =>
   @_token = token
   @_prefix = config.prefix or '!'
 
+  @_prefix = type(@_prefix) == 'string' and {@_prefix} or @_prefix
+
   @_defaultHelp = config.defaultHelp or true
   @_disableDefaultCH = config.disableDefaultCH or false
   @_owners = config.owners or {}
@@ -84,7 +86,15 @@ helper.__init = (token,config={}) =>
 
   unless @_testbot or @_disableDefaultCH
     @\on 'messageCreate', (msg) ->
-      return nil unless string.startswith(msg.content,@_prefix)     
+      local prefix
+
+      for _, p in pairs @_prefix
+        if string.sub(msg.content, 0, #p)
+          prefix = p
+          break
+      
+      return nil unless prefix
+
       if msg.author.bot and msg.author.id != @_botid
         return nil 
 
@@ -94,7 +104,7 @@ helper.__init = (token,config={}) =>
 
       command = string.split msg.content, ' '
 
-      command = string.gsub command[1],@_prefix, ''
+      command = string.sub command[1], #prefix + 1, #command[1]
 
       args = table.slice(string.split(msg.content, ' '), 2)
 

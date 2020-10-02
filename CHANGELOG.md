@@ -9,6 +9,8 @@ Changes between each version.
 * Docs generation change
 * Moved advanced argument parsing test to examples
 * Make LuaCheck happy
+* Allow multiple prefixes
+* Fixed bug where you can repeat the prefix and it'll still count; eg prefix `=`, `==` will trigger
 
 ## 1.2.3
 
