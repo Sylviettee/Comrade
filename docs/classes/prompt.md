@@ -104,7 +104,7 @@ Construct a prompt to get user information
 | Parameters | Type | Optional | Default | Description |
 | --------------- | ---- | -------- | ------- | ----------- |
 | msg |  | ❌ | `none` |  The message |
-| client |  | ❌ | `none` |  A Discordia or Harmonia client |
+| client |  | ❌ | `none` |  A Discordia or Comrade client |
 | config | <a class="type" href="../classes/prompt.md#prompt.config">config</a> | ❌ | `none` |  A config containing the tasks, timeout, and if its an embed |
 
 

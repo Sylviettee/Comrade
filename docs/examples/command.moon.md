@@ -2,7 +2,7 @@
 <h2>command.moon</h2>
 <pre>
 <code class="hljs moon">
-import Command from <span class="hljs-global">require</span> <span class="hljs-string">'Harmonia'</span>
+import Command from <span class="hljs-global">require</span> <span class="hljs-string">'comrade'</span>
 
 class commandname extends Command
   new: =&gt;
