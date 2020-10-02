@@ -1,17 +1,17 @@
 <div align="center">
   <h1>Harmonia</h1>
 
-  <a href="https://harmonia-project.github.io/Harmonia">Docs |</a>
-  <a href="https://harmonia-project.github.com/Harmonia/blob/master/CHANGELOG.md">Changelog</a>
+  <a href="https://comrade-project.github.io/Comrade">Docs |</a>
+  <a href="https://comrade-project.github.com/Comrade/blob/master/CHANGELOG.md">Changelog</a>
 </div>
 
 <div align="center">
 
-  <img src="https://img.shields.io/travis/harmonia-project/Harmonia?style=flat">
+  <img src="https://img.shields.io/travis/Comrade-project/Comrade?style=flat">
 
   <img src="https://img.shields.io/discord/665029118575902739"/>
 
-  <img src="https://img.shields.io/github/contributors/harmonia-project/Harmonia?style=flat">
+  <img src="https://img.shields.io/github/contributors/Comrade-project/Comrade?style=flat">
 
   <div>Harmonia is a lightweight framework built using Moonscript</div>
 </div>
@@ -31,7 +31,7 @@ Formerly called Comrade
 
 ## Documentation
 
-The documentation can be located at [https://harmonia-project.github.io/Harmonia](https://harmonia-project.github.io/Harmonia).
+The documentation can be located at [https://comrade-project.github.io/Comrade](https://comrade-project.github.io/Comrade).
 
 ## Installation
 
