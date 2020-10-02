@@ -19,28 +19,16 @@ do
   local _parent_0 = Embed
   local _base_0 = {
     render = function(self, env)
-      if env == nil then
-        env = { }
-      end
-      local tbl = deepScan(self:toJSON(), function(val)
-        if type(val) == 'string' then
-          return self:renderer(val, env)
-        end
-      end)
+      if env == nil then env = {} end
+      local tbl = deepScan(self:toJSON(),
+                           function(val) if type(val) == 'string' then return self:renderer(val, env) end end)
       return Embed(tbl)
     end,
     construct = function(self, env, useEtLua)
-      if env == nil then
-        env = { }
-      end
-      if useEtLua == nil then
-        useEtLua = false
-      end
-      local tbl = deepScan(self:toJSON(), function(val)
-        if type(val) == 'string' then
-          return self:renderer(val, env)
-        end
-      end)
+      if env == nil then env = {} end
+      if useEtLua == nil then useEtLua = false end
+      local tbl = deepScan(self:toJSON(),
+                           function(val) if type(val) == 'string' then return self:renderer(val, env) end end)
       return Template(tbl, useEtLua)
     end
   }
@@ -48,35 +36,25 @@ do
   setmetatable(_base_0, _parent_0.__base)
   _class_0 = setmetatable({
     __init = function(self, start, useEtLua)
-      if start == nil then
-        start = { }
-      end
-      if useEtLua == nil then
-        useEtLua = false
-      end
+      if start == nil then start = {} end
+      if useEtLua == nil then useEtLua = false end
       _class_0.__parent.__init(self, start)
       self.usingEtLua = useEtLua
       if self.usingEtLua then
-        self.renderer = function(self, ...)
-          return etlua.render(...)
-        end
+        self.renderer = function(self, ...) return etlua.render(...) end
       else
-        self.renderer = function(self, ...)
-          return lustache:render(...)
-        end
+        self.renderer = function(self, ...) return lustache:render(...) end
       end
     end,
     __base = _base_0,
-    __name = "Template",
+    __name = 'Template',
     __parent = _parent_0
   }, {
     __index = function(cls, name)
       local val = rawget(_base_0, name)
       if val == nil then
-        local parent = rawget(cls, "__parent")
-        if parent then
-          return parent[name]
-        end
+        local parent = rawget(cls, '__parent')
+        if parent then return parent[name] end
       else
         return val
       end
@@ -88,9 +66,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  if _parent_0.__inherited then
-    _parent_0.__inherited(_parent_0, _class_0)
-  end
+  if _parent_0.__inherited then _parent_0.__inherited(_parent_0, _class_0) end
   Template = _class_0
   return _class_0
 end

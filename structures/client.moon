@@ -90,7 +90,7 @@ helper.__init = (token,config={}) =>
 
       perms = (msg.guild and msg.guild.me\getPermissions msg.channel) or {has: () -> true}
       
-      return @\debug "Harmonia : No send messages" unless perms\has enums.permission.sendMessages -- If we can't send messages then just reject
+      return @\debug "Comrade : No send messages" unless perms\has enums.permission.sendMessages -- If we can't send messages then just reject
 
       command = string.split msg.content, ' '
 
@@ -104,13 +104,13 @@ helper.__init = (token,config={}) =>
         val\check command,msg, @
 
       if found
-        @\debug "Harmonia : Ran #{command}"
+        @\debug "Comrade : Ran #{command}"
 
         succ,err = pcall () -> 
           found\run msg,args, @
 
         unless succ
-          @\debug "Harmonia : Error #{err}"
+          @\debug "Comrade : Error #{err}"
           @\error err
 
 --- Login to Discord
@@ -148,7 +148,7 @@ helper.updateOwners = (owners) =>
 -- @tparam command command
 -- @see command
 helper.addCommand = (command) =>
-  @\debug "Harmonia: New command #{command.name}"
+  @\debug "Comrade: New command #{command.name}"
   @_commands\push command
 
 --- Remove a command
@@ -163,7 +163,7 @@ helper.removeCommand = (name, check = () -> false) =>
 -- @tparam event event
 -- @see event
 helper.addEvent = (event) =>
-  @\debug "Harmonia: New listener #{event.name}"
+  @\debug "Comrade: New listener #{event.name}"
   event\use @
   @_events\push event
 

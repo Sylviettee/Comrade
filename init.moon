@@ -17,7 +17,7 @@ require('./helpers/extensions') !
   version: '1.2.4'
 
   --- The name of the module
-  name: 'Harmonia'
+  name: 'Comrade'
 
   -- Classes
 

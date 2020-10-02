@@ -1,4 +1,4 @@
-import plugin from require 'Harmonia'
+import plugin from require 'comrade'
 
 class pluginname extends plugin
   new: =>

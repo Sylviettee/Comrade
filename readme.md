@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Harmonia</h1>
+  <h1>Comrade</h1>
 
   <a href="https://comrade-project.github.io/Comrade">Docs |</a>
   <a href="https://comrade-project.github.com/Comrade/blob/master/CHANGELOG.md">Changelog</a>
@@ -13,12 +13,10 @@
 
   <img src="https://img.shields.io/github/contributors/Comrade-project/Comrade?style=flat">
 
-  <div>Harmonia is a lightweight framework built using Moonscript</div>
+  <div>Comrade is a safe, lightweight framework built using Moonscript</div>
 </div>
 
-Formerly called Comrade
-
-## Features of Harmonia
+## Features of Comrade
 
 * Safe and easy embeds
 * Robust command system
@@ -29,15 +27,23 @@ Formerly called Comrade
 * Lightweight
 * Argument parsing system
 
+## Bots using Comrade
+
+If your bot uses Comrade send an issue with it.
+
+* [Little Commander](https://github.com/SovietKitsune/Little-Commander)
+
 ## Documentation
 
-The documentation can be located at [https://comrade-project.github.io/Comrade](https://comrade-project.github.io/Comrade).
+The documentation can be located at [https://comrade-project.github.io/Comrade](https://comrade-project.github.io/Comrade). (Note that the search is non-functional for now)
+
+If you have any issues you can join the support Discord [here](https://discord.gg/uCDq5mw) in the [#lua-comrade](https://discordapp.com/channels/665029118575902739/738684991923290182/) channel.
 
 ## Installation
 
 ### Lightweight
 
-The Harmonia library takes up very little space already, being less than an mb.
+The Comrade library takes up very little space already, being less than an mb.
 
 ## Credits
 
@@ -46,15 +52,15 @@ The Harmonia library takes up very little space already, being less than an mb.
 
 ## Todo
 
-* [x] Examples be an array
-* [x] Fixed preconditions
-* [x] Check embed limits
-* [x] Unload events and separation for plugin and commands
-* [x] Examples for documentation
-* [x] More advanced argument parsing system
-* [ ] More test cases
-* [ ] Pagination
+- [x] Examples be an array
+- [x] Fixed preconditions
+- [x] Check embed limits
+- [x] Unload events and separation for plugin and commands
+- [x] Examples for documentation
+- [x] More advanced argument parsing system
+- [ ] More test cases
+- [ ] Pagination
 
 ## Scrapped
 
-* Branched prompts Phased out by etlua prompts, check an example. [here](https://github.com/Roblox-Developers-CodeSkids/RobloxDevelopers/blob/master/commands/post.command.lua)
+- Branched prompts Phased out by etlua prompts, check an example. [here](https://github.com/Roblox-Developers-CodeSkids/RobloxDevelopers/blob/master/commands/post.command.lua)
