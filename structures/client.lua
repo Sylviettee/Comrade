@@ -42,9 +42,9 @@ helper.__init = function(self, token, config)
   if not (self._testbot or self._disableDefaultCH) then
     return self:on('messageCreate', function(msg)
       local prefix
-      for _, p in pairs(self._prefix) do
-        if string.sub(msg.content, 0, #p) then
-          prefix = p
+      for _, pre in pairs(self._prefix) do
+        if string.sub(msg.content, 0, #pre) == pre then
+          prefix = pre
           break
         end
       end
@@ -116,6 +116,7 @@ get.commands = function(self) return self._commands end
 get.version = function() return version end
 get.owners = function(self) return self._owners end
 get.ready = function(self) return self._ready end
-get.prefix = function(self) return self._prefix end
+get.prefix = function(self) return self._prefix[1] end
+get.prefixes = function(self) return self._prefix end
 get.errors = function(self) return self._errors end
 return helper

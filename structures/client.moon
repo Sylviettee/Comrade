@@ -88,9 +88,9 @@ helper.__init = (token,config={}) =>
     @\on 'messageCreate', (msg) ->
       local prefix
 
-      for _, p in pairs @_prefix
-        if string.sub(msg.content, 0, #p)
-          prefix = p
+      for _, pre in pairs @_prefix
+        if string.sub(msg.content, 0, #pre) == pre
+          prefix = pre
           break
       
       return nil unless prefix
@@ -205,6 +205,8 @@ get.owners = =>
 get.ready = =>
   @_ready
 get.prefix = =>
+  @_prefix[1]
+get.prefixes = =>
   @_prefix
 get.errors = =>
   @_errors
