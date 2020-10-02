@@ -39,16 +39,6 @@
 | [status](classes/status.md) | A command for testing to check the status of your tests
 
 
-### Topics
-
-
-| Module | Description |
-| ------ | ----------- |
-| [01-simple-bot.md](topics/01-simple-bot.md) |
-| [02-embed-events.md](topics/02-embed-events.md) |
-| [readme.md](topics/readme.md) |
-
-
 ### Examples
 
 
