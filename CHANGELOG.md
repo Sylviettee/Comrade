@@ -2,6 +2,11 @@
 
 Changes between each version.
 
+## 1.2.5
+
+* Subcommand class to allow for more separation
+* More Lua helpers
+
 ## 1.2.4
 
 * Removed blua as it caused compile issues

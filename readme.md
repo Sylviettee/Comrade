@@ -52,15 +52,15 @@ The Comrade library takes up very little space already, being less than an mb.
 
 ## Todo
 
-- [x] Examples be an array
-- [x] Fixed preconditions
-- [x] Check embed limits
-- [x] Unload events and separation for plugin and commands
-- [x] Examples for documentation
-- [x] More advanced argument parsing system
-- [ ] More test cases
-- [ ] Pagination
+* [x] Examples be an array
+* [x] Fixed preconditions
+* [x] Check embed limits
+* [x] Unload events and separation for plugin and commands
+* [x] Examples for documentation
+* [x] More advanced argument parsing system
+* [ ] More test cases
+* [ ] Pagination
 
 ## Scrapped
 
-- Branched prompts Phased out by etlua prompts, check an example. [here](https://github.com/Roblox-Developers-CodeSkids/RobloxDevelopers/blob/master/commands/post.command.lua)
+* Branched prompts Phased out by etlua prompts, check an example. [here](https://github.com/Roblox-Developers-CodeSkids/RobloxDevelopers/blob/master/commands/post.command.lua)

@@ -1,6 +1,7 @@
 ----
 -- An array with helper functions
--- @classmod Array
+-- @classmod array
+-- @field data
 
 class Array
   --- Takes in a vararg to populate the table

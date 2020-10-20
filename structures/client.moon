@@ -89,7 +89,7 @@ helper.__init = (token,config={}) =>
       local prefix
 
       for _, pre in pairs @_prefix
-        if string.sub(msg.content, 0, #pre) == pre
+        if string.match msg.content, "^#{pre}"
           prefix = pre
           break
       
@@ -102,11 +102,12 @@ helper.__init = (token,config={}) =>
       
       return @\debug "Comrade : No send messages" unless perms\has enums.permission.sendMessages -- If we can't send messages then just reject
 
-      command = string.split msg.content, ' '
+      command = string.match msg.content, "#{prefix}(%S+)"
 
-      command = string.sub command[1], #prefix + 1, #command[1]
+      args = {}
 
-      args = table.slice(string.split(msg.content, ' '), 2)
+      for arg in string.gmatch string.match(msg.content, "#{prefix}%S+%s*(.*)"), '%S+'
+        table.insert args, arg
 
       command = command\lower!
 

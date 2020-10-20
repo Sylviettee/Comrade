@@ -43,7 +43,7 @@ helper.__init = function(self, token, config)
     return self:on('messageCreate', function(msg)
       local prefix
       for _, pre in pairs(self._prefix) do
-        if string.sub(msg.content, 0, #pre) == pre then
+        if string.match(msg.content, '^' .. tostring(pre)) then
           prefix = pre
           break
         end
@@ -52,9 +52,11 @@ helper.__init = function(self, token, config)
       if msg.author.bot and msg.author.id ~= self._botid then return nil end
       local perms = (msg.guild and msg.guild.me:getPermissions(msg.channel)) or {has = function() return true end}
       if not (perms:has(enums.permission.sendMessages)) then return self:debug('Comrade : No send messages') end
-      local command = string.split(msg.content, ' ')
-      command = string.sub(command[1], #prefix + 1, #command[1])
-      local args = table.slice(string.split(msg.content, ' '), 2)
+      local command = string.match(msg.content, tostring(prefix) .. '(%S+)')
+      local args = {}
+      for arg in string.gmatch(string.match(msg.content, tostring(prefix) .. '%S+%s*(.*)'), '%S+') do
+        table.insert(args, arg)
+      end
       command = command:lower()
       local found = self._commands:find(function(val) return val:check(command, msg, self) end)
       if found then

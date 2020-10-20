@@ -5,4 +5,5 @@ do
 end
 if not (process.env.TOKEN) then dotenv.config() end
 local bot = Client(process.env.TOKEN, {prefix = {'=', 'a'}})
+require('./lua')():use(bot)
 return bot:login()

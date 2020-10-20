@@ -13,8 +13,9 @@
 | Module | Description |
 | ------ | ----------- |
 | [argparse](modules/argparse.md) | A module to parse arguments into a table
+| [comrade](modules/comrade.md) | The index file containing all other files.
+| [deps.discordia.libs.voice.VoiceConnection](modules/deps.discordia.libs.voice.VoiceConnection.md) | debugging
 | [dotenv](modules/dotenv.md) | A module to parse a .env file
-| [helper](modules/helper.md) | The root of all the modules
 | [logger](modules/logger.md) | A module to make logging with colors easier
 | [lua](modules/lua.md) | Allows lua to create and extend classes
 | [util](modules/util.md) | A utility module for time, moderation, and permissions
@@ -25,8 +26,8 @@
 
 | Module | Description |
 | ------ | ----------- |
-| [Array](classes/Array.md) | An array with helper functions
 | [Template](classes/Template.md) | A template for creating embeds and more templates
+| [array](classes/array.md) | An array with helper functions
 | [client](classes/client.md) | The helper client, extends a Discordia client
 | [command](classes/command.md) | A command helper class, should be extended
 | [embed](classes/embed.md) | A embed helper class

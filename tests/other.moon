@@ -10,4 +10,6 @@ bot = Client process.env.TOKEN, {
     prefix: {'=', 'a'}
 }
 
+require('./lua')!\use bot
+
 bot\login!

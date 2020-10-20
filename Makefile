@@ -1,5 +1,3 @@
-# Automatically generated from config.lua
-
 .DEFAULT_GOAL := moonscript
 
 documentation:

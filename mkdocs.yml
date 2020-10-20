@@ -3,7 +3,7 @@ site_name: Comrade
 nav:
   - Documentation:
     - Home: index.md
-    - Root: 'modules/helper.md'
+    - Root: 'modules/comrade.md'
     - Classes:
       - Array: 'classes/Array.md'
       - Client: 'classes/client.md'

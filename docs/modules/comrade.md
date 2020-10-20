@@ -1,6 +1,6 @@
 
-# Module `helper`
-The root of all the modules
+# Module `comrade`
+The index file containing all other files.
 
 
 
@@ -31,8 +31,12 @@ The root of all the modules
 | dotenv () |    |
 | extensions () |    |
 | color () |    |
-| tabular () | color |
 | lua () |    |
+
+### [Tables](#Tables)
+| Property | Description |
+| -------- | ----------- |
+| comrade |    |
 
 
 
@@ -60,7 +64,7 @@ The version
 
 **See also:**
 
-* [Array](../classes/Array.md#)
+* [Array](../modules/comrade.md#Array)
 
 
 
@@ -77,7 +81,7 @@ The version
 
 **See also:**
 
-* [Client](../modules/helper.md#Client)
+* [Client](../modules/comrade.md#Client)
 
 
 
@@ -94,7 +98,7 @@ The version
 
 **See also:**
 
-* [Command](../modules/helper.md#Command)
+* [Command](../modules/comrade.md#Command)
 
 
 
@@ -111,7 +115,7 @@ The version
 
 **See also:**
 
-* [Embed](../modules/helper.md#Embed)
+* [Embed](../modules/comrade.md#Embed)
 
 
 
@@ -128,7 +132,7 @@ The version
 
 **See also:**
 
-* [Event](../modules/helper.md#Event)
+* [Event](../modules/comrade.md#Event)
 
 
 
@@ -145,7 +149,7 @@ The version
 
 **See also:**
 
-* [Help](../modules/helper.md#Help)
+* [Help](../modules/comrade.md#Help)
 
 
 
@@ -162,7 +166,7 @@ The version
 
 **See also:**
 
-* [LuaCommand](../modules/helper.md#LuaCommand)
+* [LuaCommand](../modules/comrade.md#LuaCommand)
 
 
 
@@ -179,7 +183,7 @@ The version
 
 **See also:**
 
-* [Plugin](../modules/helper.md#Plugin)
+* [Plugin](../modules/comrade.md#Plugin)
 
 
 
@@ -213,7 +217,7 @@ The version
 
 **See also:**
 
-* [Emitter](../modules/helper.md#Emitter)
+* [Emitter](../modules/comrade.md#Emitter)
 
 
 
@@ -230,7 +234,7 @@ The version
 
 **See also:**
 
-* [Status](../modules/helper.md#Status)
+* [Status](../modules/comrade.md#Status)
 
 
 
@@ -315,7 +319,7 @@ The version
 
 **See also:**
 
-* [extensions](../modules/helper.md#extensions)
+* [extensions](../modules/comrade.md#extensions)
 
 
 
@@ -332,19 +336,7 @@ The version
 
 **See also:**
 
-* [color](../modules/helper.md#color)
-
-
-
-
-
-
-### [tabular ()](#tabular)
-color
-
-
-
-
+* [color](../modules/comrade.md#color)
 
 
 
@@ -362,6 +354,30 @@ color
 **See also:**
 
 * [lua](../modules/lua.md#)
+
+
+
+
+
+
+## [Tables](#Tables)
+
+### [comrade](#comrade)
+
+
+
+
+| Fields | Type | Optional | Default | Description |
+| --------------- | ---- | -------- | ------- | ----------- |
+| version |  | ❌ | `none` |      |
+| name |  | ❌ | `none` |      |
+| Array |  | ❌ | `none` |      |
+| Client |  | ❌ | `none` |      |
+
+
+
+
+
 
 
 

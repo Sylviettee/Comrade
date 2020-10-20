@@ -1,5 +1,5 @@
---- The root of all the modules
--- @module helper
+--- The index file containing all other files.
+-- @module comrade
 
 succ, err = pcall require, 'discordia'
 
@@ -76,12 +76,12 @@ require('./helpers/extensions') !
   extensions: require './helpers/extensions'
 
   --- @see color
-  color: require './constants/color' --- color
+  color: require './constants/color'
 
   tabular: require './libs/tabular'
 
   lustache: require './libs/lustache'
 
   --- @see lua
-  lua: require './lua' --- lua
+  lua: require './lua'
 }

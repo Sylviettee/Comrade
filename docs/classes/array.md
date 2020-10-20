@@ -1,5 +1,5 @@
 
-# Class `Array`
+# Class `array`
 An array with helper functions
 
 
@@ -13,27 +13,27 @@ An array with helper functions
 ### [Methods](#Methods)
 | Property | Description |
 | -------- | ----------- |
-| Array\new (...) | Takes in a vararg to populate the table |
-| Array\forEach (func) | For every item in the array, call the function |
-| Array\filter (func) | Loop through each item and each item that satifies the function gets added to an array and gets returned |
-| Array\find (func) | The first item to satify a function gets returned |
-| Array\map (func) | Create a new array based off what the passed function evaluates the data to |
-| Array\push (item) | Add an item to the array |
-| Array\slice ([start=1[, stop=#array[, step=1]]]) | Slice an array with a start, stop, and step |
-| Array\shift () | Remove the first in an array |
-| Array\pop (pos) | Remove the last or an index piece of data from an array |
+| array\new (...) | Takes in a vararg to populate the table |
+| array\forEach (func) | For every item in the array, call the function |
+| array\filter (func) | Loop through each item and each item that satifies the function gets added to an array and gets returned |
+| array\find (func) | The first item to satify a function gets returned |
+| array\map (func) | Create a new array based off what the passed function evaluates the data to |
+| array\push (item) | Add an item to the array |
+| array\slice ([start=1[, stop=#array[, step=1]]]) | Slice an array with a start, stop, and step |
+| array\shift () | Remove the first in an array |
+| array\pop (pos) | Remove the last or an index piece of data from an array |
 
 ### [Metamethods](#Metamethods)
 | Property | Description |
 | -------- | ----------- |
-| Array\__len () | Length of the list |
-| Array\__pairs () | Loop over the list |
+| array\__len () | Length of the list |
+| array\__pairs () | Loop over the list |
 
 
 
 ## [Methods](#Methods)
 
-### [Array\new (...)](#Array\new)
+### [array\new (...)](#array\new)
 Takes in a vararg to populate the table
 
 
@@ -52,7 +52,7 @@ Takes in a vararg to populate the table
 
 
 
-### [Array\forEach (func)](#Array\forEach)
+### [array\forEach (func)](#array\forEach)
 For every item in the array, call the function
 
 
@@ -71,7 +71,7 @@ For every item in the array, call the function
 
 
 
-### [Array\filter (func)](#Array\filter)
+### [array\filter (func)](#array\filter)
 Loop through each item and each item that satifies the function gets added to an array and gets returned
 
 
@@ -90,7 +90,7 @@ Loop through each item and each item that satifies the function gets added to an
 
 
 
-### [Array\find (func)](#Array\find)
+### [array\find (func)](#array\find)
 The first item to satify a function gets returned
 
 
@@ -109,7 +109,7 @@ The first item to satify a function gets returned
 
 
 
-### [Array\map (func)](#Array\map)
+### [array\map (func)](#array\map)
 Create a new array based off what the passed function evaluates the data to
 
 
@@ -128,7 +128,7 @@ Create a new array based off what the passed function evaluates the data to
 
 
 
-### [Array\push (item)](#Array\push)
+### [array\push (item)](#array\push)
 Add an item to the array
 
 
@@ -147,7 +147,7 @@ Add an item to the array
 
 
 
-### [Array\slice ([start=1[, stop=#array[, step=1]]])](#Array\slice)
+### [array\slice ([start=1[, stop=#array[, step=1]]])](#array\slice)
 Slice an array with a start, stop, and step
 
 
@@ -168,7 +168,7 @@ Slice an array with a start, stop, and step
 
 
 
-### [Array\shift ()](#Array\shift)
+### [array\shift ()](#array\shift)
 Remove the first in an array
 
 
@@ -180,7 +180,7 @@ Remove the first in an array
 
 
 
-### [Array\pop (pos)](#Array\pop)
+### [array\pop (pos)](#array\pop)
 Remove the last or an index piece of data from an array
 
 
@@ -201,7 +201,7 @@ Remove the last or an index piece of data from an array
 
 ## [Metamethods](#Metamethods)
 
-### [Array\__len ()](#Array\__len)
+### [array\__len ()](#array\__len)
 Length of the list
 
 
@@ -213,7 +213,7 @@ Length of the list
 
 
 
-### [Array\__pairs ()](#Array\__pairs)
+### [array\__pairs ()](#array\__pairs)
 Loop over the list
 
 
