@@ -19,7 +19,7 @@ helper.__init = function(self, token, config)
   self._token = token
   self._prefix = config.prefix or '!'
   self._prefix = type(self._prefix) == 'string' and {self._prefix} or self._prefix
-  self._defaultHelp = config.defaultHelp == true or true
+  self._defaultHelp = config.defaultHelp == false or true
   self._disableDefaultCH = config.disableDefaultCH or false
   self._owners = config.owners or {}
   self._testing = config.testing or config.testbot or false
