@@ -51,7 +51,7 @@ helper.__init = (token,config={}) =>
 
   @_prefix = type(@_prefix) == 'string' and {@_prefix} or @_prefix
 
-  @_defaultHelp = config.defaultHelp or true
+  @_defaultHelp = config.defaultHelp == true or true
   @_disableDefaultCH = config.disableDefaultCH or false
   @_owners = config.owners or {}
 
