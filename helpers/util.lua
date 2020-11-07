@@ -1,5 +1,8 @@
 local permission
-permission = require('discordia').enums.permission
+do
+  local _obj_0 = require('discordia').enums
+  permission = _obj_0.permission
+end
 local enums = permission
 local util = {}
 local roles = {
@@ -65,7 +68,7 @@ util.checkPerm = function(member, channel, permissions)
     member.roles:forEach(function(role) if role.name:lower() == role:lower() then has = true end end)
     return has
   end
-  if not (member) then return false end
+  if not member then return false end
   local perms = member:getPermissions(channel)
   local permCodes = {}
   for _, perm in pairs(permissions) do table.insert(permCodes, enums[perm]) end
@@ -81,7 +84,7 @@ util.checkPerm = function(member, channel, permissions)
       end
       local has = true
       if #needed > 0 then
-        for _, role in pairs(needed) do if not (hasRole(member, role)) then has = false end end
+        for _, role in pairs(needed) do if not hasRole(member, role) then has = false end end
         return has
       else
         return false

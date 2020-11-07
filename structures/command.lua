@@ -1,14 +1,20 @@
 local embed = require('./embed')
 local util = require('../helpers/util')
 local setTimeout
-setTimeout = require('timer').setTimeout
+do
+  local _obj_0 = require('timer')
+  setTimeout = _obj_0.setTimeout
+end
 local Date
-Date = require('discordia').Date
+do
+  local _obj_0 = require('discordia')
+  Date = _obj_0.Date
+end
 do
   local _class_0
   local _base_0 = {
     help = function(self, channel)
-      if not (self.formatted) then
+      if not self.formatted then
         local formatted = ''
         if type(self.example) == 'string' then self.example = {self.example} end
         for i, v in pairs(self.example) do formatted = formatted .. tostring(i) .. '. ' .. tostring(v) .. '\n' end
@@ -40,18 +46,18 @@ do
       self.example = {tostring(self.name)}
       local ignore = {'pre', 'new', 'check', 'run', 'execute'}
       for i, v in pairs(self.__class.__base) do
-        if type(v) == 'function' then if not (table.search(ignore, i)) then self.subcommands[i] = v end end
+        if type(v) == 'function' then if not table.search(ignore, i) then self.subcommands[i] = v end end
       end
       if #self.permissions > 0 then self.allowDMS = false end
     end,
     check = function(self, command, msg, client)
       local isValid = command:lower() == self.name or table.search(self.aliases, command:lower())
-      if not (isValid) then return false end
+      if not isValid then return false end
       isValid = not (self.allowDMS and msg.channel.type == 1)
-      if not (isValid) then return false end
-      if self.hidden then if not (table.search(client.owners, msg.author.id)) then return false end end
-      if not (self.allowDMS) then isValid = util.checkPerm(msg.member, msg.channel, self.permissions) end
-      if not (isValid) then return false end
+      if not isValid then return false end
+      if self.hidden then if not table.search(client.owners, msg.author.id) then return false end end
+      if not self.allowDMS then isValid = util.checkPerm(msg.member, msg.channel, self.permissions) end
+      if not isValid then return false end
       if self.cooldown then
         if self.cooldowns[msg.author.id] then
           local secondsLeft = self.cooldown - (self.cooldowns[msg.author.id] - Date()):toMilliseconds()
@@ -83,9 +89,9 @@ do
           if res and res.invalid then return end
         end
         succ, err = pcall(toRun, self, msg, args, client)
-        if not (succ) then
+        if not succ then
           client:error('Command error: ' .. tostring(err))
-          if not (self.errors[ran]) then self.errors[ran] = {} end
+          if not self.errors[ran] then self.errors[ran] = {} end
           table.insert(self.errors[ran], err)
         end
         self.tested[ran] = true
@@ -98,8 +104,7 @@ do
       self.name = self.__class.__name or '_temp_'
       return self:pre()
     end,
-    __base = _base_0,
-    __name = nil
+    __base = _base_0
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -109,7 +114,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'Command'
   return _class_0
 end

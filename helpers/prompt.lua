@@ -41,15 +41,15 @@ do
     end,
     update = function(self)
       local message = self.tasks[self.stage].message
-      if not (self.message) then
-        if not (self.tasks[self.stage]) then return self.channel:send('Error: No tasks found') end
+      if not self.message then
+        if not self.tasks[self.stage] then return self.channel:send('Error: No tasks found') end
         if self.embed then
           self.message = message:send(self.channel)
         else
           self.message = self.channel:send(message)
         end
       else
-        if not (self.tasks[self.stage]) then return self.channel:send('Error: Prompt out of tasks') end
+        if not self.tasks[self.stage] then return self.channel:send('Error: Prompt out of tasks') end
         if message == 'check' then
           local desc = ''
           for i, v in pairs(self.data) do
@@ -70,11 +70,11 @@ do
           return self:handle()
         elseif message ~= 'none' then
           if self.embed then
-            if not (message.render) then
+            if not message.render then
               return message:send(self.channel)
             else
               local get
-              if not (message.usingEtLua) then
+              if not message.usingEtLua then
                 get = function(text, render) return render(self:get(text)) end
               else
                 get = function(text) return self:get(text) end
@@ -111,9 +111,9 @@ do
           called, msg = client:waitFor('messageCreate', self.timeout, function(recieved)
             return recieved.author.id == msg.author.id and recieved.channel.id == msg.channel.id and not self.closed
           end)
-          if not (called) then
-            if not (self.closed) then self.channel:send('Closing prompt!') end
-            if not (self.closed) then return self:close() end
+          if not called then
+            if not self.closed then self.channel:send('Closing prompt!') end
+            if not self.closed then return self:close() end
           else
             self:handle(msg)
             return loop()
@@ -124,8 +124,7 @@ do
       self:next()
       return coroutine.resume(self.co)
     end,
-    __base = _base_0,
-    __name = nil
+    __base = _base_0
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -135,7 +134,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'Prompt'
   return _class_0
 end

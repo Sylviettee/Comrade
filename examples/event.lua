@@ -1,5 +1,8 @@
 local Event
-Event = require('comrade').Event
+do
+  local _obj_0 = require('comrade')
+  Event = _obj_0.Event
+end
 local messageCreate
 do
   local _class_0

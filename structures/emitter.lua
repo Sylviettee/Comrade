@@ -3,20 +3,12 @@ do
   local _obj_0 = require('timer')
   setTimeout, clearTimeout = _obj_0.setTimeout, _obj_0.clearTimeout
 end
-local wrap, yield, running, resume
-do
-  local _obj_0 = coroutine
-  wrap, yield, running, resume = _obj_0.wrap, _obj_0.yield, _obj_0.running, _obj_0.resume
-end
-local insert, remove
-do
-  local _obj_0 = table
-  insert, remove = _obj_0.insert, _obj_0.remove
-end
+local wrap, yield, running, resume = coroutine.wrap, coroutine.yield, coroutine.running, coroutine.resume
+local insert, remove = table.insert, table.remove
 local new
 new = function(self, name, listener)
   local listeners = self.listeners[name]
-  if not (listeners) then
+  if not listeners then
     listeners = {}
     self.listeners[name] = listeners
   end
@@ -30,7 +22,7 @@ do
     once = function(self, name, fn) return new(self, name, {fn = fn, once = true}) end,
     emit = function(self, name, ...)
       local listeners = self.listeners[name]
-      if not (listeners) then return end
+      if not listeners then return end
       for i = 1, #listeners do
         local listener = listeners[i]
         if listener then
@@ -40,14 +32,14 @@ do
         end
       end
       if listeners.removed then
-        for i = #listeners, 1, -1 do if not (listeners[i]) then remove(listeners, i) end end
+        for i = #listeners, 1, -1 do if not listeners[i] then remove(listeners, i) end end
         if #listeners == 0 then self.listeners[name] = nil end
         listeners.removed = nil
       end
     end,
     removeListener = function(self, name, fn)
       local listeners = self.listeners[name]
-      if not (listeners) then return end
+      if not listeners then return end
       for i, listener in ipairs(listeners) do if listener and listener.fn == fn then listeners[i] = false end end
       listeners.removed = true
     end,
@@ -68,7 +60,7 @@ do
     end
   }
   _base_0.__index = _base_0
-  _class_0 = setmetatable({__init = function(self) self.listeners = {} end, __base = _base_0, __name = nil}, {
+  _class_0 = setmetatable({__init = function(self) self.listeners = {} end, __base = _base_0}, {
     __index = _base_0,
     __call = function(cls, ...)
       local _self_0 = setmetatable({}, _base_0)
@@ -77,7 +69,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'Emitter'
   return _class_0
 end

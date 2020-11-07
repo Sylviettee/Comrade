@@ -3,7 +3,7 @@ do
   local _base_0 = {
     use = function(self, client)
       self.client = client
-      if not (self.once) then
+      if not self.once then
         return client:on(self.name, self.execute)
       else
         return client:once(self.name, self.execute)
@@ -16,8 +16,7 @@ do
       assert(self.execute, 'No execution for event was found')
       self.name = self.__class.__name
     end,
-    __base = _base_0,
-    __name = nil
+    __base = _base_0
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -27,7 +26,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'event'
   return _class_0
 end

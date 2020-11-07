@@ -4,14 +4,17 @@ do
   readdirSync, readFileSync = _obj_0.readdirSync, _obj_0.readFileSync
 end
 local sleep
-sleep = require('timer').sleep
+do
+  local _obj_0 = require('timer')
+  sleep = _obj_0.sleep
+end
 local Client = require('../structures/client')
 local Array = require('../structures/array')
 local Stack = require('./stack')
 local Describe = require('./framework')
 local logger = require('./logger')
 local discordia = require('discordia')
-local _class = discordia.class
+local _class = discordia['class']
 local faker, get = _class('Faker Helper', Client)
 faker.__init = function(self, token, config)
   if config == nil then config = {} end
@@ -54,9 +57,9 @@ faker.load = function(self, dir)
     local sandbox = setmetatable({}, {__index = _G})
     sandbox.describe = function(...) return self._testStack:push(Describe(...)) end
     local fn, syntax = load(test, 'Test', 't', sandbox)
-    if not (fn) then return logger.test(file, syntax) end
+    if not fn then return logger.test(file, syntax) end
     local succ, err = pcall(fn)
-    if not (succ) then return logger.test(file, err) end
+    if not succ then return logger.test(file, err) end
   end)
 end
 faker.executeTests = function(self)

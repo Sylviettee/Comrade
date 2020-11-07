@@ -1,76 +1,47 @@
-local lua = {}
-local _super
-_super = function(cls, self, method, ...)
-  local fn
-  if method == 'new' then
-    fn = cls.__parent.__init
-  else
-    fn = cls.__parent.__base[method]
-  end
-  return fn(self, ...)
+local setup
+setup = function(__name, __parent, __base)
+  local mt = {
+    __call = function(self, ...)
+      local obj = setmetatable({}, __base)
+      self.__init(obj, ...)
+      return obj
+    end,
+    __newindex = function(self, key, value) __base[key] = value end
+  }
+  __base.new = __base.new or function(self) end
+  return setmetatable({
+    __name = __name,
+    __base = __base,
+    __parent = __parent,
+    __init = function(...) return __base.new(...) end
+  }, mt), mt
 end
-lua.class = function(name, tbl, extend, setup)
-  local cls
-  if extend then
-    do
-      local _class_0
-      local _parent_0 = extend
-      local _base_0 = {}
-      _base_0.__index = _base_0
-      setmetatable(_base_0, _parent_0.__base)
-      _class_0 = setmetatable({__init = tbl and tbl.new, __base = _base_0, __name = 'cls', __parent = _parent_0}, {
-        __index = function(cls, name)
-          local val = rawget(_base_0, name)
-          if val == nil then
-            local parent = rawget(cls, '__parent')
-            if parent then return parent[name] end
-          else
-            return val
-          end
-        end,
-        __call = function(cls, ...)
-          local _self_0 = setmetatable({}, _base_0)
-          cls.__init(_self_0, ...)
-          return _self_0
-        end
-      })
-      _base_0.__class = _class_0
-      local self = _class_0
-      self.super = _super
-      self.__name = name
-      if tbl then
-        tbl.new = nil
-        for k, v in pairs(tbl) do self.__base[k] = v end
-      end
-      local _ = setup and setup(self)
-      if _parent_0.__inherited then _parent_0.__inherited(_parent_0, _class_0) end
-      cls = _class_0
-    end
-  else
-    do
-      local _class_0
-      local _base_0 = {}
-      _base_0.__index = _base_0
-      _class_0 = setmetatable({__init = tbl and tbl.new, __base = _base_0, __name = 'cls'}, {
-        __index = _base_0,
-        __call = function(cls, ...)
-          local _self_0 = setmetatable({}, _base_0)
-          cls.__init(_self_0, ...)
-          return _self_0
-        end
-      })
-      _base_0.__class = _class_0
-      local self = _class_0
-      self.super = _super
-      self.__name = name
-      if tbl then
-        tbl.new = nil
-        for k, v in pairs(tbl) do self.__base[k] = v end
-      end
-      local _ = setup and setup(self)
-      cls = _class_0
+local extend
+extend = function(name, parent, base)
+  setmetatable(base, parent.__base)
+  local cls, mt = setup(name, parent, base)
+  base.__class, base.__index = cls, base
+  mt.__index = function(self, key)
+    local val = rawget(base, key)
+    if val ~= nil then
+      return val
+    else
+      return parent[key]
     end
   end
+  if parent.__inherited then parent.__inherited(parent, cls) end
   return cls
 end
-return lua
+local muun = {super = function(self, ...) return self.__class.__parent.__init(self, ...) end}
+return setmetatable(muun, {
+  __call = function(self, name, parentOrBase, base)
+    if type(name) ~= 'string' then error('Invalid class name') end
+    local parent
+    if type(parentOrBase) == 'table' and parentOrBase.__class then parent = parentOrBase end
+    base = not parent and parentOrBase or base or {}
+    if parent then return extend(name, parent, base) end
+    local cls, mt = setup(name, nil, base)
+    mt.__index, base.__class, base.__index = base, cls, base
+    return cls
+  end
+})

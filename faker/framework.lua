@@ -37,7 +37,7 @@ do
   local _base_0 = {
     run = function(self, env)
       if env == nil then env = {} end
-      if not (self.canLoad) then return end
+      if not self.canLoad then return end
       for _, v in pairs(self.cases) do
         table.insert(self.out, v:run(env))
         collectgarbage('collect')
@@ -58,7 +58,7 @@ do
       local succ, err = pcall(fn)
       self.canLoad = succ
       table.insert(self.out, logger.case(test))
-      if not (self.canLoad) then return table.insert(self.out, logger.test('Load tests', err)) end
+      if not self.canLoad then return table.insert(self.out, logger.test('Load tests', err)) end
     end,
     __base = _base_0,
     __name = 'Describe'

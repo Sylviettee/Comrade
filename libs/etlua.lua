@@ -1,16 +1,8 @@
 local VERSION = '1.3.0'
-local insert, concat
-do
-  local _obj_0 = table
-  insert, concat = _obj_0.insert, _obj_0.concat
-end
-local load, setfenv, assert, type, error, tostring, tonumber, setmetatable
-do
-  local _obj_0 = _G
-  load, setfenv, assert, type, error, tostring, tonumber, setmetatable = _obj_0.load, _obj_0.setfenv, _obj_0.assert,
-                                                                         _obj_0.type, _obj_0.error, _obj_0.tostring,
-                                                                         _obj_0.tonumber, _obj_0.setmetatable
-end
+local insert, concat = table.insert, table.concat
+local load, setfenv, assert, type, error, tostring, tonumber, setmetatable = _G.load, _G.setfenv, _G.assert, _G.type,
+                                                                             _G.error, _G.tostring, _G.tonumber,
+                                                                             _G.setmetatable
 setfenv = setfenv or function(fn, env)
   local name
   local i = 1
@@ -64,14 +56,13 @@ do
         local chunk = chunks[_index_0]
         local t = type(chunk)
         if t == 'table' then t = chunk[1] end
-        local _exp_0 = t
-        if 'string' == _exp_0 then
+        if 'string' == t then
           self:increment()
           self:assign(('%q'):format(chunk))
-        elseif 'code' == _exp_0 then
+        elseif 'code' == t then
           self:mark(chunk[3])
           self:push(chunk[2], '\n')
-        elseif '=' == _exp_0 or '-' == _exp_0 then
+        elseif '=' == t or '-' == t then
           self:increment()
           self:mark(chunk[3])
           self:assign()
@@ -116,7 +107,7 @@ do
     modifiers = '^[=-]',
     next_tag = function(self)
       local start, stop = self.str:find(self.open_tag, self.pos, true)
-      if not (start) then
+      if not start then
         self:push_raw(self.pos, #self.str)
         return false
       end
@@ -131,10 +122,10 @@ do
         end
       end
       local close_start, close_stop = self.str:find(self.close_tag, self.pos, true)
-      if not (close_start) then return nil, self:error_for_pos(start, 'failed to find closing tag') end
+      if not close_start then return nil, self:error_for_pos(start, 'failed to find closing tag') end
       while self:in_string(self.pos, close_start) do
         close_start, close_stop = self.str:find(self.close_tag, close_stop, true)
-        if not (close_start) then return nil, self:error_for_pos(start, 'failed to find string close') end
+        if not close_start then return nil, self:error_for_pos(start, 'failed to find string close') end
       end
       local trim_newline
       if '-' == self.str:sub(close_start - 1, close_start - 1) then
@@ -146,7 +137,7 @@ do
       if trim_newline then
         do
           local match = self.str:match('^\n', self.pos)
-          if match then self.pos = self.pos + #match end
+          if match then self.pos = self.pos + (#match) end
         end
       end
       return true
@@ -185,7 +176,7 @@ do
                 if lstring then
                   local lstring_end = lstring:gsub('%[', ']')
                   local lstring_p1, lstring_p2 = chunk:find(lstring_end, pos, true)
-                  if not (lstring_p1) then return true end
+                  if not lstring_p1 then return true end
                   skip_until = lstring_p2
                 end
               end
@@ -204,10 +195,10 @@ do
     end,
     compile = function(self, str)
       local success, err = self:parse(str)
-      if not (success) then return nil, err end
+      if not success then return nil, err end
       local fn
       fn, err = self:load(self:chunks_to_lua())
-      if not (fn) then return nil, err end
+      if not fn then return nil, err end
       return function(...)
         local buffer
         buffer, err = self:run(fn, ...)
@@ -226,17 +217,17 @@ do
       while true do
         local found, err = self:next_tag()
         if err then return nil, err end
-        if not (found) then break end
+        if not found then break end
       end
       return true
     end,
     parse_error = function(self, err, code)
       local line_no, err_msg = err:match('%[.-%]:(%d+): (.*)$')
       line_no = tonumber(line_no)
-      if not (line_no) then return end
+      if not line_no then return end
       local line = get_line(code, line_no)
       local source_pos = tonumber(line:match('^%-%-%[%[(%d+)%]%]'))
-      if not (source_pos) then return end
+      if not source_pos then return end
       return self:error_for_pos(source_pos, err_msg)
     end,
     error_for_pos = function(self, source_pos, err_msg)
@@ -250,15 +241,13 @@ do
       do
         local code_ref = code
         code_fn = function()
-          do
-            local ret = code_ref
-            code_ref = nil
-            return ret
-          end
+          local ret = code_ref
+          code_ref = nil
+          return ret
         end
       end
       local fn, err = load(code_fn, name)
-      if not (fn) then
+      if not fn then
         do
           local err_msg = self:parse_error(err, code)
           if err_msg then return nil, err_msg end
@@ -276,7 +265,7 @@ do
           return val
         end
       })
-      if not (buffer) then
+      if not buffer then
         buffer = {}
         i = 0
       end
@@ -285,7 +274,7 @@ do
     end,
     compile_to_lua = function(self, str, ...)
       local success, err = self:parse(str)
-      if not (success) then return nil, err end
+      if not success then return nil, err end
       return self:chunks_to_lua(...)
     end,
     chunks_to_lua = function(self, compiler_cls)
@@ -309,7 +298,7 @@ local compile
 do
   local _base_0 = Parser()
   local _fn_0 = _base_0.compile
-  compile = function(...) return _fn_0(_base_0, ...) end
+  compile = _fn_0 and function(...) return _fn_0(_base_0, ...) end
 end
 local render
 render = function(str, ...)

@@ -8,7 +8,7 @@ format:
 	@lua-format *.lua ./**/*.lua -i -c .luaformat.yaml
 moonscript:
 	@echo -e '\033[32mRunning moonscript\033[0m'
-	@moonc .
+	@moonp .
 test:
 	@echo -e '\033[32mRunning test\033[0m'
 	@cd tests && luvit main.lua

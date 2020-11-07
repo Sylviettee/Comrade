@@ -1,47 +1,51 @@
---- Allows lua to create and extend classes
--- @module lua
-lua = {}
+-----------------------------------------------------------------
+-- muun - moonscript compatible class implementation
+-- Copyright 2019 megagrump@pm.me
+-- License: MIT. See LICENSE for details
+-----------------------------------------------------------------
 
-_super = (cls, self, method, ...) ->
-  fn = if method == "new"
-    cls.__parent.__init
-  else
-    cls.__parent.__base[method]
+setup = (__name, __parent, __base) ->
+	mt =
+		__call: (...) =>
+			obj = setmetatable({}, __base)
+			@.__init(obj, ...)
+			obj
+		__newindex: (key, value) => __base[key] = value
+	__base.new or= =>
 
-  fn @, ...
+	setmetatable({
+		:__name, :__base, :__parent, __init: (...) -> __base.new(...)
+	}, mt), mt
 
---- Create a moonscript class
--- @tparam string name The name of the class
--- @tparam table tbl Methods to add to the class
--- @tparam table|boolean extend The class to extend or false
--- @tparam function setup The new method of the class
--- @treturn table The class that was created
-lua.class = (name, tbl, extend, setup) ->
-  cls = if extend
-    class extends extend
-      new: tbl and tbl.new
-      @super: _super
-      @__name: name
+extend = (name, parent, base) ->
+	setmetatable(base, parent.__base)
 
-      if tbl
-        tbl.new = nil
-        for k,v in pairs tbl
-          @__base[k] = v
+	cls, mt = setup(name, parent, base)
+	base.__class, base.__index = cls, base
 
-      setup and setup @
-  else
-    class
-      new: tbl and tbl.new
-      @super: _super
-      @__name: name
+	mt.__index = (key) =>
+			val = rawget(base, key)
 
-      if tbl
-        tbl.new = nil
-        for k,v in pairs tbl
-          @__base[k] = v
+			if val ~= nil 
+				return val
+			else 
+				return parent[key]
 
-      setup and setup @
+	parent.__inherited(parent, cls) if parent.__inherited
+	cls
 
-  cls
+muun =
+	super: (...) => @.__class.__parent.__init(@, ...)
 
-lua
+setmetatable(muun, {
+	__call: (name, parentOrBase, base) =>
+		error("Invalid class name") if type(name) ~= 'string'
+
+		parent = parentOrBase if type(parentOrBase) == 'table' and parentOrBase.__class
+		base = not parent and parentOrBase or base or {}
+		return extend(name, parent, base) if parent
+
+		cls, mt = setup(name, nil, base)
+		mt.__index, base.__class, base.__index = base, cls, base
+		cls
+})

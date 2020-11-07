@@ -1,5 +1,8 @@
 local Command
-Command = require('comrade').Command
+do
+  local _obj_0 = require('comrade')
+  Command = _obj_0.Command
+end
 local commandname
 do
   local _class_0

@@ -1,10 +1,12 @@
 local version
-version = require('../init').version
+do
+  local _obj_0 = require('../init')
+  version = _obj_0.version
+end
 local array = require('./array')
 local discordia = require('discordia')
-local enums
-enums = discordia.enums
-local Class, Client = discordia.class, discordia.Client
+local enums = discordia.enums
+local Class, Client = discordia['class'], discordia.Client
 local helper, get = Class('Helper Client', Client)
 local options = {
   'routeDelay', 'maxRetries', 'shardCount', 'firstShard', 'lastShard', 'largeThreshold', 'cacheAllMembers',
@@ -48,10 +50,10 @@ helper.__init = function(self, token, config)
           break
         end
       end
-      if not (prefix) then return nil end
+      if not prefix then return nil end
       if msg.author.bot and msg.author.id ~= self._botid then return nil end
       local perms = (msg.guild and msg.guild.me:getPermissions(msg.channel)) or {has = function() return true end}
-      if not (perms:has(enums.permission.sendMessages)) then return self:debug('Comrade : No send messages') end
+      if not perms:has(enums.permission.sendMessages) then return self:debug('Comrade : No send messages') end
       local command = string.match(msg.content, tostring(prefix) .. '(%S+)')
       local args = {}
       for arg in string.gmatch(string.match(msg.content, tostring(prefix) .. '%S+%s*(.*)'), '%S+') do
@@ -62,7 +64,7 @@ helper.__init = function(self, token, config)
       if found then
         self:debug('Comrade : Ran ' .. tostring(command))
         local succ, err = pcall(function() return found:run(msg, args, self) end)
-        if not (succ) then
+        if not succ then
           self:debug('Comrade : Error ' .. tostring(err))
           return self:error(err)
         end
@@ -75,11 +77,11 @@ helper.login = function(self, status)
   if status then return self:setGame(status) end
 end
 helper.info = function(self, ...)
-  if not (self._testing) then self._logger:log(3, ...) end
+  if not self._testing then self._logger:log(3, ...) end
   return self:emit('info', string.format(...))
 end
 helper.error = function(self, ...)
-  if not (self._testing) then self._logger:log(1, ...) end
+  if not self._testing then self._logger:log(1, ...) end
   self:emit('error', string.format(...))
   if self._errors then return table.insert(self._errors, string.format(...)) end
 end

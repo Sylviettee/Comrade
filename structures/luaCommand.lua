@@ -17,7 +17,6 @@ do
             return _class_1.__parent.__init(self)
           end,
           __base = _base_1,
-          __name = nil,
           __parent = _parent_0
         }, {
           __index = function(cls, name)
@@ -42,7 +41,7 @@ do
     end
   }
   _base_0.__index = _base_0
-  _class_0 = setmetatable({__init = function(self, name) self.name = name end, __base = _base_0, __name = nil}, {
+  _class_0 = setmetatable({__init = function(self, name) self.name = name end, __base = _base_0}, {
     __index = _base_0,
     __call = function(cls, ...)
       local _self_0 = setmetatable({}, _base_0)
@@ -51,7 +50,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'luaCommand'
   return _class_0
 end

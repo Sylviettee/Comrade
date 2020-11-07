@@ -13,8 +13,7 @@ do
       if initialState == nil then initialState = {} end
       self.data = initialState
     end,
-    __base = _base_0,
-    __name = nil
+    __base = _base_0
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -24,7 +23,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'Stack'
   return _class_0
 end

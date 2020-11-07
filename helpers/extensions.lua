@@ -1,18 +1,6 @@
-local sort, concat, insert, remove
-do
-  local _obj_0 = table
-  sort, concat, insert, remove = _obj_0.sort, _obj_0.concat, _obj_0.insert, _obj_0.remove
-end
-local min, max, random, floor
-do
-  local _obj_0 = math
-  min, max, random, floor = _obj_0.min, _obj_0.max, _obj_0.random, _obj_0.floor
-end
-local char, gmatch, match, find, sub
-do
-  local _obj_0 = string
-  char, gmatch, match, find, sub = _obj_0.char, _obj_0.gmatch, _obj_0.match, _obj_0.find, _obj_0.sub
-end
+local sort, concat, insert, remove = table.sort, table.concat, table.insert, table.remove
+local min, max, random, floor = math.min, math.max, math.random, math.floor
+local char, gmatch, match, find, sub = string.char, string.gmatch, string.match, string.find, string.sub
 local table = {}
 table.count = function(tbl, fn)
   if fn == nil then fn = function() return true end end
@@ -86,7 +74,7 @@ end
 local string = {}
 string.split = function(str, delim)
   local ret = {}
-  if not (str) then return ret end
+  if not str then return ret end
   if not delim or delim == '' then
     for c in gmatch(str, '.') do insert(ret, c) end
     return ret
@@ -94,7 +82,7 @@ string.split = function(str, delim)
   local n = 1
   while true do
     local i, j = find(str, delim, n)
-    if not (i) then break end
+    if not i then break end
     insert(ret, sub(str, n, i - 1))
     n = j + 1
   end

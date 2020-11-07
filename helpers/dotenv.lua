@@ -1,8 +1,14 @@
 local dotenv = {}
 local readFileSync
-readFileSync = require('fs').readFileSync
+do
+  local _obj_0 = require('fs')
+  readFileSync = _obj_0.readFileSync
+end
 local resolve
-resolve = require('path').resolve
+do
+  local _obj_0 = require('path')
+  resolve = _obj_0.resolve
+end
 dotenv.split = function(str, sep)
   if sep == nil then sep = '%s' end
   local t = {}
@@ -11,10 +17,9 @@ dotenv.split = function(str, sep)
 end
 dotenv.trim = function(str) return string.match(str, '^%s*(.-)%s*$') end
 dotenv.transform = function(str, quoted)
-  local _exp_0 = str
-  if 'false' == _exp_0 then
+  if 'false' == str then
     return (quoted and 'false') or false
-  elseif 'true' == _exp_0 then
+  elseif 'true' == str then
     return (quoted and 'true') or true
   else
     return (quoted and str) or (tonumber(str) and tonumber(str)) or str
@@ -32,7 +37,7 @@ dotenv.parse = function(src, options)
       local isQuoted = val:sub(0, 1) == '"' or val:sub(0, 1) == '\'' and val:sub(#val, #val) == '"' or
                            val:sub(#val, #val) == '\''
       val = (isQuoted and val:sub(2, #val - 1)) or val
-      if not (isQuoted) then val = dotenv.trim(val) end
+      if not isQuoted then val = dotenv.trim(val) end
       obj[key] = dotenv.transform(val, isQuoted)
     end
   end

@@ -14,7 +14,7 @@ do
       return helpEmbed:send(msg.channel)
     end,
     execute = function(self, msg, args, client)
-      if not (args[1]) then
+      if not args[1] then
         return self:all(msg, args, client)
       else
         command = client.commands:find(function(com)

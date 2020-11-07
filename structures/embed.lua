@@ -8,7 +8,7 @@ do
   local _base_0 = {
     addField = function(self, name, value, inline)
       if inline == nil then inline = false end
-      if not (self.embed.fields) then self.embed.fields = {} end
+      if not self.embed.fields then self.embed.fields = {} end
       if #self.embed.fields <= 25 then
         if type(name) == 'table' then
           table.insert(self.embed.fields, name)
@@ -23,7 +23,7 @@ do
     addFields = function(self, ...)
       local fields = {...}
       for _, v in pairs(fields) do
-        if not (v.name) then
+        if not v.name then
           self:addField(unpack(v))
         else
           self:addField(v)
@@ -76,7 +76,7 @@ do
         return channel:send({embed = self:toJSON()})
       else
         local perms = channel.guild.me:getPermissions(channel)
-        if not (perms:has(enums.permission.embedLinks)) then
+        if not perms:has(enums.permission.embedLinks) then
           return channel:send('I don\'t have the permissions to send embeds.')
         else
           return channel:send({embed = self:toJSON()})
@@ -90,8 +90,7 @@ do
       if starting == nil then starting = {} end
       self.embed = starting
     end,
-    __base = _base_0,
-    __name = nil
+    __base = _base_0
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -101,7 +100,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'embed'
   return _class_0
 end

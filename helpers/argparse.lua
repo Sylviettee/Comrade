@@ -1,5 +1,8 @@
 local gmatch
-gmatch = require('rex').gmatch
+do
+  local _obj_0 = require('rex')
+  gmatch = _obj_0.gmatch
+end
 local Array = require('../structures/array')
 local split
 split = function(str)
@@ -28,7 +31,7 @@ do
       local toReturn = {}
       for i, v in pairs(parsed) do
         local data = newArgs[i]
-        if not (data) then
+        if not data then
           if v.default then
             data = v.default
           else
@@ -81,8 +84,7 @@ do
             end)(), ', ') .. ']') or '')
       end
     end,
-    __base = _base_0,
-    __name = nil
+    __base = _base_0
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -92,7 +94,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'Parser'
   self.types = {
     int = function(val) return tonumber(val) end,
@@ -100,17 +102,17 @@ do
     boolean = function(val) return (val == 'true' and true) or (val == 'false' and false) or nil end,
     ban = function(val, msg)
       local id = val:match('%d+') or val:match('<@%!?(%d+)>')
-      if not (isSnowflake(id)) then return nil end
+      if not isSnowflake(id) then return nil end
       return msg.guild and msg.guild:getBans():get(id)
     end,
     channel = function(val, msg)
       local id = val:match('%d') or val:match('<#(%d+)>')
-      if not (isSnowflake(id)) then return nil end
+      if not isSnowflake(id) then return nil end
       return msg.guild and msg.guild.textChannels:get(id)
     end,
     emoji = function(val, msg)
       local id = val:match('<a?:%S+:(%d+)>')
-      if not (isSnowflake(id)) then return nil end
+      if not isSnowflake(id) then return nil end
       return msg.mentionedEmojis:get(id)
     end,
     guild = function(val, msg)
@@ -132,18 +134,18 @@ do
     end,
     member = function(val, msg)
       local id = val:match('<@%!?(%d+)>') or val:match('%d+')
-      if not (isSnowflake(id)) then return nil end
+      if not isSnowflake(id) then return nil end
       return msg.guild and msg.guild:getMember(id)
     end,
     message = function(val, msg)
       local guildId, channelId, messageLink = val:match('https?://discord[app]*%.com/channels/(%d+)/(%d+)/(%d+)')
       local messageId = messageLink or val:match('%d+')
-      if not (isSnowflake(messageId)) then return nil end
+      if not isSnowflake(messageId) then return nil end
       local guild = msg.guild
       local channel = msg.channel
       if channelId ~= channel.id or guild.id ~= guildId then
         if isSnowflake(channelId) then channel = msg.client:getChannel(channelId) end
-        if not (channel) then return nil end
+        if not channel then return nil end
       end
       return messageId and channel:getMessage(messageId)
     end,
@@ -170,7 +172,7 @@ do
     end,
     user = function(val, msg)
       local id = val:match('<@%!?(%d+)>') or val:match('%d+')
-      if not (isSnowflake(id)) then return nil end
+      if not isSnowflake(id) then return nil end
       return msg.client:getUser(id)
     end
   }

@@ -1,5 +1,8 @@
 local plugin
-plugin = require('comrade').plugin
+do
+  local _obj_0 = require('comrade')
+  plugin = _obj_0.plugin
+end
 local pluginname
 do
   local _class_0
@@ -64,7 +67,7 @@ do
         _base_1.__index = _base_1
         setmetatable(_base_1, _parent_1.__base)
         _class_1 = setmetatable({
-          __init = function(self, ...) return _class_1.__parent.__init(self, ...) end,
+          __init = function(self, ...) return _class_0.__parent.__init(self, ...) end,
           __base = _base_1,
           __name = 'messageCreate',
           __parent = _parent_1

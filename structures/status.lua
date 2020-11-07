@@ -1,7 +1,13 @@
 local request
-request = require('coro-http').request
+do
+  local _obj_0 = require('coro-http')
+  request = _obj_0.request
+end
 local parse
-parse = require('json').parse
+do
+  local _obj_0 = require('json')
+  parse = _obj_0.parse
+end
 local command = require('./command')
 local tabular = require('../libs/tabular')
 local haste = 'https://hasteb.in/'
@@ -27,8 +33,7 @@ do
         _, res = request('POST', tostring(haste) .. 'documents',
                          {{'Content-Type', 'text/plain'}, {'Content-Length', #content}}, content)
         local body = parse(res)
-        local key
-        key = body.key
+        local key = body.key
         return msg:reply('Content too large;\nPlease see: ' .. tostring(haste) .. tostring(key) .. '.txt')
       end
     end

@@ -29,7 +29,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.commands = {}
   self.__inherited = function(self, klass) return table.insert(self.__class.commands, klass()) end
   self.clear = function(self) self.__class.commands = {} end
@@ -65,7 +65,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.events = {}
   self.__inherited = function(self, klass) return table.insert(self.__class.events, klass()) end
   self.clear = function(self) self.__class.events = {} end
@@ -94,8 +94,7 @@ do
       self.command = plguinCommand
       self.event = pluginEvent
     end,
-    __base = _base_0,
-    __name = nil
+    __base = _base_0
   }, {
     __index = _base_0,
     __call = function(cls, ...)
@@ -105,7 +104,7 @@ do
     end
   })
   _base_0.__class = _class_0
-  local self = _class_0
+  local self = _class_0;
   self.__name = 'Plugin'
   return _class_0
 end

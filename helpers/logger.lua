@@ -1,6 +1,5 @@
 local logger = {}
-local getenv
-getenv = os.getenv
+local getenv = os.getenv
 local lustache = require('../libs/lustache')
 logger.colors = {
   [8] = {
