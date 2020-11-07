@@ -104,6 +104,8 @@ helper.__init = (token,config={}) =>
 
       command = string.match msg.content, "#{prefix}(%S+)"
 
+      return nil unless command
+
       args = {}
 
       for arg in string.gmatch string.match(msg.content, "#{prefix}%S+%s*(.*)"), '%S+'

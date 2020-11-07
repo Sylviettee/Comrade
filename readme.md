@@ -1,17 +1,16 @@
 <div align="center">
   <h1>Comrade</h1>
 
-  <a href="https://comrade-project.github.io/Comrade">Docs |</a>
-  <a href="https://comrade-project.github.com/Comrade/blob/master/CHANGELOG.md">Changelog</a>
+  <a href="https://sovietkitsune.github.io/Comrade">Docs</a>
 </div>
 
 <div align="center">
 
-  <img src="https://img.shields.io/travis/Comrade-project/Comrade?style=flat">
+  <img src="https://img.shields.io/travis/sovietkitsune/Comrade?style=flat">
 
   <img src="https://img.shields.io/discord/665029118575902739"/>
 
-  <img src="https://img.shields.io/github/contributors/Comrade-project/Comrade?style=flat">
+  <img src="https://img.shields.io/github/contributors/sovietkitsune/Comrade?style=flat">
 
   <div>Comrade is a safe, lightweight framework built using Moonscript</div>
 </div>
@@ -35,9 +34,9 @@ If your bot uses Comrade send an issue with it.
 
 ## Documentation
 
-The documentation can be located at [https://comrade-project.github.io/Comrade](https://comrade-project.github.io/Comrade). (Note that the search is non-functional for now)
+The documentation can be located at [https://sovietkitsune.github.io/Comrade](https://sovietkitsune.github.io/Comrade). (Note that the search is non-functional for now)
 
-If you have any issues you can join the support Discord [here](https://discord.gg/uCDq5mw) in the [#lua-comrade](https://discordapp.com/channels/665029118575902739/738684991923290182/) channel.
+If you have any issues you can join the support Discord [here](https://discord.gg/uCDq5mw) in the [#comrade](https://discordapp.com/channels/665029118575902739/738684991923290182/) channel.
 
 ## Installation
 
